@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; width: 1100px; height: 760px; background: #090b0d; color: rgba(255,255,255,.72); font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #c8a24a; text-decoration: none; }
+    a:hover { color: #e2c27e; }
+    h1, h2, h3 { font-family: "Sora", system-ui, sans-serif; margin: 0; color: #fff; }
+    p { margin: 0; }
+    .rnd { width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); display: flex; align-items: center; justify-content: center; flex: none; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1100px; height: 760px; display: flex; flex-direction: column; background: rgba(9,11,13,.97);">
+
+  <!-- top bar -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 28px;">
+    <span style="font-size: 14.5px; color: rgba(255,255,255,.6); font-variant-numeric: tabular-nums;">07 <span style="opacity: .45;">/ 24</span></span>
+    <div class="rnd">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+    </div>
+  </div>
+
+  <!-- stage -->
+  <div style="flex: 1; position: relative; display: flex; align-items: center; justify-content: center; padding: 0 78px; min-height: 0;">
+    <div style="position: absolute; left: 22px; top: 50%; transform: translateY(-50%);" class="rnd">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+    </div>
+    <div style="position: absolute; right: 22px; top: 50%; transform: translateY(-50%); background: #c8a24a; border-color: #c8a24a;" class="rnd">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0e1114" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+    </div>
+
+    <div style="position: relative; overflow: hidden; width: 800px; height: 500px; border-radius: 8px; box-shadow: 0 30px 80px rgba(0,0,0,.6); background-color: #171d24;">
+      <div style="position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(200,162,74,.3) 0 3px, transparent 3px 34px), linear-gradient(168deg, #2a343f 0%, #161d24 55%, #0d1115 100%);"></div>
+      <div style="position: absolute; left: 6%; right: 6%; top: 14%; bottom: -8%; border: 3px solid rgba(200,162,74,.3); border-bottom: 0; border-radius: 260px 260px 0 0;"></div>
+      <span style="position: absolute; left: 18px; bottom: 16px; display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; background: rgba(14,17,20,.72); border: 1px solid rgba(255,255,255,.14); font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.6);">
+        <span style="width: 5px; height: 5px; border-radius: 50%; background: #c8a24a;"></span>Photo at full size
+      </span>
+    </div>
+  </div>
+
+  <!-- caption -->
+  <div style="padding: 22px 28px 30px; display: flex; flex-direction: column; align-items: center; gap: 5px;">
+    <span style="font-family: 'Sora', sans-serif; font-size: 16.5px; font-weight: 600; color: #fff;">Estate gates, [Town]</span>
+    <span style="font-size: 13.5px; color: rgba(255,255,255,.45);">Driveway gates &middot; use &larr; &rarr; to browse, Esc to close</span>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1100,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap">
+  <style>
+    body {
+      margin: 0;
+      width: 1440px;
+      background: #0e1114;
+      color: rgba(255,255,255,.72);
+      font-family: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #c8a24a; text-decoration: none; }
+    a:hover { color: #e2c27e; }
+    h1, h2, h3, h4 { font-family: "Sora", "Segoe UI", system-ui, sans-serif; margin: 0; color: #fff; letter-spacing: -.022em; line-height: 1.1; }
+    p { margin: 0; text-wrap: pretty; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    .tile { position: relative; overflow: hidden; border-radius: 14px; break-inside: avoid; margin-bottom: 18px; background-color: #171d24; }
+    .tile::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(90deg, rgba(200,162,74,.26) 0 2px, transparent 2px 24px),
+        linear-gradient(168deg, #242d37 0%, #151b21 55%, #0d1115 100%);
+    }
+    .tile::after {
+      content: "";
+      position: absolute; left: 8%; right: 8%; top: 12%; bottom: -8%;
+      border: 2px solid rgba(200,162,74,.26); border-bottom: 0;
+      border-radius: 220px 220px 0 0;
+    }
+    .lbl {
+      position: absolute; left: 14px; bottom: 12px; z-index: 3;
+      font-family: "Sora", sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.5);
+    }
+  </style>
+</helmet>
+
+<div style="display: flex; flex-direction: column;">
+
+  <!-- NAV -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 0 96px; height: 84px; border-bottom: 1px solid rgba(255,255,255,.09);">
+    <div style="display: flex; align-items: center; gap: 13px;">
+      <div style="width: 40px; height: 40px; border-radius: 10px; background: #c8a24a; display: flex; align-items: center; justify-content: center;">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#0e1114" stroke-width="1.8" stroke-linecap="round"><path d="M4 21V8l8-5 8 5v13"></path><path d="M8 21V10M12 21V8M16 21V10"></path><path d="M3 21h18"></path></svg>
+      </div>
+      <div style="display: flex; flex-direction: column; line-height: 1.05;">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; color: #fff;">Westhead Gates</span>
+        <span style="font-size: 10px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.42);">Gates &amp; Automation</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="padding: 9px 16px; border-radius: 999px; font-size: 15px; color: rgba(255,255,255,.66);">Home</span>
+      <span style="padding: 9px 16px; border-radius: 999px; font-size: 15px; font-weight: 600; color: #fff; background: rgba(255,255,255,.07);">Gallery</span>
+      <span style="padding: 9px 16px; border-radius: 999px; font-size: 15px; color: rgba(255,255,255,.66);">Contact</span>
+      <a href="#" style="display: inline-flex; align-items: center; gap: 8px; margin-left: 14px; padding: 12px 22px; border-radius: 999px; background: #c8a24a; color: #0e1114; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600;">[YOUR PHONE]</a>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div style="position: relative; overflow: hidden; padding: 76px 96px 68px; border-bottom: 1px solid rgba(255,255,255,.08);">
+    <div style="position: absolute; inset: 0; background: radial-gradient(70% 120% at 88% 6%, rgba(200,162,74,.17), rgba(200,162,74,0) 62%), repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 54px);"></div>
+    <div style="position: relative; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 18px; font-size: 13.5px; color: rgba(255,255,255,.45);">
+        <span style="color: #c8a24a;">Home</span>
+        <span>/</span>
+        <span>Gallery</span>
+      </div>
+      <h1 style="font-size: 54px; font-weight: 600;">Our work</h1>
+      <p style="margin-top: 16px; font-size: 18px; max-width: 620px; color: rgba(255,255,255,.7);">Gates, railings and automation we&rsquo;ve designed, built and fitted. Click any photo to see it full size.</p>
+    </div>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 34px 96px 26px;">
+    <div style="display: flex; gap: 9px;">
+      <span style="padding: 10px 20px; border-radius: 999px; background: #c8a24a; color: #0e1114; font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 600;">All <span style="opacity: .6;">24</span></span>
+      <span style="padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.78); font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 500;">Driveway gates <span style="opacity: .5;">9</span></span>
+      <span style="padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.78); font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 500;">Sliding <span style="opacity: .5;">5</span></span>
+      <span style="padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.78); font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 500;">Railings <span style="opacity: .5;">6</span></span>
+      <span style="padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.78); font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 500;">Automation <span style="opacity: .5;">4</span></span>
+    </div>
+    <span style="font-size: 14.5px; color: rgba(255,255,255,.5);">Showing 24 photos</span>
+  </div>
+
+  <!-- MASONRY GRID -->
+  <div style="padding: 0 96px 20px; columns: 3; column-gap: 18px;">
+    <div class="tile" style="height: 340px;">
+      <div style="position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(14,17,20,0) 42%, rgba(14,17,20,.82) 100%);"></div>
+      <div style="position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 3; display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #e2c27e;">Driveway gates</span>
+        <span style="font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 600; color: #fff;">Estate gates, [Town]</span>
+      </div>
+      <span style="position: absolute; top: 14px; right: 14px; z-index: 3; padding: 5px 10px; border-radius: 6px; background: rgba(200,162,74,.92); color: #0e1114; font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;">Hover state</span>
+    </div>
+    <div class="tile" style="height: 250px;"><span class="lbl">Photo 04</span></div>
+    <div class="tile" style="height: 420px;"><span class="lbl">Photo 07</span></div>
+    <div class="tile" style="height: 300px;"><span class="lbl">Photo 10</span></div>
+
+    <div class="tile" style="height: 430px;"><span class="lbl">Photo 02</span></div>
+    <div class="tile" style="height: 290px;"><span class="lbl">Photo 05</span></div>
+    <div class="tile" style="height: 330px;"><span class="lbl">Photo 08</span></div>
+    <div class="tile" style="height: 260px;"><span class="lbl">Photo 11</span></div>
+
+    <div class="tile" style="height: 280px;"><span class="lbl">Photo 03</span></div>
+    <div class="tile" style="height: 380px;"><span class="lbl">Photo 06</span></div>
+    <div class="tile" style="height: 250px;"><span class="lbl">Photo 09</span></div>
+    <div class="tile" style="height: 400px;"><span class="lbl">Photo 12</span></div>
+  </div>
+
+  <!-- HOW IT LOADS (spec note for the build) -->
+  <div style="margin: 34px 96px 0; padding: 26px 30px; border: 1px dashed rgba(200,162,74,.42); border-radius: 16px; display: flex; align-items: flex-start; gap: 16px; background: rgba(200,162,74,.05);">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="1.8" stroke-linecap="round" style="flex: none; margin-top: 2px;"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+    <p style="font-size: 15.5px; color: rgba(255,255,255,.66);"><strong style="color: #fff; font-family: 'Sora', sans-serif;">Auto-loading:</strong> this grid is not hand-coded. Drop photos into <span style="font-family: ui-monospace, monospace; color: #e2c27e;">/images/</span> on the Plesk server and they appear here on the next page load &mdash; newest first, captions and categories read from the filename. Nothing to edit.</p>
+  </div>
+
+  <!-- CTA -->
+  <div style="padding: 80px 96px 90px;">
+    <div style="position: relative; overflow: hidden; border-radius: 24px; background: #171d24; padding: 60px; display: flex; align-items: center; justify-content: space-between; gap: 50px;">
+      <div style="position: absolute; left: 0; right: 0; top: -60%; height: 130%; background: radial-gradient(45% 55% at 30% 0%, rgba(200,162,74,.22), rgba(200,162,74,0) 70%);"></div>
+      <div style="position: relative; display: flex; flex-direction: column; gap: 14px;">
+        <h2 style="font-size: 36px; font-weight: 600;">Seen something you like?</h2>
+        <p style="font-size: 17px; color: rgba(255,255,255,.7); max-width: 520px;">Tell us which photo caught your eye and we&rsquo;ll price something similar for your opening.</p>
+      </div>
+      <a href="#" style="position: relative; flex: none; display: inline-flex; align-items: center; gap: 9px; padding: 16px 30px; border-radius: 999px; background: #c8a24a; color: #0e1114; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600;">
+        Get a quote
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background: #090b0d; padding: 44px 96px; display: flex; align-items: center; justify-content: space-between; gap: 30px; border-top: 1px solid rgba(255,255,255,.08);">
+    <div style="display: flex; align-items: center; gap: 13px;">
+      <div style="width: 36px; height: 36px; border-radius: 9px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="1.8" stroke-linecap="round"><path d="M4 21V8l8-5 8 5v13"></path><path d="M8 21V10M12 21V8M16 21V10"></path><path d="M3 21h18"></path></svg>
+      </div>
+      <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: #fff;">Westhead Gates</span>
+    </div>
+    <div style="display: flex; gap: 26px;">
+      <span style="font-size: 14.5px; color: rgba(255,255,255,.6);">Home</span>
+      <span style="font-size: 14.5px; color: rgba(255,255,255,.6);">Gallery</span>
+      <span style="font-size: 14.5px; color: rgba(255,255,255,.6);">Contact</span>
+    </div>
+    <span style="font-size: 13.5px; color: rgba(255,255,255,.42);">&copy; [YEAR] Westhead Gates</span>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":2280}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap">
+  <style>
+    body {
+      margin: 0;
+      width: 1440px;
+      background: #0e1114;
+      color: rgba(255,255,255,.72);
+      font-family: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #c8a24a; text-decoration: none; }
+    a:hover { color: #e2c27e; }
+    h1, h2, h3, h4 { font-family: "Sora", "Segoe UI", system-ui, sans-serif; margin: 0; color: #fff; letter-spacing: -.022em; line-height: 1.1; }
+    p { margin: 0; text-wrap: pretty; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    .ph { position: relative; overflow: hidden; background-color: #171d24; }
+    .ph::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(90deg, rgba(200,162,74,.30) 0 2px, transparent 2px 26px),
+        linear-gradient(168deg, #232c35 0%, #141a20 55%, #0d1115 100%);
+    }
+    .ph::after {
+      content: "";
+      position: absolute; left: 6%; right: 6%; top: 14%; bottom: -6%;
+      border: 2px solid rgba(200,162,74,.30);
+      border-bottom: 0;
+      border-radius: 200px 200px 0 0;
+    }
+    .ph > .chip {
+      position: absolute; left: 16px; bottom: 16px; z-index: 2;
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 11px; border-radius: 999px;
+      background: rgba(14,17,20,.74); border: 1px solid rgba(255,255,255,.14);
+      font-family: "Sora", sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.62);
+    }
+    .chip i { width: 5px; height: 5px; border-radius: 50%; background: #c8a24a; display: block; }
+  </style>
+</helmet>
+
+<div style="display: flex; flex-direction: column;">
+
+  <!-- ============ NAV ============ -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 0 96px; height: 84px; border-bottom: 1px solid rgba(255,255,255,.09); background: rgba(14,17,20,.9);">
+    <div style="display: flex; align-items: center; gap: 13px;">
+      <div style="width: 40px; height: 40px; border-radius: 10px; background: #c8a24a; display: flex; align-items: center; justify-content: center;">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#0e1114" stroke-width="1.8" stroke-linecap="round">
+          <path d="M4 21V8l8-5 8 5v13"></path>
+          <path d="M8 21V10M12 21V8M16 21V10"></path>
+          <path d="M3 21h18"></path>
+        </svg>
+      </div>
+      <div style="display: flex; flex-direction: column; line-height: 1.05;">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; color: #fff;">Westhead Gates</span>
+        <span style="font-size: 10px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.42);">Gates &amp; Automation</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="padding: 9px 16px; border-radius: 999px; font-size: 15px; font-weight: 600; color: #fff; background: rgba(255,255,255,.07);">Home</span>
+      <span style="padding: 9px 16px; border-radius: 999px; font-size: 15px; color: rgba(255,255,255,.66);">Gallery</span>
+      <span style="padding: 9px 16px; border-radius: 999px; font-size: 15px; color: rgba(255,255,255,.66);">Contact</span>
+      <a href="#" style="display: inline-flex; align-items: center; gap: 8px; margin-left: 14px; padding: 12px 22px; border-radius: 999px; background: #c8a24a; color: #0e1114; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"></path></svg>
+        [YOUR PHONE]
+      </a>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <div class="ph" style="position: relative; padding: 116px 96px 76px; min-height: 620px; display: flex; flex-direction: column; justify-content: center;">
+    <div style="position: absolute; inset: 0; z-index: 1; background: linear-gradient(102deg, rgba(14,17,20,.96) 6%, rgba(14,17,20,.84) 42%, rgba(14,17,20,.44) 100%);"></div>
+    <div style="position: relative; z-index: 2; display: flex; flex-direction: column; max-width: 760px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 22px;">
+        <span style="width: 30px; height: 1px; background: #c8a24a; display: block;"></span>
+        <span style="font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #e2c27e;">Designed, built and fitted by us</span>
+      </div>
+      <h1 style="font-size: 68px; font-weight: 600; text-wrap: balance;">Gates that make<br>an <span style="color: #e2c27e;">entrance</span>.</h1>
+      <p style="margin-top: 26px; font-size: 20px; max-width: 560px; color: rgba(255,255,255,.74);">Bespoke driveway gates, railings and automation for homes and businesses across [YOUR AREA]. Measured, made in our own workshop, and installed by the team that built them.</p>
+      <div style="display: flex; gap: 14px; margin-top: 38px;">
+        <a href="#" style="display: inline-flex; align-items: center; gap: 9px; padding: 16px 30px; border-radius: 999px; background: #c8a24a; color: #0e1114; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600;">
+          Get a free quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+        <a href="#" style="display: inline-flex; align-items: center; padding: 16px 30px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); color: #fff; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600;">See our work</a>
+      </div>
+      <div style="display: flex; gap: 64px; margin-top: 60px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,.13);">
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <strong style="font-family: 'Sora', sans-serif; font-size: 34px; font-weight: 700; color: #fff; line-height: 1;">[25]+</strong>
+          <span style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.5);">Years on the tools</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <strong style="font-family: 'Sora', sans-serif; font-size: 34px; font-weight: 700; color: #fff; line-height: 1;">[500]+</strong>
+          <span style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.5);">Gates installed</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <strong style="font-family: 'Sora', sans-serif; font-size: 34px; font-weight: 700; color: #fff; line-height: 1;">[12] mth</strong>
+          <span style="font-size: 12px; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.5);">Workmanship warranty</span>
+        </div>
+      </div>
+    </div>
+    <span class="chip" style="z-index: 3;"><i></i>Photo &mdash; hero, wide driveway gate at dusk</span>
+  </div>
+
+  <!-- ============ TRUST STRIP ============ -->
+  <div style="display: flex; align-items: center; justify-content: center; gap: 54px; padding: 20px 96px; background: #1a2128; border-bottom: 1px solid rgba(255,255,255,.07);">
+    <span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.6);">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path></svg>
+      Fully insured
+    </span>
+    <span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.6);">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      Machinery Directive compliant
+    </span>
+    <span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.6);">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"></path></svg>
+      Free site survey
+    </span>
+    <span style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.6);">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+      Servicing &amp; call-outs
+    </span>
+  </div>
+
+  <!-- ============ SERVICES (light) ============ -->
+  <div style="background: #f7f5f2; padding: 108px 96px; display: flex; flex-direction: column;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 60px; margin-bottom: 54px;">
+      <div style="display: flex; flex-direction: column; max-width: 620px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+          <span style="width: 30px; height: 1px; background: #9c7c2e; display: block;"></span>
+          <span style="font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #9c7c2e;">What we do</span>
+        </div>
+        <h2 style="font-size: 44px; font-weight: 600; color: #0e1114;">One team, from drawing to first opening.</h2>
+      </div>
+      <p style="font-size: 17px; color: #5b6670; max-width: 380px;">We don&rsquo;t sub-contract. The people who measure your driveway are the people who weld, spray and hang the gate.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px;">
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; background: #fff; border: 1px solid rgba(14,17,20,.1); border-radius: 20px;">
+        <div style="width: 48px; height: 48px; border-radius: 13px; background: rgba(200,162,74,.15); display: flex; align-items: center; justify-content: center;">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#9c7c2e" stroke-width="1.7" stroke-linecap="round"><path d="M3 21V7l9-4 9 4v14"></path><path d="M7 21V9M12 21V7M17 21V9"></path><path d="M2 21h20"></path></svg>
+        </div>
+        <h3 style="font-size: 20px; font-weight: 600; color: #0e1114;">Driveway gates</h3>
+        <p style="font-size: 15.5px; color: #5b6670;">Swing and sliding gates in steel, aluminium or hardwood &mdash; made to your opening, not to a catalogue size.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; background: #fff; border: 1px solid rgba(14,17,20,.1); border-radius: 20px;">
+        <div style="width: 48px; height: 48px; border-radius: 13px; background: rgba(200,162,74,.15); display: flex; align-items: center; justify-content: center;">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#9c7c2e" stroke-width="1.7" stroke-linecap="round"><path d="M12 3v6"></path><circle cx="12" cy="12" r="3"></circle><path d="M12 15v6"></path><path d="M4.9 4.9 9 9"></path><path d="M19.1 19.1 15 15"></path></svg>
+        </div>
+        <h3 style="font-size: 20px; font-weight: 600; color: #0e1114;">Automation</h3>
+        <p style="font-size: 15.5px; color: #5b6670;">Underground, ram and sliding motors with intercom, keypad, app control and safety edges fitted to spec.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; background: #fff; border: 1px solid rgba(14,17,20,.1); border-radius: 20px;">
+        <div style="width: 48px; height: 48px; border-radius: 13px; background: rgba(200,162,74,.15); display: flex; align-items: center; justify-content: center;">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#9c7c2e" stroke-width="1.7" stroke-linecap="round"><path d="M3 20h18"></path><path d="M5 20V9M9.7 20V9M14.3 20V9M19 20V9"></path><path d="M3 9h18"></path><path d="M4 9 12 4l8 5"></path></svg>
+        </div>
+        <h3 style="font-size: 20px; font-weight: 600; color: #0e1114;">Railings &amp; fencing</h3>
+        <p style="font-size: 15.5px; color: #5b6670;">Matching railings, balustrade, estate fencing and pedestrian gates so the whole frontage reads as one piece.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; background: #fff; border: 1px solid rgba(14,17,20,.1); border-radius: 20px;">
+        <div style="width: 48px; height: 48px; border-radius: 13px; background: rgba(200,162,74,.15); display: flex; align-items: center; justify-content: center;">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#9c7c2e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5l-9 9a2.8 2.8 0 0 1-4-4l9-9a4 4 0 0 0-1 -1Z"></path></svg>
+        </div>
+        <h3 style="font-size: 20px; font-weight: 600; color: #0e1114;">Repairs &amp; servicing</h3>
+        <p style="font-size: 15.5px; color: #5b6670;">Gate not closing? We service and repair most makes of motor, including gates we didn&rsquo;t install.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SPLIT / WORKSHOP (light) ============ -->
+  <div style="background: #fff; padding: 104px 96px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 72px; align-items: center; border-top: 1px solid rgba(14,17,20,.08);">
+    <div class="ph" style="border-radius: 22px; height: 460px;">
+      <span class="chip"><i></i>Photo &mdash; workshop, welding a gate frame</span>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+        <span style="width: 30px; height: 1px; background: #9c7c2e; display: block;"></span>
+        <span style="font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #9c7c2e;">Why Westhead</span>
+      </div>
+      <h2 style="font-size: 42px; font-weight: 600; color: #0e1114;">Built in the workshop.<br>Not bought in a box.</h2>
+      <p style="margin-top: 20px; font-size: 17px; color: #5b6670; max-width: 480px;">Every gate starts as a drawing and a stack of steel. That means an odd-shaped opening, a slope, or a wall you can&rsquo;t move are design problems &mdash; not reasons to say no.</p>
+      <ul style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
+        <li style="display: grid; grid-template-columns: 22px 1fr; gap: 13px; align-items: start; font-size: 16.5px; color: #161b20;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9c7c2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px;"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg>
+          <span>Galvanised then powder-coated &mdash; any RAL colour, no rust bleed in year three</span>
+        </li>
+        <li style="display: grid; grid-template-columns: 22px 1fr; gap: 13px; align-items: start; font-size: 16.5px; color: #161b20;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9c7c2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px;"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg>
+          <span>Force-tested and certified to the current safety standards on handover</span>
+        </li>
+        <li style="display: grid; grid-template-columns: 22px 1fr; gap: 13px; align-items: start; font-size: 16.5px; color: #161b20;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9c7c2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px;"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg>
+          <span>Groundworks, ducting and power run by us &mdash; one trade on site, one point of contact</span>
+        </li>
+        <li style="display: grid; grid-template-columns: 22px 1fr; gap: 13px; align-items: start; font-size: 16.5px; color: #161b20;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9c7c2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px;"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg>
+          <span>Written quote with a fixed price &mdash; no day-rate surprises</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ PROCESS (dark) ============ -->
+  <div style="background: #0e1114; padding: 104px 96px; display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 52px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+        <span style="width: 30px; height: 1px; background: #c8a24a; display: block;"></span>
+        <span style="font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #e2c27e;">How it works</span>
+      </div>
+      <h2 style="font-size: 42px; font-weight: 600;">Four steps, roughly [6&ndash;8] weeks.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px;">
+      <div style="position: relative; padding: 40px 26px 30px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: rgba(255,255,255,.03); display: flex; flex-direction: column; gap: 10px;">
+        <span style="position: absolute; top: 22px; right: 26px; font-family: 'Sora', sans-serif; font-size: 40px; font-weight: 700; line-height: 1; color: rgba(200,162,74,.26);">01</span>
+        <h3 style="font-size: 19px; font-weight: 600;">Site survey</h3>
+        <p style="font-size: 15.5px; color: rgba(255,255,255,.66);">We come out, measure the opening, check levels and power, and talk through what you actually want it to do.</p>
+      </div>
+      <div style="position: relative; padding: 40px 26px 30px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: rgba(255,255,255,.03); display: flex; flex-direction: column; gap: 10px;">
+        <span style="position: absolute; top: 22px; right: 26px; font-family: 'Sora', sans-serif; font-size: 40px; font-weight: 700; line-height: 1; color: rgba(200,162,74,.26);">02</span>
+        <h3 style="font-size: 19px; font-weight: 600;">Design &amp; fixed quote</h3>
+        <p style="font-size: 15.5px; color: rgba(255,255,255,.66);">A drawing of your gate in your opening, with a price that doesn&rsquo;t move unless you change the brief.</p>
+      </div>
+      <div style="position: relative; padding: 40px 26px 30px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: rgba(255,255,255,.03); display: flex; flex-direction: column; gap: 10px;">
+        <span style="position: absolute; top: 22px; right: 26px; font-family: 'Sora', sans-serif; font-size: 40px; font-weight: 700; line-height: 1; color: rgba(200,162,74,.26);">03</span>
+        <h3 style="font-size: 19px; font-weight: 600;">Fabrication</h3>
+        <p style="font-size: 15.5px; color: rgba(255,255,255,.66);">Cut, welded and finished in our workshop. You get photos before it leaves the shop floor.</p>
+      </div>
+      <div style="position: relative; padding: 40px 26px 30px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: rgba(255,255,255,.03); display: flex; flex-direction: column; gap: 10px;">
+        <span style="position: absolute; top: 22px; right: 26px; font-family: 'Sora', sans-serif; font-size: 40px; font-weight: 700; line-height: 1; color: rgba(200,162,74,.26);">04</span>
+        <h3 style="font-size: 19px; font-weight: 600;">Install &amp; handover</h3>
+        <p style="font-size: 15.5px; color: rgba(255,255,255,.66);">Posts set, motors wired, safety tested, and ten minutes showing you how everything works.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GALLERY TEASER (dark) ============ -->
+  <div style="background: #12171c; padding: 100px 96px; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,.07);">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 60px; margin-bottom: 40px;">
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+          <span style="width: 30px; height: 1px; background: #c8a24a; display: block;"></span>
+          <span style="font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #e2c27e;">Recent work</span>
+        </div>
+        <h2 style="font-size: 42px; font-weight: 600;">A few we&rsquo;re proud of.</h2>
+      </div>
+      <a href="#" style="display: inline-flex; align-items: center; gap: 9px; padding: 14px 26px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); color: #fff; font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 600;">
+        View full gallery
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px;">
+      <div class="ph" style="border-radius: 14px; height: 300px;"><span class="chip"><i></i>Estate gate</span></div>
+      <div class="ph" style="border-radius: 14px; height: 300px;"><span class="chip"><i></i>Sliding, cantilever</span></div>
+      <div class="ph" style="border-radius: 14px; height: 300px;"><span class="chip"><i></i>Railings</span></div>
+      <div class="ph" style="border-radius: 14px; height: 300px;"><span class="chip"><i></i>Automation</span></div>
+    </div>
+  </div>
+
+  <!-- ============ TESTIMONIALS (light) ============ -->
+  <div style="background: #f7f5f2; padding: 100px 96px; display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 48px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+        <span style="width: 30px; height: 1px; background: #9c7c2e; display: block;"></span>
+        <span style="font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #9c7c2e;">What customers say</span>
+      </div>
+      <h2 style="font-size: 42px; font-weight: 600; color: #0e1114;">Word of mouth, mostly.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px;">
+      <div style="display: flex; flex-direction: column; gap: 20px; padding: 34px 30px; background: #fff; border: 1px solid rgba(14,17,20,.1); border-radius: 20px;">
+        <div style="display: flex; gap: 3px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+        </div>
+        <p style="font-size: 16.5px; color: #161b20;">&ldquo;[REAL REVIEW &mdash; replace with a genuine quote. Two or three sentences works best: the problem, what we did, and how it turned out.]&rdquo;</p>
+        <div style="margin-top: auto; display: flex; flex-direction: column;">
+          <strong style="font-family: 'Sora', sans-serif; font-size: 15.5px; color: #0e1114;">[Customer name]</strong>
+          <span style="font-size: 14px; color: #5b6670;">[Town] &middot; Electric swing gates</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px; padding: 34px 30px; background: #fff; border: 1px solid rgba(14,17,20,.1); border-radius: 20px;">
+        <div style="display: flex; gap: 3px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+        </div>
+        <p style="font-size: 16.5px; color: #161b20;">&ldquo;[REAL REVIEW &mdash; replace me.]&rdquo;</p>
+        <div style="margin-top: auto; display: flex; flex-direction: column;">
+          <strong style="font-family: 'Sora', sans-serif; font-size: 15.5px; color: #0e1114;">[Customer name]</strong>
+          <span style="font-size: 14px; color: #5b6670;">[Town] &middot; Sliding gate &amp; intercom</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px; padding: 34px 30px; background: #fff; border: 1px solid rgba(14,17,20,.1); border-radius: 20px;">
+        <div style="display: flex; gap: 3px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#c8a24a"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"></path></svg>
+        </div>
+        <p style="font-size: 16.5px; color: #161b20;">&ldquo;[REAL REVIEW &mdash; replace me.]&rdquo;</p>
+        <div style="margin-top: auto; display: flex; flex-direction: column;">
+          <strong style="font-family: 'Sora', sans-serif; font-size: 15.5px; color: #0e1114;">[Customer name]</strong>
+          <span style="font-size: 14px; color: #5b6670;">[Town] &middot; Railings &amp; pedestrian gate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CTA (dark) ============ -->
+  <div style="background: #0e1114; padding: 96px 96px;">
+    <div style="position: relative; overflow: hidden; border-radius: 24px; background: #171d24; padding: 72px 60px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <div style="position: absolute; left: 0; right: 0; top: -60%; height: 130%; background: radial-gradient(50% 55% at 50% 0%, rgba(200,162,74,.24), rgba(200,162,74,0) 70%);"></div>
+      <div style="position: relative; display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 44px; font-weight: 600;">Thinking about a new gate?</h2>
+        <p style="margin-top: 18px; font-size: 18px; color: rgba(255,255,255,.72); max-width: 520px;">Send a photo of the opening and rough measurements &mdash; we&rsquo;ll come back with an honest steer on what will work and what it&rsquo;ll cost.</p>
+        <div style="display: flex; gap: 14px; margin-top: 34px;">
+          <a href="#" style="display: inline-flex; align-items: center; gap: 9px; padding: 16px 30px; border-radius: 999px; background: #c8a24a; color: #0e1114; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600;">Request a quote</a>
+          <a href="#" style="display: inline-flex; align-items: center; gap: 9px; padding: 16px 30px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); color: #fff; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"></path></svg>
+            [YOUR PHONE]
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div style="background: #090b0d; padding: 72px 96px 34px; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,.08);">
+    <div style="display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.1fr; gap: 56px;">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; gap: 13px;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="1.8" stroke-linecap="round"><path d="M4 21V8l8-5 8 5v13"></path><path d="M8 21V10M12 21V8M16 21V10"></path><path d="M3 21h18"></path></svg>
+          </div>
+          <div style="display: flex; flex-direction: column; line-height: 1.05;">
+            <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; color: #fff;">Westhead Gates</span>
+            <span style="font-size: 10px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.42);">Gates &amp; Automation</span>
+          </div>
+        </div>
+        <p style="font-size: 15px; color: rgba(255,255,255,.58); max-width: 300px;">Bespoke gates, railings and automation, designed and built in [YOUR TOWN] and fitted across [YOUR AREA].</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <h4 style="font-size: 11px; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; color: rgba(255,255,255,.42);">Pages</h4>
+        <span style="font-size: 15px; color: rgba(255,255,255,.66);">Home</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.66);">Gallery</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.66);">Contact</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <h4 style="font-size: 11px; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; color: rgba(255,255,255,.42);">Services</h4>
+        <span style="font-size: 15px; color: rgba(255,255,255,.66);">Driveway gates</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.66);">Automation</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.66);">Railings &amp; fencing</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.66);">Repairs &amp; servicing</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <h4 style="font-size: 11px; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; color: rgba(255,255,255,.42);">Get in touch</h4>
+        <span style="font-size: 15px; color: rgba(255,255,255,.66);">[YOUR PHONE]</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.66);">[YOUR EMAIL]</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.66);">[Workshop address]<br>[Town, Postcode]</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 52px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1);">
+      <span style="font-size: 13.5px; color: rgba(255,255,255,.42);">&copy; [YEAR] Westhead Gates. All rights reserved.</span>
+      <span style="font-size: 13.5px; color: rgba(255,255,255,.42);">Company no. [NUMBER] &middot; VAT [NUMBER]</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":3560}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

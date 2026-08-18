@@ -1,0 +1,7 @@
+# Generated design-canvas output (rebuilt from the .dc.html sources in .mockup/)
+.mockup/westhead-gates-website.html
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
