@@ -1,0 +1,65 @@
+# Westhead Gates — Apache configuration.
+# Plesk serves Apache by default; these settings are safe to leave in place.
+
+# ---------------------------------------------------------------- default doc
+DirectoryIndex index.html index.php
+
+# ------------------------------------------------------------- error document
+ErrorDocument 404 /404.html
+
+# ------------------------------------------------------------------ no prying
+# Don't list folder contents if a page is missing.
+Options -Indexes
+
+# Keep the gallery cache and config out of reach.
+<FilesMatch "^(config\.php|captions\.json)$">
+    Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/api/cache/
+
+# ------------------------------------------------------------ security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    # Uncomment once the site is confirmed working over HTTPS only:
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ------------------------------------------------------------------- caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg              "access plus 1 month"
+    ExpiresByType image/png               "access plus 1 month"
+    ExpiresByType image/webp              "access plus 1 month"
+    ExpiresByType image/avif              "access plus 1 month"
+    ExpiresByType image/svg+xml           "access plus 1 month"
+    ExpiresByType text/css                "access plus 1 week"
+    ExpiresByType application/javascript  "access plus 1 week"
+    ExpiresByType text/html               "access plus 1 hour"
+</IfModule>
+
+# ----------------------------------------------------------------- compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ------------------------------------------------------------------- tidy URLs
+# Let /contact work as well as /contact.html
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Force HTTPS. Comment this out until your SSL certificate is installed.
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Extensionless URLs
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — Westhead Gates</title>
+<meta name="description" content="Gates, railings and automation designed, built and fitted by Westhead Gates across [YOUR AREA].">
+<link rel="canonical" href="https://[YOUR-DOMAIN]/gallery.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gallery — Westhead Gates">
+<meta property="og:description" content="Gates, railings and automation we've designed, built and fitted.">
+<meta property="og:image" content="https://[YOUR-DOMAIN]/assets/img/og.jpg">
+<meta name="theme-color" content="#0e1114">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="1.8" stroke-linecap="round"><path d="M4 21V8l8-5 8 5v13"></path><path d="M8 21V10M12 21V8M16 21V10"></path><path d="M3 21h18"></path></svg>
+      </span>
+      <span class="brand__text">
+        <span class="brand__name">Westhead Gates</span>
+        <span class="brand__sub">Gates &amp; Automation</span>
+      </span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link is-active" href="gallery.html" aria-current="page">Gallery</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+      <a class="btn btn--brass nav__cta" href="tel:[YOURPHONE-E164]">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"></path></svg>
+        [YOUR PHONE]
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span>/</span><span aria-current="page">Gallery</span>
+      </nav>
+      <h1>Our work</h1>
+      <p>Gates, railings and automation we&rsquo;ve designed, built and fitted. Click any photo to see it full size.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight section--dark on-dark">
+    <div class="wrap">
+
+      <div class="gallery-toolbar">
+        <div class="filters" id="galleryFilters" role="group" aria-label="Filter by category"></div>
+        <p class="gallery-count" id="galleryCount" role="status" aria-live="polite"></p>
+      </div>
+
+      <!-- Every image in /images/ is loaded here at page load. Nothing is hard-coded. -->
+      <div class="gallery" id="gallery"></div>
+
+      <div class="gallery-note" id="galleryNote" hidden>
+        <h3 id="galleryNoteTitle">No photos yet</h3>
+        <p id="galleryNoteBody">
+          Upload photos to the <code>/images/</code> folder on the server and they will
+          appear here automatically. Sub-folders become filter categories.
+        </p>
+      </div>
+
+      <noscript>
+        <div class="gallery-note">
+          <h3>JavaScript is switched off</h3>
+          <p>The gallery needs JavaScript to load the photo list. Please enable it, or
+            <a href="contact.html">get in touch</a> and we&rsquo;ll send photos over directly.</p>
+        </div>
+      </noscript>
+
+    </div>
+  </section>
+
+  <section class="section section--tight section--dark on-dark">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Seen something you like?</h2>
+        <p>Tell us which photo caught your eye and we&rsquo;ll price something similar for your opening.</p>
+        <div class="hero__actions">
+          <a class="btn btn--brass" href="contact.html">
+            Get a quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <div class="lightbox__bar">
+    <span id="lightboxCounter">1 / 1</span>
+    <button class="lb-btn" id="lightboxClose" aria-label="Close (Esc)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+    </button>
+  </div>
+  <div class="lightbox__stage">
+    <button class="lb-btn lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"></path></svg>
+    </button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <button class="lb-btn lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg>
+    </button>
+  </div>
+  <p class="lightbox__meta" id="lightboxMeta"></p>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="1.8" stroke-linecap="round"><path d="M4 21V8l8-5 8 5v13"></path><path d="M8 21V10M12 21V8M16 21V10"></path><path d="M3 21h18"></path></svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__name">Westhead Gates</span>
+            <span class="brand__sub">Gates &amp; Automation</span>
+          </span>
+        </a>
+        <p class="footer__about">Bespoke gates, railings and automation, designed and built in [YOUR TOWN] and fitted across [YOUR AREA].</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul class="footer__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="footer__list">
+          <li><a href="index.html">Driveway gates</a></li>
+          <li><a href="index.html">Automation</a></li>
+          <li><a href="index.html">Railings &amp; fencing</a></li>
+          <li><a href="index.html">Repairs &amp; servicing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="footer__list">
+          <li><a href="tel:[YOURPHONE-E164]">[YOUR PHONE]</a></li>
+          <li><a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a></li>
+          <li><span>[Workshop address]<br>[Town, Postcode]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="year">2026</span> Westhead Gates. All rights reserved.</span>
+      <span>Company no. [NUMBER] &middot; VAT [NUMBER] &middot; <a href="privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/gallery.js" defer></script>
+</body>
+</html>

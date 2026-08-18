@@ -5,3 +5,6 @@
 .DS_Store
 Thumbs.db
 *.swp
+
+# Generated at runtime by api/images.php and api/contact.php
+api/cache/

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Westhead Gates</title>
+<meta name="description" content="Free quotes on bespoke gates, railings and automation across [YOUR AREA]. Call [YOUR PHONE] or send us the details of your job.">
+<link rel="canonical" href="https://[YOUR-DOMAIN]/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact — Westhead Gates">
+<meta property="og:description" content="Free quotes, no hard sell. Tell us what you're after.">
+<meta property="og:image" content="https://[YOUR-DOMAIN]/assets/img/og.jpg">
+<meta name="theme-color" content="#0e1114">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="1.8" stroke-linecap="round"><path d="M4 21V8l8-5 8 5v13"></path><path d="M8 21V10M12 21V8M16 21V10"></path><path d="M3 21h18"></path></svg>
+      </span>
+      <span class="brand__text">
+        <span class="brand__name">Westhead Gates</span>
+        <span class="brand__sub">Gates &amp; Automation</span>
+      </span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="gallery.html">Gallery</a>
+      <a class="nav__link is-active" href="contact.html" aria-current="page">Contact</a>
+      <a class="btn btn--brass nav__cta" href="tel:[YOURPHONE-E164]">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"></path></svg>
+        [YOUR PHONE]
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span>/</span><span aria-current="page">Contact</span>
+      </nav>
+      <h1>Let&rsquo;s talk about your gate</h1>
+      <p>Quotes are free and there&rsquo;s no hard sell. Tell us roughly what you&rsquo;re after and we&rsquo;ll come back within [one working day].</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap contact-layout">
+
+      <!-- ============ FORM ============ -->
+      <div class="form-card">
+        <h2>Request a quote</h2>
+        <p style="margin-top: .6rem; color: var(--slate);">Fields marked <span class="req" style="color: var(--brass-dark);">*</span> are required.</p>
+
+        <form id="contactForm" class="mt-lg" action="api/contact.php" method="post" novalidate>
+          <!-- Spam traps: hidden from people, tempting to bots. Do not remove. -->
+          <div class="hp" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="loaded_at" id="loadedAt" value="">
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Your name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required maxlength="120">
+              <span class="error" data-error-for="name"></span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required maxlength="40">
+              <span class="error" data-error-for="phone"></span>
+            </div>
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required maxlength="180">
+              <span class="error" data-error-for="email"></span>
+            </div>
+            <div class="field">
+              <label for="postcode">Postcode</label>
+              <input type="text" id="postcode" name="postcode" autocomplete="postal-code" maxlength="12" placeholder="For travel &amp; access">
+              <span class="error" data-error-for="postcode"></span>
+            </div>
+            <div class="field field--full">
+              <label for="subject">What do you need?</label>
+              <select id="subject" name="subject">
+                <option value="new-gates">Driveway gates &mdash; new</option>
+                <option value="automation">Automation for existing gates</option>
+                <option value="railings">Railings, fencing or balustrade</option>
+                <option value="repair">Repair or service</option>
+                <option value="safety-inspection">Safety inspection of an existing gate</option>
+                <option value="other">Something else</option>
+              </select>
+              <span class="error" data-error-for="subject"></span>
+            </div>
+            <div class="field field--full">
+              <label for="message">Tell us about the job <span class="req">*</span></label>
+              <textarea id="message" name="message" required maxlength="4000" placeholder="Rough width of the opening, whether you want it automated, and anything else that'd help us price it."></textarea>
+              <span class="error" data-error-for="message"></span>
+            </div>
+          </div>
+
+          <label class="form-consent" for="consent">
+            <input type="checkbox" id="consent" name="consent" value="yes" required>
+            <span>I&rsquo;m happy for Westhead Gates to contact me about this enquiry. <a href="privacy.html">Privacy policy</a></span>
+          </label>
+          <span class="error" data-error-for="consent"></span>
+
+          <div class="form-foot">
+            <button type="submit" class="btn" id="contactSubmit">
+              <span data-submit-label>Send enquiry</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </button>
+            <small>Or just call &mdash; we don&rsquo;t mind.</small>
+          </div>
+
+          <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
+        </form>
+      </div>
+
+      <!-- ============ INFO ============ -->
+      <div class="info-stack">
+        <div class="info-card">
+          <div class="info-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"></path></svg></div>
+          <div>
+            <h3>Call us</h3>
+            <a href="tel:[YOURPHONE-E164]">[YOUR PHONE]</a>
+            <small>Mobile: [YOUR MOBILE]</small>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 6 10-6"></path></svg></div>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a>
+            <small>Photos welcome &mdash; they help a lot</small>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.6"></circle></svg></div>
+          <div>
+            <h3>Workshop</h3>
+            <p>[Unit / street]</p>
+            <small>[Town], [Postcode] &mdash; visits by appointment</small>
+          </div>
+        </div>
+
+        <div class="info-card" style="grid-template-columns: 1fr; background: var(--ink); border-color: rgba(255,255,255,.1);">
+          <div>
+            <h3 style="color: rgba(255,255,255,.5);">Opening hours</h3>
+            <ul class="hours" style="margin-top: .8rem;">
+              <li><span>Monday &ndash; Friday</span><span style="color: #fff;">[07:30 &ndash; 17:00]</span></li>
+              <li style="border-color: rgba(255,255,255,.12);"><span>Saturday</span><span style="color: #fff;">[08:00 &ndash; 12:00]</span></li>
+              <li><span>Sunday</span><span class="is-closed">Closed</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ MAP ============ -->
+  <section class="section section--tight" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="map-embed">
+        <!-- Replace src with your own Google Maps embed URL (Maps > Share > Embed a map). -->
+        <iframe
+          title="Westhead Gates workshop location"
+          src="[YOUR GOOGLE MAPS EMBED URL]"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section--dark on-dark">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Before you ask</span>
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How much does a pair of electric gates cost?</summary>
+          <p>[Give a genuine range here &mdash; e.g. &ldquo;Most residential pairs land between £X and £Y fitted, depending on width, material and how much groundwork is involved.&rdquo; A real number filters out the wrong enquiries and wins the right ones.]</p>
+        </details>
+        <details>
+          <summary>Do you cover my area?</summary>
+          <p>[List the towns and the radius you'll travel. Say what happens beyond it &mdash; e.g. a travel charge, or that you'll still quote for larger jobs.]</p>
+        </details>
+        <details>
+          <summary>Can you automate gates I already have?</summary>
+          <p>[Usually yes, with caveats &mdash; explain what makes a gate suitable, and that the gate itself has to be sound before a motor goes anywhere near it.]</p>
+        </details>
+        <details>
+          <summary>What happens in a power cut?</summary>
+          <p>[Explain manual release, and battery back-up if you offer it.]</p>
+        </details>
+        <details>
+          <summary>How long from order to installation?</summary>
+          <p>[Your honest current lead time. Update this when it changes &mdash; it is one of the most-read lines on the site.]</p>
+        </details>
+        <details>
+          <summary>How often should an automatic gate be serviced?</summary>
+          <p>[CONFIRM against the standards and manufacturer guidance in your source documents before publishing a frequency here.]</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="1.8" stroke-linecap="round"><path d="M4 21V8l8-5 8 5v13"></path><path d="M8 21V10M12 21V8M16 21V10"></path><path d="M3 21h18"></path></svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__name">Westhead Gates</span>
+            <span class="brand__sub">Gates &amp; Automation</span>
+          </span>
+        </a>
+        <p class="footer__about">Bespoke gates, railings and automation, designed and built in [YOUR TOWN] and fitted across [YOUR AREA].</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul class="footer__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="footer__list">
+          <li><a href="index.html">Driveway gates</a></li>
+          <li><a href="index.html">Automation</a></li>
+          <li><a href="index.html">Railings &amp; fencing</a></li>
+          <li><a href="index.html">Repairs &amp; servicing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="footer__list">
+          <li><a href="tel:[YOURPHONE-E164]">[YOUR PHONE]</a></li>
+          <li><a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a></li>
+          <li><span>[Workshop address]<br>[Town, Postcode]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="year">2026</span> Westhead Gates. All rights reserved.</span>
+      <span>Company no. [NUMBER] &middot; VAT [NUMBER] &middot; <a href="privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/contact.js" defer></script>
+</body>
+</html>
