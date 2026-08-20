@@ -7,11 +7,15 @@ The canvas has two pages, switched from the toolbar's pages menu.
 
 ## Page 1 — "Site — built"
 
-The four pages that are built, tested and pushed.
+The pages that are built, tested and pushed — plus one proposal.
 
-| File                | Artboard              |
-|---------------------|-----------------------|
-| `Main.dc.html`      | Home page             |
+`HomeSimple.dc.html` is a proposed replacement for the home page: image-led,
+five sections instead of nine. Not built. `Main.dc.html` is what is live.
+
+| File                 | Artboard                      |
+|----------------------|-------------------------------|
+| `HomeSimple.dc.html` | Home — simplified (proposed)  |
+| `Main.dc.html`       | Home — as built               |
 | `Gallery.dc.html`   | Gallery page          |
 | `Contact.dc.html`   | Contact page          |
 | `Lightbox.dc.html`  | Gallery lightbox      |
