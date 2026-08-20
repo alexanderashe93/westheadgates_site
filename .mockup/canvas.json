@@ -1,77 +1,25 @@
 {
+  "pages": [
+    { "id": "page-1", "name": "Site — built" },
+    { "id": "page-2", "name": "SEO plan" }
+  ],
   "artboards": [
-    {
-      "file": "Main.dc.html",
-      "title": "Home",
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 4290
-    },
-    {
-      "file": "Gallery.dc.html",
-      "title": "Gallery",
-      "x": 1560,
-      "y": 0,
-      "w": 1440,
-      "h": 2280
-    },
-    {
-      "file": "Contact.dc.html",
-      "title": "Contact",
-      "x": 3120,
-      "y": 0,
-      "w": 1440,
-      "h": 2560
-    },
-    {
-      "file": "Lightbox.dc.html",
-      "title": "Gallery — lightbox",
-      "x": 1560,
-      "y": 2420,
-      "w": 1100,
-      "h": 760
-    },
-    {
-      "file": "Mobile.dc.html",
-      "title": "Mobile — home",
-      "x": 4680,
-      "y": 0,
-      "w": 390,
-      "h": 1330
-    }
+    { "file": "Main.dc.html",     "title": "Home",              "page": "page-1", "x": 0,    "y": 0,    "w": 1440, "h": 4290 },
+    { "file": "Gallery.dc.html",  "title": "Gallery",           "page": "page-1", "x": 1560, "y": 0,    "w": 1440, "h": 2280 },
+    { "file": "Contact.dc.html",  "title": "Contact",           "page": "page-1", "x": 3120, "y": 0,    "w": 1440, "h": 2560 },
+    { "file": "Lightbox.dc.html", "title": "Gallery — lightbox","page": "page-1", "x": 1560, "y": 2420, "w": 1100, "h": 760 },
+    { "file": "Mobile.dc.html",   "title": "Mobile — home",     "page": "page-1", "x": 4680, "y": 0,    "w": 390,  "h": 1330 },
+
+    { "file": "Architecture.dc.html", "title": "1 — Site architecture", "page": "page-2", "x": 0,    "y": 0, "w": 1440, "h": 1720 },
+    { "file": "Service.dc.html",      "title": "2 — Service page template", "page": "page-2", "x": 1560, "y": 0, "w": 1440, "h": 1980 },
+    { "file": "SEOSpec.dc.html",      "title": "3 — Technical SEO spec", "page": "page-2", "x": 3120, "y": 0, "w": 1200, "h": 2280 }
   ],
   "annotations": [
-    {
-      "id": "brief",
-      "x": 0,
-      "y": -240,
-      "w": 460,
-      "text": "WESTHEAD GATES — brochure site mockup\nDirection: Forged (charcoal #0e1114 + brass #c8a24a)\nType: Sora (headings) / Instrument Sans (body)\n\nEverything in [SQUARE BRACKETS] is a placeholder for real business detail — phone, email, area, address, years, prices, reviews. Send me those and I'll drop them in.\n\nPhoto placeholders are the striped gate panels.\n\nSAFETY & COMPLIANCE section added — the standard numbers come from the source documents you sent, but the descriptions are bracketed because those documents could not be opened from this session. Confirm each before it goes live."
-    },
-    {
-      "id": "gallery-note",
-      "x": 1560,
-      "y": -240,
-      "w": 420,
-      "text": "GALLERY — the auto-loading bit\nNo hard-coded image list. A small script on the Plesk server reads /images/ and builds this grid at page load.\n\nDrop a JPEG in the folder → it appears. Delete it → it's gone. Filename becomes the caption and the category chip."
-    },
-    {
-      "id": "contact-note",
-      "x": 3120,
-      "y": -240,
-      "w": 420,
-      "text": "CONTACT\nForm posts to a PHP handler on the same server and emails you — no third-party form service, nothing to pay for.\n\nThe FAQ answers are the highest-value copy on the site. A real price range in Q1 filters enquiries hard."
-    },
-    {
-      "id": "mobile-note",
-      "x": 4680,
-      "y": -240,
-      "w": 390,
-      "text": "MOBILE — same pages, single column, tap targets ≥ 44px. Gallery drops to one column; filters scroll sideways."
-    }
+    { "id": "brief", "x": 0, "y": -240, "w": 460, "page": "page-1", "text": "WESTHEAD GATES — the site as built\nDirection: Forged (charcoal #0e1114 + brass #c8a24a)\nType: Sora (headings) / Instrument Sans (body)\n\nThese four pages are built, tested and pushed. Everything in [SQUARE BRACKETS] is a placeholder for real business detail.\n\nThe SEO plan is on the second page — use the pages menu in the toolbar." },
+    { "id": "gallery-note", "x": 1560, "y": -240, "w": 420, "page": "page-1", "text": "GALLERY — the auto-loading bit\nNo hard-coded image list. A PHP script reads /images/ and builds this grid at page load.\n\nDrop a JPEG in the folder → it appears. Sub-folders become the filter buttons. Filenames become captions — and, for SEO, alt text." },
+    { "id": "contact-note", "x": 3120, "y": -240, "w": 420, "page": "page-1", "text": "CONTACT\nForm posts to a PHP handler on the same server and emails you — no third-party form service.\n\nHoneypot, time-trap and per-IP rate limit built in. Works with JavaScript off." },
+    { "id": "seo-intro", "x": 0, "y": -300, "w": 620, "page": "page-2", "text": "HEAVILY SEO'd — what that actually means\n\nYou rank a page, not a site. Four pages can compete for about four phrases, so \"heavy SEO\" is mostly an ARCHITECTURE decision, not a markup one: roughly 28 pages instead of 4.\n\nRead these three in order:\n  1. Site architecture — the page tree and what each page targets\n  2. Service page template — the anatomy that does the ranking\n  3. Technical SEO spec — head tags, schema, images, build order\n\nTwo things I'd want you to read properly rather than skim: the doorway-page warning on board 1, and section 5 on board 3 — the part that isn't the website.\n\nNothing here is built yet. This is the plan to approve or cut down." },
+    { "id": "seo-decision", "x": 660, "y": -300, "w": 420, "page": "page-2", "text": "DECISIONS I NEED FROM YOU\n\n• Which towns do you genuinely work in, in priority order?\n• Which services earn the most, and which do you want more of? (Those get pages first.)\n• Real price ranges — the single highest-value content on the site.\n• Are you happy to commit to one guide a month? If not, we cut /guides/ from the plan rather than build a section that goes stale." }
   ],
-  "launch": {
-    "view": "canvas"
-  }
+  "launch": { "view": "canvas", "page": "page-2" }
 }

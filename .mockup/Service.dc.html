@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <style>
+    body {
+      margin: 0; width: 1440px;
+      background: #0a0d10; color: rgba(255,255,255,.72);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-size: 15px; line-height: 1.62; -webkit-font-smoothing: antialiased;
+    }
+    a { color: #c8a24a; text-decoration: none; }
+    a:hover { color: #e2c27e; }
+    h1, h2, h3 { font-family: "Sora", system-ui, sans-serif; margin: 0; color: #fff; letter-spacing: -.022em; line-height: 1.12; }
+    p { margin: 0; text-wrap: pretty; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+    /* page canvas — the actual rendered page */
+    .page { background: #0e1114; border: 1px solid rgba(255,255,255,.09); border-radius: 16px; overflow: hidden; }
+    .lightband { background: #f7f5f2; color: #161b20; }
+    .lightband h2, .lightband h3 { color: #0e1114; }
+    /* annotation rail */
+    .ann { display: flex; gap: 13px; align-items: flex-start; }
+    .ann__no {
+      width: 25px; height: 25px; flex: none; border-radius: 50%;
+      background: #c8a24a; color: #0e1114;
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Sora", sans-serif; font-size: 12px; font-weight: 700;
+    }
+    .ann h4 { font-family: "Sora", sans-serif; font-size: 14px; font-weight: 600; color: #fff; margin: 0 0 4px; }
+    .ann p { font-size: 13.5px; color: rgba(255,255,255,.6); line-height: 1.55; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      width: 25px; height: 25px; border-radius: 50%;
+      background: #c8a24a; color: #0e1114;
+      justify-content: center;
+      font-family: "Sora", sans-serif; font-size: 12px; font-weight: 700;
+      flex: none;
+    }
+    .ph { position: relative; overflow: hidden; background-color: #171d24; }
+    .ph::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(200,162,74,.26) 0 2px, transparent 2px 24px), linear-gradient(168deg, #242d37 0%, #151b21 55%, #0d1115 100%); }
+    .ph::after { content: ""; position: absolute; left: 8%; right: 8%; top: 12%; bottom: -8%; border: 2px solid rgba(200,162,74,.26); border-bottom: 0; border-radius: 220px 220px 0 0; }
+  </style>
+</helmet>
+
+<div style="display: grid; grid-template-columns: 980px 340px; gap: 40px; padding: 44px 40px 60px;">
+
+  <!-- ============================ THE PAGE ============================ -->
+  <div class="page">
+
+    <!-- nav -->
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 34px; height: 66px; border-bottom: 1px solid rgba(255,255,255,.09);">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 30px; height: 30px; border-radius: 8px; background: #c8a24a; display: flex; align-items: center; justify-content: center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0e1114" stroke-width="1.9" stroke-linecap="round"><path d="M4 21V8l8-5 8 5v13"></path><path d="M8 21V10M12 21V8M16 21V10"></path><path d="M3 21h18"></path></svg>
+        </div>
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px; color: #fff;">Westhead Gates</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 18px; font-size: 13px; color: rgba(255,255,255,.62);">
+        <span style="color: #fff; font-weight: 600;">Services</span><span>Areas</span><span>Guides</span><span>Gallery</span><span>Contact</span>
+      </div>
+    </div>
+
+    <!-- hero -->
+    <div style="padding: 34px 34px 38px; display: grid; grid-template-columns: 1fr 300px; gap: 30px; align-items: center; border-bottom: 1px solid rgba(255,255,255,.08);">
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 14px; font-size: 12px; color: rgba(255,255,255,.42);">
+          <span style="color: #c8a24a;">Home</span><span>/</span><span style="color: #c8a24a;">Services</span><span>/</span><span>Electric gates</span>
+          <span class="pill" style="margin-left: 8px; width: 20px; height: 20px; font-size: 10px;">2</span>
+        </div>
+        <h1 style="font-size: 38px; font-weight: 600;">Electric Gates in [Town]</h1>
+        <span class="pill" style="position: absolute; margin-top: -34px; margin-left: -37px;">1</span>
+        <p style="margin-top: 14px; font-size: 16px; color: rgba(255,255,255,.72);">Bespoke automated driveway gates, designed and built in our [Town] workshop and fitted across [area]. Free site survey, fixed written quote, and every installation force-tested and certified on handover.</p>
+        <div style="display: flex; gap: 11px; margin-top: 22px;">
+          <span style="padding: 12px 22px; border-radius: 999px; background: #c8a24a; color: #0e1114; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600;">Get a free quote</span>
+          <span style="padding: 12px 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); color: #fff; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600;">[YOUR PHONE]</span>
+        </div>
+      </div>
+      <div class="ph" style="height: 200px; border-radius: 12px;"></div>
+    </div>
+
+    <!-- price guide -->
+    <div class="lightband" style="padding: 34px;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+        <h2 style="font-size: 25px; font-weight: 600;">What electric gates cost in [Town]</h2>
+        <span class="pill">3</span>
+      </div>
+      <p style="font-size: 15px; color: #5b6670; max-width: 620px;">Honest ranges, fitted. Your opening decides where in the range you land.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px;">
+        <div style="padding: 20px; background: #fff; border: 1px solid rgba(14,17,20,.1); border-radius: 13px;">
+          <span style="font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #9c7c2e;">Swing pair, steel</span>
+          <strong style="display: block; margin-top: 8px; font-family: 'Sora', sans-serif; font-size: 27px; font-weight: 700; color: #0e1114;">£[X]&ndash;£[Y]</strong>
+          <span style="display: block; margin-top: 5px; font-size: 13.5px; color: #5b6670;">Up to [3.5]m opening, automated</span>
+        </div>
+        <div style="padding: 20px; background: #fff; border: 1px solid rgba(14,17,20,.1); border-radius: 13px;">
+          <span style="font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #9c7c2e;">Sliding, cantilever</span>
+          <strong style="display: block; margin-top: 8px; font-family: 'Sora', sans-serif; font-size: 27px; font-weight: 700; color: #0e1114;">£[X]&ndash;£[Y]</strong>
+          <span style="display: block; margin-top: 5px; font-size: 13.5px; color: #5b6670;">No room to swing inwards</span>
+        </div>
+        <div style="padding: 20px; background: #fff; border: 1px solid rgba(14,17,20,.1); border-radius: 13px;">
+          <span style="font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #9c7c2e;">Automate existing</span>
+          <strong style="display: block; margin-top: 8px; font-family: 'Sora', sans-serif; font-size: 27px; font-weight: 700; color: #0e1114;">£[X]&ndash;£[Y]</strong>
+          <span style="display: block; margin-top: 5px; font-size: 13.5px; color: #5b6670;">If the gates are sound</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- gallery pull -->
+    <div style="padding: 34px; border-bottom: 1px solid rgba(255,255,255,.08);">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+        <h2 style="font-size: 23px; font-weight: 600;">Electric gates we&rsquo;ve fitted in [Town]</h2>
+        <span class="pill">4</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+        <div class="ph" style="height: 130px; border-radius: 10px;"></div>
+        <div class="ph" style="height: 130px; border-radius: 10px;"></div>
+        <div class="ph" style="height: 130px; border-radius: 10px;"></div>
+        <div class="ph" style="height: 130px; border-radius: 10px;"></div>
+      </div>
+      <p style="margin-top: 13px; font-size: 13.5px; color: rgba(255,255,255,.45);">Auto-pulled from <span class="mono" style="color: #e2c27e;">/images/driveway-gates/</span> &mdash; no separate upload.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div style="padding: 34px; border-bottom: 1px solid rgba(255,255,255,.08);">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+        <h2 style="font-size: 23px; font-weight: 600;">Electric gate questions</h2>
+        <span class="pill">5</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 9px;">
+        <div style="padding: 16px 20px; border: 1px solid rgba(200,162,74,.4); border-radius: 12px; background: rgba(255,255,255,.03);">
+          <strong style="font-family: 'Sora', sans-serif; font-size: 15px; color: #fff;">How long do electric gates take to install?</strong>
+          <p style="margin-top: 8px; font-size: 14.5px; color: rgba(255,255,255,.65);">[A real, specific answer. Two or three sentences. This is the text Google lifts into the results page.]</p>
+        </div>
+        <div style="padding: 16px 20px; border: 1px solid rgba(255,255,255,.11); border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-family: 'Sora', sans-serif; font-size: 15px; color: #fff;">Do electric gates need a power supply run to them?</strong>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="2.2" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg>
+        </div>
+        <div style="padding: 16px 20px; border: 1px solid rgba(255,255,255,.11); border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-family: 'Sora', sans-serif; font-size: 15px; color: #fff;">What happens if the power goes off?</strong>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="2.2" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- internal links -->
+    <div style="padding: 34px; border-bottom: 1px solid rgba(255,255,255,.08);">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+        <h2 style="font-size: 20px; font-weight: 600;">We fit electric gates across</h2>
+        <span class="pill">6</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span style="padding: 8px 15px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: 13.5px; color: #c8a24a;">[Town 1]</span>
+        <span style="padding: 8px 15px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: 13.5px; color: #c8a24a;">[Town 2]</span>
+        <span style="padding: 8px 15px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: 13.5px; color: #c8a24a;">[Town 3]</span>
+        <span style="padding: 8px 15px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: 13.5px; color: #c8a24a;">[Town 4]</span>
+        <span style="padding: 8px 15px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: 13.5px; color: #c8a24a;">[Town 5]</span>
+      </div>
+      <h3 style="font-size: 15px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: rgba(255,255,255,.75);">Related services</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span style="padding: 8px 15px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: 13.5px; color: #c8a24a;">Gate automation</span>
+        <span style="padding: 8px 15px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: 13.5px; color: #c8a24a;">Sliding gates</span>
+        <span style="padding: 8px 15px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: 13.5px; color: #c8a24a;">Gate repairs</span>
+        <span style="padding: 8px 15px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font-size: 13.5px; color: #c8a24a;">Safety inspections</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="padding: 40px 34px; text-align: center; background: #12171c;">
+      <h2 style="font-size: 27px; font-weight: 600;">Get a price for your driveway</h2>
+      <p style="margin-top: 10px; font-size: 15px; color: rgba(255,255,255,.68);">Send a photo and rough measurements &mdash; we&rsquo;ll come back with an honest steer.</p>
+      <span style="display: inline-block; margin-top: 18px; padding: 13px 28px; border-radius: 999px; background: #c8a24a; color: #0e1114; font-family: 'Sora', sans-serif; font-size: 14.5px; font-weight: 600;">Request a quote</span>
+    </div>
+  </div>
+
+  <!-- ========================= ANNOTATION RAIL ========================= -->
+  <div style="display: flex; flex-direction: column; gap: 26px; padding-top: 6px;">
+
+    <div style="padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,.12);">
+      <span style="font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #e2c27e;">Template</span>
+      <h2 style="font-size: 24px; font-weight: 600; margin-top: 8px;">Service page</h2>
+      <p style="font-size: 14px; color: rgba(255,255,255,.6); margin-top: 8px;">One per service, six in total. This is the page that does the ranking.</p>
+      <p class="mono" style="font-size: 12.5px; color: #e2c27e; margin-top: 12px;">/services/electric-gates/</p>
+    </div>
+
+    <div class="ann">
+      <span class="ann__no">1</span>
+      <div><h4>One H1, the exact phrase</h4><p>&ldquo;Electric Gates in [Town]&rdquo; &mdash; matching what people type. One H1 per page, never more.</p></div>
+    </div>
+    <div class="ann">
+      <span class="ann__no">2</span>
+      <div><h4>Breadcrumbs + schema</h4><p>Visible trail, plus <span class="mono" style="color:#e2c27e;">BreadcrumbList</span> markup so Google shows the path instead of a bare URL.</p></div>
+    </div>
+    <div class="ann">
+      <span class="ann__no">3</span>
+      <div><h4>Real prices</h4><p>The highest-value block on the page. Most competitors hide this, so publishing it wins both the click and the trust.</p></div>
+    </div>
+    <div class="ann">
+      <span class="ann__no">4</span>
+      <div><h4>Photos with real alt text</h4><p>Pulled from the gallery folder by category. Filenames become alt text, so naming files properly is SEO work.</p></div>
+    </div>
+    <div class="ann">
+      <span class="ann__no">5</span>
+      <div><h4>FAQ + FAQPage schema</h4><p>Answers questions people actually search. Wins featured snippets and &ldquo;People also ask&rdquo; slots.</p></div>
+    </div>
+    <div class="ann">
+      <span class="ann__no">6</span>
+      <div><h4>Internal linking</h4><p>Every service links to every town, and back. This is what stops the deeper pages being orphans Google never crawls.</p></div>
+    </div>
+
+    <div style="margin-top: 10px; padding: 20px; border: 1px solid rgba(200,162,74,.4); border-radius: 14px; background: rgba(200,162,74,.06);">
+      <h4 style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #fff; margin: 0 0 10px;">In the &lt;head&gt;</h4>
+      <p class="mono" style="font-size: 11.5px; color: rgba(255,255,255,.72); line-height: 1.75;">
+        title: Electric Gates [Town] | Westhead Gates<br>
+        description: 155 chars, with a reason to click<br>
+        canonical: self-referencing<br>
+        og:image: a real photo of the work<br>
+        schema: Service + FAQPage + Breadcrumb
+      </p>
+    </div>
+
+    <div style="padding: 20px; border: 1px solid rgba(255,255,255,.13); border-radius: 14px;">
+      <h4 style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #fff; margin: 0 0 8px;">Word count</h4>
+      <p style="font-size: 13.5px; color: rgba(255,255,255,.6);">Aim for <strong style="color:#fff;">800&ndash;1,200 words</strong> of genuinely useful copy. Not padding &mdash; answers. Thin pages don&rsquo;t rank, and waffle doesn&rsquo;t convert.</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1980}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

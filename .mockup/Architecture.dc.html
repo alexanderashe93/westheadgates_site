@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <style>
+    body {
+      margin: 0; width: 1440px;
+      background: #0e1114; color: rgba(255,255,255,.72);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    a { color: #c8a24a; text-decoration: none; }
+    a:hover { color: #e2c27e; }
+    h1, h2, h3 { font-family: "Sora", system-ui, sans-serif; margin: 0; color: #fff; letter-spacing: -.022em; line-height: 1.12; }
+    p { margin: 0; text-wrap: pretty; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    code, .url { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px; }
+    .node {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      padding: 13px 18px; border-radius: 11px;
+      border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.035);
+    }
+    .node--hub { border-color: rgba(200,162,74,.55); background: rgba(200,162,74,.09); }
+    .node--exists { border-color: rgba(120,200,150,.35); background: rgba(120,200,150,.06); }
+    .kw {
+      font-family: "Sora", sans-serif; font-size: 11.5px; font-weight: 600;
+      letter-spacing: .04em; color: #e2c27e; white-space: nowrap;
+    }
+    .branch { position: relative; padding-left: 34px; display: flex; flex-direction: column; gap: 9px; }
+    .branch::before {
+      content: ""; position: absolute; left: 13px; top: -9px; bottom: 22px;
+      width: 1px; background: rgba(255,255,255,.18);
+    }
+    .branch > * { position: relative; }
+    .branch > *::before {
+      content: ""; position: absolute; left: -21px; top: 50%;
+      width: 15px; height: 1px; background: rgba(255,255,255,.18);
+    }
+    .tag {
+      display: inline-block; padding: 3px 9px; border-radius: 5px;
+      font-family: "Sora", sans-serif; font-size: 10px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+    }
+    .tag--new { background: rgba(200,162,74,.9); color: #0e1114; }
+    .tag--have { background: rgba(120,200,150,.85); color: #0b1a12; }
+  </style>
+</helmet>
+
+<div style="display: flex; flex-direction: column; padding: 64px 72px 72px;">
+
+  <!-- header -->
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; margin-bottom: 14px;">
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        <span style="width: 30px; height: 1px; background: #c8a24a; display: block;"></span>
+        <span style="font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #e2c27e;">Proposed structure</span>
+      </div>
+      <h1 style="font-size: 46px; font-weight: 600;">Site architecture for search</h1>
+      <p style="margin-top: 14px; font-size: 17px; max-width: 620px; color: rgba(255,255,255,.68);">You rank a page, not a site. Four pages can target four things. This structure gives every service and every town its own page to compete with.</p>
+    </div>
+    <div style="display: flex; gap: 14px; flex: none;">
+      <div style="padding: 18px 24px; border: 1px solid rgba(255,255,255,.13); border-radius: 14px; text-align: center;">
+        <strong style="display: block; font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 700; color: #fff; line-height: 1;">4</strong>
+        <span style="display: block; margin-top: 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5);">Pages now</span>
+      </div>
+      <div style="padding: 18px 24px; border: 1px solid rgba(200,162,74,.5); border-radius: 14px; text-align: center; background: rgba(200,162,74,.08);">
+        <strong style="display: block; font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 700; color: #e2c27e; line-height: 1;">~28</strong>
+        <span style="display: block; margin-top: 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5);">Proposed</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- legend -->
+  <div style="display: flex; gap: 22px; align-items: center; margin: 26px 0 30px; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,.1);">
+    <span class="tag tag--have">Built</span>
+    <span class="tag tag--new">New</span>
+    <span style="font-size: 13.5px; color: rgba(255,255,255,.45);">Brass text on the right of each row is the search phrase that page is built to win.</span>
+  </div>
+
+  <!-- tree -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 44px;">
+
+    <!-- LEFT COLUMN -->
+    <div style="display: flex; flex-direction: column; gap: 9px;">
+
+      <div class="node node--exists">
+        <span><span class="tag tag--have" style="margin-right: 10px;">Built</span><span class="url" style="color: #fff;">/</span> <span style="color: rgba(255,255,255,.6); font-size: 14px;">Home</span></span>
+        <span class="kw">gates [town]</span>
+      </div>
+
+      <!-- SERVICES -->
+      <div style="margin-top: 16px;" class="node node--hub">
+        <span><span class="tag tag--new" style="margin-right: 10px;">New</span><span class="url" style="color: #fff;">/services/</span> <span style="color: rgba(255,255,255,.6); font-size: 14px;">Services hub</span></span>
+        <span class="kw">gate installers [area]</span>
+      </div>
+      <div class="branch">
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/services/electric-gates/</span><span class="kw">electric gates [town]</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/services/sliding-gates/</span><span class="kw">sliding gates [town]</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/services/gate-automation/</span><span class="kw">gate automation [town]</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/services/gate-repairs/</span><span class="kw">gate repairs near me</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/services/railings-and-fencing/</span><span class="kw">metal railings [town]</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/services/gate-safety-inspections/</span><span class="kw">gate safety inspection</span></div>
+      </div>
+
+      <!-- AREAS -->
+      <div style="margin-top: 22px;" class="node node--hub">
+        <span><span class="tag tag--new" style="margin-right: 10px;">New</span><span class="url" style="color: #fff;">/areas/</span> <span style="color: rgba(255,255,255,.6); font-size: 14px;">Areas covered</span></span>
+        <span class="kw">gate company near me</span>
+      </div>
+      <div class="branch">
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/areas/[town-1]/</span><span class="kw">electric gates [town-1]</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/areas/[town-2]/</span><span class="kw">electric gates [town-2]</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/areas/[town-3]/</span><span class="kw">electric gates [town-3]</span></div>
+        <div class="node" style="border-style: dashed; opacity: .72;"><span style="color: rgba(255,255,255,.55); font-size: 14px;">&hellip; one per town you genuinely work in</span><span class="kw">6&ndash;10 total</span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div style="display: flex; flex-direction: column; gap: 9px;">
+
+      <!-- GUIDES -->
+      <div class="node node--hub">
+        <span><span class="tag tag--new" style="margin-right: 10px;">New</span><span class="url" style="color: #fff;">/guides/</span> <span style="color: rgba(255,255,255,.6); font-size: 14px;">Guides &amp; advice</span></span>
+        <span class="kw">informational search</span>
+      </div>
+      <div class="branch">
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/guides/electric-gate-costs/</span><span class="kw">how much do electric gates cost</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/guides/gate-safety-standards/</span><span class="kw">bs en 12453 explained</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/guides/swing-vs-sliding-gates/</span><span class="kw">swing or sliding gates</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/guides/gate-not-closing/</span><span class="kw">electric gate won't close</span></div>
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/guides/planning-permission-gates/</span><span class="kw">do i need planning permission</span></div>
+        <div class="node" style="border-style: dashed; opacity: .72;"><span style="color: rgba(255,255,255,.55); font-size: 14px;">&hellip; add one a month, forever</span><span class="kw">compounds over time</span></div>
+      </div>
+
+      <!-- GALLERY -->
+      <div style="margin-top: 22px;" class="node node--exists">
+        <span><span class="tag tag--have" style="margin-right: 10px;">Built</span><span class="url" style="color: #fff;">/gallery/</span> <span style="color: rgba(255,255,255,.6); font-size: 14px;">Our work</span></span>
+        <span class="kw">electric gates pictures</span>
+      </div>
+      <div class="branch">
+        <div class="node"><span class="url" style="color: rgba(255,255,255,.9);">/gallery/?filter=&hellip;</span><span class="kw">image search traffic</span></div>
+      </div>
+
+      <!-- CONTACT -->
+      <div style="margin-top: 22px;" class="node node--exists">
+        <span><span class="tag tag--have" style="margin-right: 10px;">Built</span><span class="url" style="color: #fff;">/contact/</span> <span style="color: rgba(255,255,255,.6); font-size: 14px;">Contact &amp; quotes</span></span>
+        <span class="kw">brand + &ldquo;contact&rdquo;</span>
+      </div>
+
+      <!-- TRUST -->
+      <div style="margin-top: 22px;" class="node">
+        <span><span class="tag tag--new" style="margin-right: 10px;">New</span><span class="url" style="color: #fff;">/about/</span> <span style="color: rgba(255,255,255,.6); font-size: 14px;">About &mdash; the people, the workshop</span></span>
+        <span class="kw">trust signal</span>
+      </div>
+      <div style="margin-top: 9px;" class="node">
+        <span><span class="tag tag--new" style="margin-right: 10px;">New</span><span class="url" style="color: #fff;">/reviews/</span> <span style="color: rgba(255,255,255,.6); font-size: 14px;">Reviews</span></span>
+        <span class="kw">westhead gates reviews</span>
+      </div>
+
+      <!-- warning panel -->
+      <div style="margin-top: 30px; padding: 24px 26px; border: 1px solid rgba(214,120,90,.5); border-radius: 15px; background: rgba(214,120,90,.09); display: flex; gap: 15px; align-items: flex-start;">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#e0916f" stroke-width="1.9" stroke-linecap="round" style="flex: none; margin-top: 2px;"><path d="M12 9v5"></path><path d="M12 17.5h.01"></path><path d="M10.3 3.9 2.4 17.2A2 2 0 0 0 4.1 20.2h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"></path></svg>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <strong style="font-family: 'Sora', sans-serif; font-size: 16px; color: #fff;">The one way this goes wrong</strong>
+          <p style="font-size: 14.5px; color: rgba(255,255,255,.72);">Location pages that are the same text with the town swapped are &ldquo;doorway pages&rdquo;. Google demotes them, and it is the single most common failure of local SEO builds. Each town page needs something genuinely its own: a real job you did there, real photos, the actual travel time, local specifics. <strong style="color: #fff;">Build a town page only when you have a real job to put on it.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- reality check -->
+  <div style="margin-top: 46px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;">
+    <div style="display: flex; flex-direction: column; gap: 9px;">
+      <h3 style="font-size: 17px; font-weight: 600;">What actually moves the needle</h3>
+      <p style="font-size: 14.5px; color: rgba(255,255,255,.65);">For a local trade, your <strong style="color: #fff;">Google Business Profile</strong> and review count outrank on-page work. The site supports that; it doesn&rsquo;t replace it. Claim it, fill it out, post photos to it weekly, and ask every happy customer for a review.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 9px;">
+      <h3 style="font-size: 17px; font-weight: 600;">Why the guides matter</h3>
+      <p style="font-size: 14.5px; color: rgba(255,255,255,.65);">&ldquo;How much do electric gates cost&rdquo; is searched far more than &ldquo;electric gates [town]&rdquo;. Those readers aren&rsquo;t ready to buy today &mdash; but they will be, and they will come back to whoever answered the question honestly.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 9px;">
+      <h3 style="font-size: 17px; font-weight: 600;">The maintenance cost</h3>
+      <p style="font-size: 14.5px; color: rgba(255,255,255,.65);">28 pages of hand-copied nav and footer is not maintainable. This structure needs shared header/footer includes &mdash; still plain files on Plesk, still no build step, but one file to edit instead of 28.</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1720}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

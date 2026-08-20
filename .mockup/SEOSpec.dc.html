@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <style>
+    body {
+      margin: 0; width: 1200px;
+      background: #0e1114; color: rgba(255,255,255,.72);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-size: 15px; line-height: 1.62; -webkit-font-smoothing: antialiased;
+    }
+    a { color: #c8a24a; text-decoration: none; }
+    a:hover { color: #e2c27e; }
+    h1, h2, h3 { font-family: "Sora", system-ui, sans-serif; margin: 0; color: #fff; letter-spacing: -.022em; line-height: 1.12; }
+    p { margin: 0; text-wrap: pretty; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12.5px; }
+    .block {
+      padding: 26px 28px; border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px; background: rgba(255,255,255,.03);
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .block h2 { font-size: 20px; font-weight: 600; }
+    .row {
+      display: grid; grid-template-columns: 190px 1fr; gap: 18px;
+      padding-bottom: 11px; border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: 14px;
+    }
+    .row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .row > span:first-child { color: #e2c27e; font-family: "Sora", sans-serif; font-weight: 600; font-size: 13px; }
+    .row > span:last-child { color: rgba(255,255,255,.68); }
+    .code {
+      padding: 18px 20px; border-radius: 11px;
+      background: #070a0c; border: 1px solid rgba(255,255,255,.09);
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 12px; line-height: 1.8; color: rgba(255,255,255,.7);
+      white-space: pre-wrap;
+    }
+    .code b { color: #e2c27e; font-weight: 500; }
+    .tick { display: grid; grid-template-columns: 19px 1fr; gap: 11px; align-items: start; font-size: 14px; color: rgba(255,255,255,.7); }
+  </style>
+</helmet>
+
+<div style="display: flex; flex-direction: column; padding: 60px 64px 68px; gap: 30px;">
+
+  <!-- header -->
+  <div>
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+      <span style="width: 30px; height: 1px; background: #c8a24a; display: block;"></span>
+      <span style="font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #e2c27e;">Build spec</span>
+    </div>
+    <h1 style="font-size: 42px; font-weight: 600;">Technical SEO</h1>
+    <p style="margin-top: 13px; font-size: 16px; max-width: 660px; color: rgba(255,255,255,.68);">What goes into every page, and what has to be built once. The site already ships some of this &mdash; marked <span style="color: #8fd3a8;">done</span> below.</p>
+  </div>
+
+  <!-- head -->
+  <div class="block">
+    <h2>1 &middot; Every page&rsquo;s &lt;head&gt;</h2>
+    <div class="code">&lt;title&gt;<b>Electric Gates [Town] | Westhead Gates</b>&lt;/title&gt;            <span style="opacity:.5;">← under 60 chars, keyword first, brand last</span>
+&lt;meta name="description" content="<b>…</b>"&gt;                    <span style="opacity:.5;">← 150–160 chars, written to earn the click</span>
+&lt;link rel="canonical" href="<b>https://…/services/electric-gates/</b>"&gt;
+&lt;meta property="og:title" …&gt; &lt;meta property="og:image" …&gt;    <span style="opacity:.5;">← a real photo, 1200×630</span>
+&lt;script type="application/ld+json"&gt; <b>{ … }</b> &lt;/script&gt;</div>
+    <p style="font-size: 14px; color: rgba(255,255,255,.6);">Titles and descriptions must be unique on every page. Duplicates are the fastest way to have pages ignored. <span style="color: #8fd3a8;">The four existing pages already carry all of this.</span></p>
+  </div>
+
+  <!-- schema -->
+  <div class="block">
+    <h2>2 &middot; Structured data</h2>
+    <p style="font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 4px;">This is what turns a plain blue link into a result with stars, prices and expandable questions.</p>
+    <div style="display: flex; flex-direction: column; gap: 11px;">
+      <div class="row"><span>LocalBusiness</span><span>Home page. Name, address, phone, hours, area served, geo coordinates. <span style="color:#8fd3a8;">Already on the home page &mdash; needs the real details filling in.</span></span></div>
+      <div class="row"><span>Service</span><span>Each of the six service pages. Ties the service to the business and the area.</span></div>
+      <div class="row"><span>FAQPage</span><span>Every page with an FAQ. Wins &ldquo;People also ask&rdquo; slots and expandable results.</span></div>
+      <div class="row"><span>BreadcrumbList</span><span>Every page below the home page. Shows the path in the result instead of a raw URL.</span></div>
+      <div class="row"><span>ImageObject</span><span>Gallery photos. Generated automatically from the folder scan &mdash; no extra work per photo.</span></div>
+      <div class="row"><span>Review / AggregateRating</span><span>Only with genuine, verifiable reviews. Faking these gets a manual penalty, so it is real ones or none.</span></div>
+    </div>
+  </div>
+
+  <!-- images -->
+  <div class="block">
+    <h2>3 &middot; Images &mdash; where the gallery pays off</h2>
+    <p style="font-size: 14px; color: rgba(255,255,255,.6);">The folder scanner already turns filenames into captions. The same mechanism gives every photo proper alt text, so naming files well <em>is</em> the SEO work &mdash; there is no separate admin step.</p>
+    <div class="code">images/driveway-gates/<b>oak-clad-electric-gates-ormskirk.jpg</b>
+      ↓
+alt="<b>Oak clad electric gates, Ormskirk</b>"   +  caption  +  ImageObject schema</div>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 6px;">
+      <div class="tick"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#8fd3a8" stroke-width="2.2" stroke-linecap="round" style="margin-top:3px;"><path d="M20 6 9 17l-5-5"></path></svg><span>Width &amp; height read from the file &mdash; no layout shift <span style="color:#8fd3a8;">(done)</span></span></div>
+      <div class="tick"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#8fd3a8" stroke-width="2.2" stroke-linecap="round" style="margin-top:3px;"><path d="M20 6 9 17l-5-5"></path></svg><span>Lazy loading below the fold <span style="color:#8fd3a8;">(done)</span></span></div>
+      <div class="tick"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="2.2" stroke-linecap="round" style="margin-top:3px;"><path d="M12 5v14M5 12h14"></path></svg><span>Auto-generate WebP + thumbnails on upload</span></div>
+      <div class="tick"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="2.2" stroke-linecap="round" style="margin-top:3px;"><path d="M12 5v14M5 12h14"></path></svg><span>Image sitemap, generated from the same scan</span></div>
+    </div>
+  </div>
+
+  <!-- technical -->
+  <div class="block">
+    <h2>4 &middot; Technical foundations</h2>
+    <div style="display: flex; flex-direction: column; gap: 11px;">
+      <div class="row"><span>Sitemap</span><span>Generated by PHP from the real page list, so it can never drift out of date. Currently hand-written for four pages.</span></div>
+      <div class="row"><span>URLs</span><span>Lower-case, hyphenated, no extensions: <span class="mono" style="color:#e2c27e;">/services/electric-gates/</span> <span style="color:#8fd3a8;">(.htaccess already strips .html)</span></span></div>
+      <div class="row"><span>HTTPS + HSTS</span><span>Forced redirect. <span style="color:#8fd3a8;">Already in .htaccess &mdash; uncomment once the certificate is installed.</span></span></div>
+      <div class="row"><span>Core Web Vitals</span><span>No framework, no render-blocking JS, fonts preconnected. <span style="color:#8fd3a8;">Should pass out of the box &mdash; verify with PageSpeed Insights after launch.</span></span></div>
+      <div class="row"><span>Search Console</span><span>Verify the domain, submit the sitemap, then actually read it monthly. This is where you learn what people really search.</span></div>
+      <div class="row"><span>Analytics</span><span>Something privacy-light. Track quote form submissions and phone-link taps as conversions, not just page views.</span></div>
+    </div>
+  </div>
+
+  <!-- off site -->
+  <div style="padding: 26px 28px; border: 1px solid rgba(200,162,74,.42); border-radius: 16px; background: rgba(200,162,74,.07); display: flex; flex-direction: column; gap: 14px;">
+    <h2 style="font-size: 20px; font-weight: 600;">5 &middot; The part that isn&rsquo;t the website</h2>
+    <p style="font-size: 14.5px; color: rgba(255,255,255,.72);">For a local trade, on-page SEO is maybe a third of the result. Being straight with you: if you only do one thing from this page, do the first item.</p>
+    <div style="display: flex; flex-direction: column; gap: 11px;">
+      <div class="row" style="border-color: rgba(200,162,74,.2);"><span>Google Business Profile</span><span>Claim it, complete every field, add photos weekly, answer questions. This is what wins the map pack, which sits above every organic result.</span></div>
+      <div class="row" style="border-color: rgba(200,162,74,.2);"><span>Reviews</span><span>Ask every satisfied customer, every time. Volume and recency both count. A steady trickle beats a burst.</span></div>
+      <div class="row" style="border-color: rgba(200,162,74,.2);"><span>Consistent NAP</span><span>Name, address and phone identical everywhere &mdash; site, GBP, Checkatrade, Yell, Facebook. Mismatches dilute you.</span></div>
+      <div class="row" style="border-color: rgba(200,162,74,.2);"><span>Local links</span><span>Trade bodies, suppliers, the local paper, anyone you have done work for. A handful of genuine local links beats a hundred bought ones.</span></div>
+    </div>
+  </div>
+
+  <!-- build order -->
+  <div class="block">
+    <h2>6 &middot; Suggested build order</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 4px;">
+      <div style="padding: 18px; border: 1px solid rgba(255,255,255,.12); border-radius: 13px;">
+        <span style="font-family: 'Sora', sans-serif; font-size: 24px; font-weight: 700; color: rgba(200,162,74,.4);">01</span>
+        <h3 style="font-size: 15px; font-weight: 600; margin-top: 6px;">Foundations</h3>
+        <p style="font-size: 13.5px; color: rgba(255,255,255,.6); margin-top: 6px;">Shared header/footer includes, auto sitemap, schema helper. One day&rsquo;s work that makes the other 24 pages cheap.</p>
+      </div>
+      <div style="padding: 18px; border: 1px solid rgba(255,255,255,.12); border-radius: 13px;">
+        <span style="font-family: 'Sora', sans-serif; font-size: 24px; font-weight: 700; color: rgba(200,162,74,.4);">02</span>
+        <h3 style="font-size: 15px; font-weight: 600; margin-top: 6px;">Six service pages</h3>
+        <p style="font-size: 13.5px; color: rgba(255,255,255,.6); margin-top: 6px;">Highest commercial intent. These are what turn searches into quotes.</p>
+      </div>
+      <div style="padding: 18px; border: 1px solid rgba(255,255,255,.12); border-radius: 13px;">
+        <span style="font-family: 'Sora', sans-serif; font-size: 24px; font-weight: 700; color: rgba(200,162,74,.4);">03</span>
+        <h3 style="font-size: 15px; font-weight: 600; margin-top: 6px;">Town pages</h3>
+        <p style="font-size: 13.5px; color: rgba(255,255,255,.6); margin-top: 6px;">Only for towns where you have a real job and real photos. Start with three.</p>
+      </div>
+      <div style="padding: 18px; border: 1px solid rgba(200,162,74,.45); border-radius: 13px; background: rgba(200,162,74,.06);">
+        <span style="font-family: 'Sora', sans-serif; font-size: 24px; font-weight: 700; color: rgba(200,162,74,.55);">04</span>
+        <h3 style="font-size: 15px; font-weight: 600; margin-top: 6px;">Guides, ongoing</h3>
+        <p style="font-size: 13.5px; color: rgba(255,255,255,.6); margin-top: 6px;">One a month. This is the part that compounds &mdash; and the part everyone abandons.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- honest note -->
+  <div style="padding: 22px 26px; border: 1px dashed rgba(255,255,255,.22); border-radius: 15px; display: flex; gap: 15px; align-items: flex-start;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8a24a" stroke-width="1.9" stroke-linecap="round" style="flex: none; margin-top: 3px;"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+    <p style="font-size: 14.5px; color: rgba(255,255,255,.66);"><strong style="color: #fff;">On timescales:</strong> a new site on a new domain takes [6&ndash;12] months to rank for competitive local terms, and no amount of on-page work shortcuts that. Anyone promising page one in six weeks is selling something. The pages built now are what start the clock.</p>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1200,"height":2280}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

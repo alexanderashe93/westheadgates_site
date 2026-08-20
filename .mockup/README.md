@@ -3,6 +3,12 @@
 Working files for the Westhead Gates design canvas. These are the source of
 truth — the published canvas is regenerated from them, never edited directly.
 
+The canvas has two pages, switched from the toolbar's pages menu.
+
+## Page 1 — "Site — built"
+
+The four pages that are built, tested and pushed.
+
 | File                | Artboard              |
 |---------------------|-----------------------|
 | `Main.dc.html`      | Home page             |
@@ -10,13 +16,25 @@ truth — the published canvas is regenerated from them, never edited directly.
 | `Contact.dc.html`   | Contact page          |
 | `Lightbox.dc.html`  | Gallery lightbox      |
 | `Mobile.dc.html`    | Mobile — home         |
-| `canvas.json`       | Canvas layout + notes |
+
+## Page 2 — "SEO plan"
+
+Proposed, not built. Awaiting approval.
+
+| File                     | Artboard                     |
+|--------------------------|------------------------------|
+| `Architecture.dc.html`   | 1 — Site architecture        |
+| `Service.dc.html`        | 2 — Service page template    |
+| `SEOSpec.dc.html`        | 3 — Technical SEO spec       |
+
+## Conventions
 
 Direction: **Forged** — charcoal `#0e1114` + brass `#c8a24a`,
 Sora (headings) / Instrument Sans (body).
 
 Anything in `[SQUARE BRACKETS]` is a placeholder awaiting real business
-detail (phone, email, area covered, address, prices, reviews).
+detail (phone, email, area covered, address, prices, reviews, towns).
 
-The generated canvas file is gitignored; it is rebuilt by re-seeding from
-these sources.
+`canvas.json` holds the layout, the page split and the sticky notes.
+The generated canvas file is gitignored; it is rebuilt by re-seeding
+from these sources.
