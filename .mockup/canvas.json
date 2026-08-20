@@ -25,7 +25,7 @@
       "x": 0,
       "y": 0,
       "w": 1440,
-      "h": 4620
+      "h": 4560
     },
     {
       "file": "GalleryD.dc.html",
@@ -167,26 +167,26 @@
     {
       "id": "d-dev",
       "x": 0,
-      "y": -500,
+      "y": -520,
       "w": 560,
       "page": "page-3",
-      "text": "DIRECTION D — NOW DARK\n\nYou said it felt too light. It was: near enough the whole page was white, and at full height that reads as thin rather than bold.\n\nSame direction, inverted:\n• Near-black ground (#0c0c0c), white type, accent unchanged\n• Photos now sit on black, which is where they carry the most weight — the grid reads as one solid block of work\n• Caption bars went black, keeping the hard edge\n• The safety section flips to WHITE — one bright panel against all that black, so it lands rather than blending in\n• Rules went white and stayed heavy (3px)\n\nTHEME IS A LIVE SWITCH. The tweak chips above the artboard flip dark/light and change the accent. Dark is now the default; light is the version you saw before, kept so you can compare directly rather than from memory."
+      "text": "DIRECTION D — RESTRAINT PASS\n\nToo bright was fair. Going dark fixed the ground but left the loudest thing untouched: the accent was being used as full-bleed COLOUR FIELDS — a lime slab across the ticker, another across the whole closing CTA. On black that glows, and it reads young.\n\nWhat changed:\n• Accent is no longer a field. The ticker is now hairline rules with 5px dots; the closing CTA is dark with the accent on one button. Accent surface area is down roughly 90%.\n• Acid lime is gone. Four mature options in its place — see the note to the right.\n• Pure white → bone (#e8e4dd). Pure white on black glares; bone doesn't.\n• Ground warmed from #0c0c0c to #0f0e0d. Slightly warm black reads as considered; neutral black reads as default.\n• Photo placeholders warmed and dimmed to match.\n• Hero dropped 132px → 118px. Still large, less shouting.\n• The white safety panel became bone too, so it lands without flaring.\n\nThe bones are untouched: Archivo Black caps, square corners, heavy rules, the numbered index."
     },
     {
       "id": "d-accent",
       "x": 620,
-      "y": -500,
+      "y": -520,
       "w": 400,
       "page": "page-3",
-      "text": "ACCENT, ON BLACK\n\nDark ground changes which accent works. Acid lime is far more comfortable here than it was on white — it stops shouting and starts glowing.\n\n• #d8f000 acid lime — best of the four on black\n• #ff4d00 safety orange — still the most 'trade'\n• #ffd400 industrial yellow — warmest\n• #2ee6a8 signal green — cleanest, least connected to the work\n\nThe van test still applies: whatever you pick has to work printed on vehicles and workwear, not just on screen. Dark backgrounds flatter every one of these more than white does, so judge the accent on its own, not on how good it looks here."
+      "text": "FOUR ADULT ACCENTS\n\nAll desaturated, all readable on bone and on black, none of them 'tech'.\n\n• #a4432a OXBLOOD (default) — iron oxide. Rust is literally what happens to the material you work in, which is a better reason than most for a brand colour.\n• #6d7f8c SLATE — cool, engineering, unshowy. The most corporate of the four.\n• #8f9686 SAGE — muted green-grey. Quiet and land-adjacent; suits rural and estate work.\n• #b8ab8e STONE — barely a colour. The most restrained option; the design carries itself on type and rules.\n\nTry them from the tweak chip. Note the label colour flips automatically on the pale two so text stays readable.\n\nIf you want NO accent at all, pick Stone — at that point it is effectively tonal."
     },
     {
       "id": "d-note",
       "x": 1560,
-      "y": -500,
+      "y": -520,
       "w": 400,
       "page": "page-3",
-      "text": "GALLERY + MOBILE, DARK\n\nSame auto-loading mechanism as built — drop files in /images/, sub-folders become filters. Only the skin changed.\n\nThe gallery is the page that gains most from going dark: 6px gutters, square corners and a black ground make twelve photos read as one mass of work rather than twelve separate cards.\n\nContact page follows the same rules; I'll build it with the rest rather than mock it separately."
+      "text": "GALLERY + MOBILE\n\nSame treatment: no accent slabs, bone type on warm black, accent reduced to filter pills, dots and one button.\n\nThe gallery is where this direction is strongest — twelve photos, 6px gutters, square corners, on near-black. It reads as one mass of work.\n\nAuto-loading mechanism is untouched: drop files in /images/, sub-folders become filters. Only the skin changes.\n\nContact page follows the same rules; I'll build it with the rest."
     },
     {
       "id": "dir-intro",

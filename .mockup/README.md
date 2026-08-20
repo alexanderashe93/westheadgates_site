@@ -24,8 +24,13 @@ Two live tweaks on each artboard:
   (`--bg --fg --fg2 --rule --strong --panel --panelfg --bar`), so the whole
   artboard flips with one control. The safety section deliberately inverts
   against whichever ground is active.
-- `accent` — `#d8f000` acid lime (default), `#ff4d00` safety orange,
-  `#ffd400` industrial yellow, `#2ee6a8` signal green.
+- `accent` — `#a4432a` oxblood (default), `#6d7f8c` slate, `#8f9686` sage,
+  `#b8ab8e` stone. All desaturated; `--accentfg` flips automatically so
+  label text stays readable on the two pale ones.
+
+The accent is used sparingly by design: small labels, 5px dots, thin rules
+and one button per section. It is never a full-bleed colour field — that
+was what made the earlier acid-lime version read as bright and youthful.
 
 The same token set is what the real stylesheet will use, so the theme
 switch is not a mockup trick — it survives into the build.
