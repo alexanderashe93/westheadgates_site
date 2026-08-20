@@ -16,10 +16,19 @@ electric accent; Archivo Black caps, hard rules, square corners everywhere.
 | `GalleryD.dc.html` | Gallery  |
 | `MobileD.dc.html`  | Mobile   |
 
-The accent is a live tweak on each artboard (`accent` prop, colour editor)
-with four candidates: `#d8f000` acid lime (default), `#ff4d00` safety
-orange, `#ffd400` industrial yellow, `#2ee6a8` signal green. It drives a
-`--accent` custom property, so one change re-skins the whole artboard.
+**Dark-first.** Near-black ground, white type, one electric accent.
+
+Two live tweaks on each artboard:
+
+- `theme` — `dark` (default) or `light`. Drives a set of custom properties
+  (`--bg --fg --fg2 --rule --strong --panel --panelfg --bar`), so the whole
+  artboard flips with one control. The safety section deliberately inverts
+  against whichever ground is active.
+- `accent` — `#d8f000` acid lime (default), `#ff4d00` safety orange,
+  `#ffd400` industrial yellow, `#2ee6a8` signal green.
+
+The same token set is what the real stylesheet will use, so the theme
+switch is not a mockup trick — it survives into the build.
 
 Not built yet. The live site still carries the old charcoal-and-brass style.
 

@@ -9,121 +9,110 @@
 <helmet>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@500;600;700&display=swap">
   <style>
-    body {
-      margin: 0; width: 1440px;
-      background: #ffffff; color: #2b2b2b;
-      font-family: "Archivo", system-ui, sans-serif;
-      font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
-    }
-    a { color: #0a0a0a; text-decoration: none; }
-    h1, h2, h3 { font-family: "Archivo", system-ui, sans-serif; margin: 0; color: #0a0a0a; font-weight: 900; letter-spacing: -.045em; line-height: .9; text-transform: uppercase; }
+    body { margin: 0; width: 1440px; background: #0c0c0c; font-family: "Archivo", system-ui, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; }
+    h1, h2, h3 { font-family: "Archivo", system-ui, sans-serif; margin: 0; font-weight: 900; letter-spacing: -.045em; line-height: .9; text-transform: uppercase; }
     p { margin: 0; text-wrap: pretty; }
     .lbl { font-family: "Archivo Narrow", sans-serif; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
-    .ph { position: relative; overflow: hidden; background-color: #e4e4e4; break-inside: avoid; }
-    .ph::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(10,10,10,.24) 0 3px, transparent 3px 30px), linear-gradient(165deg, #d2d2d2 0%, #9c9c9c 60%, #6a6a6a 100%); }
-    .ph::after { content: ""; position: absolute; left: 8%; right: 8%; top: 13%; bottom: -8%; border: 3px solid rgba(10,10,10,.26); border-bottom: 0; border-radius: 240px 240px 0 0; }
-    .capbar {
-      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 12px 15px; background: rgba(255,255,255,.94);
-    }
+    .ph { position: relative; overflow: hidden; background-color: #2a2a2a; break-inside: avoid; }
+    .ph::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 3px, transparent 3px 30px), linear-gradient(165deg, #5c5c5c 0%, #333 60%, #1a1a1a 100%); }
+    .ph::after { content: ""; position: absolute; left: 8%; right: 8%; top: 13%; bottom: -8%; border: 3px solid rgba(255,255,255,.22); border-bottom: 0; border-radius: 240px 240px 0 0; }
+    .capbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 12px 15px; background: var(--bar, rgba(12,12,12,.92)); }
   </style>
 </helmet>
 
-<div style="--accent: {{accent}}; display: flex; flex-direction: column;">
+<div style="--bg: {{bg}}; --fg: {{fg}}; --fg2: {{fg2}}; --rule: {{rule}}; --strong: {{strong}}; --panel: {{panel}}; --panelfg: {{panelfg}}; --bar: {{bar}}; --accent: {{accent}}; background: var(--bg, #0c0c0c); color: var(--fg2, rgba(255,255,255,.62)); display: flex; flex-direction: column;">
 
-  <!-- nav -->
-  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 52px; height: 80px; border-bottom: 3px solid #0a0a0a;">
-    <span style="font-weight: 900; font-size: 22px; color: #0a0a0a; letter-spacing: -.04em; text-transform: uppercase;">Westhead Gates</span>
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 52px; height: 80px; border-bottom: 3px solid var(--strong, #fff);">
+    <span style="font-weight: 900; font-size: 22px; color: var(--fg, #fff); letter-spacing: -.04em; text-transform: uppercase;">Westhead Gates</span>
     <div style="display: flex; align-items: center; gap: 30px;">
-      <span class="lbl" style="font-size: 13px; padding-bottom: 3px; border-bottom: 3px solid var(--accent, #d8f000); color: #0a0a0a;">Work</span>
-      <span class="lbl" style="font-size: 13px; color: #2b2b2b;">Services</span>
-      <span class="lbl" style="font-size: 13px; color: #2b2b2b;">Safety</span>
-      <span class="lbl" style="font-size: 13px; color: #2b2b2b;">Contact</span>
+      <span class="lbl" style="font-size: 13px; padding-bottom: 3px; border-bottom: 3px solid var(--accent, #d8f000); color: var(--fg, #fff);">Work</span>
+      <span class="lbl" style="font-size: 13px; color: var(--fg2, rgba(255,255,255,.62));">Services</span>
+      <span class="lbl" style="font-size: 13px; color: var(--fg2, rgba(255,255,255,.62));">Safety</span>
+      <span class="lbl" style="font-size: 13px; color: var(--fg2, rgba(255,255,255,.62));">Contact</span>
       <span class="lbl" style="padding: 13px 24px; background: var(--accent, #d8f000); color: #0a0a0a; font-size: 13px;">Get a quote</span>
     </div>
   </div>
 
-  <!-- page head -->
   <div style="padding: 52px 52px 34px;">
     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 22px;">
-      <span class="lbl" style="font-size: 12px; color: #767676;">Home</span>
-      <span class="lbl" style="font-size: 12px; color: #c4c4c4;">/</span>
-      <span class="lbl" style="font-size: 12px; color: #0a0a0a;">Work</span>
+      <span class="lbl" style="font-size: 12px; color: var(--fg2, rgba(255,255,255,.62));">Home</span>
+      <span class="lbl" style="font-size: 12px; color: var(--rule, rgba(255,255,255,.18));">/</span>
+      <span class="lbl" style="font-size: 12px; color: var(--fg, #fff);">Work</span>
     </div>
     <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 50px;">
-      <h1 style="font-size: 116px;">Our work</h1>
-      <p style="font-size: 18px; color: #454545; max-width: 400px; padding-bottom: 12px;">Every gate on this page was drawn, built and fitted by us. Click any photo to see it full size.</p>
+      <h1 style="font-size: 116px; color: var(--fg, #fff);">Our work</h1>
+      <p style="font-size: 18px; color: var(--fg2, rgba(255,255,255,.62)); max-width: 400px; padding-bottom: 12px;">Every gate on this page was drawn, built and fitted by us. Click any photo to see it full size.</p>
     </div>
   </div>
 
-  <!-- filter bar -->
   <div style="padding: 0 52px;">
-    <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 20px 0; border-top: 3px solid #0a0a0a; border-bottom: 1px solid #d4d4d4;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 20px 0; border-top: 3px solid var(--strong, #fff); border-bottom: 1px solid var(--rule, rgba(255,255,255,.18));">
       <div style="display: flex; gap: 8px;">
-        <span class="lbl" style="padding: 11px 20px; background: #0a0a0a; color: #fff; font-size: 12.5px;">All <span style="opacity: .55;">24</span></span>
-        <span class="lbl" style="padding: 11px 20px; border: 2px solid #0a0a0a; color: #0a0a0a; font-size: 12.5px;">Driveway gates <span style="opacity: .5;">9</span></span>
-        <span class="lbl" style="padding: 11px 20px; border: 2px solid #d4d4d4; color: #454545; font-size: 12.5px;">Sliding <span style="opacity: .5;">5</span></span>
-        <span class="lbl" style="padding: 11px 20px; border: 2px solid #d4d4d4; color: #454545; font-size: 12.5px;">Railings <span style="opacity: .5;">6</span></span>
-        <span class="lbl" style="padding: 11px 20px; border: 2px solid #d4d4d4; color: #454545; font-size: 12.5px;">Automation <span style="opacity: .5;">4</span></span>
+        <span class="lbl" style="padding: 11px 20px; background: var(--accent, #d8f000); color: #0a0a0a; font-size: 12.5px;">All <span style="opacity: .55;">24</span></span>
+        <span class="lbl" style="padding: 11px 20px; border: 2px solid var(--fg, #fff); color: var(--fg, #fff); font-size: 12.5px;">Driveway gates <span style="opacity: .5;">9</span></span>
+        <span class="lbl" style="padding: 11px 20px; border: 2px solid var(--rule, rgba(255,255,255,.18)); color: var(--fg2, rgba(255,255,255,.62)); font-size: 12.5px;">Sliding <span style="opacity: .5;">5</span></span>
+        <span class="lbl" style="padding: 11px 20px; border: 2px solid var(--rule, rgba(255,255,255,.18)); color: var(--fg2, rgba(255,255,255,.62)); font-size: 12.5px;">Railings <span style="opacity: .5;">6</span></span>
+        <span class="lbl" style="padding: 11px 20px; border: 2px solid var(--rule, rgba(255,255,255,.18)); color: var(--fg2, rgba(255,255,255,.62)); font-size: 12.5px;">Automation <span style="opacity: .5;">4</span></span>
       </div>
-      <span class="lbl" style="font-size: 12.5px; color: #767676;">Showing 24</span>
+      <span class="lbl" style="font-size: 12.5px; color: var(--fg2, rgba(255,255,255,.62));">Showing 24</span>
     </div>
   </div>
 
-  <!-- masonry -->
   <div style="padding: 22px 52px 0; columns: 3; column-gap: 6px;">
     <div class="ph" style="height: 380px; margin-bottom: 6px;">
-      <div class="capbar"><span class="lbl" style="font-size: 11.5px; color: #767676;">Driveway gates</span><span class="lbl" style="font-size: 11.5px; color: #0a0a0a;">Estate pair, [Town]</span></div>
+      <div class="capbar"><span class="lbl" style="font-size: 11.5px; color: var(--fg2, rgba(255,255,255,.62));">Driveway gates</span><span class="lbl" style="font-size: 11.5px; color: var(--fg, #fff);">Estate pair, [Town]</span></div>
       <span class="lbl" style="position: absolute; top: 12px; right: 12px; z-index: 4; padding: 5px 10px; background: var(--accent, #d8f000); color: #0a0a0a; font-size: 10px;">Hover state</span>
     </div>
     <div class="ph" style="height: 270px; margin-bottom: 6px;"></div>
     <div class="ph" style="height: 440px; margin-bottom: 6px;"></div>
     <div class="ph" style="height: 320px; margin-bottom: 6px;"></div>
-
     <div class="ph" style="height: 450px; margin-bottom: 6px;"></div>
     <div class="ph" style="height: 300px; margin-bottom: 6px;"></div>
     <div class="ph" style="height: 350px; margin-bottom: 6px;"></div>
     <div class="ph" style="height: 280px; margin-bottom: 6px;"></div>
-
     <div class="ph" style="height: 300px; margin-bottom: 6px;"></div>
     <div class="ph" style="height: 400px; margin-bottom: 6px;"></div>
     <div class="ph" style="height: 260px; margin-bottom: 6px;"></div>
     <div class="ph" style="height: 420px; margin-bottom: 6px;"></div>
   </div>
 
-  <!-- auto-load note -->
-  <div style="margin: 30px 52px 0; padding: 24px 28px; border: 3px solid #0a0a0a; display: flex; align-items: flex-start; gap: 16px;">
+  <div style="margin: 30px 52px 0; padding: 24px 28px; border: 3px solid var(--strong, #fff); display: flex; align-items: flex-start; gap: 16px;">
     <span class="lbl" style="padding: 6px 11px; background: var(--accent, #d8f000); color: #0a0a0a; font-size: 11px; flex: none;">Auto</span>
-    <p style="font-size: 15.5px; color: #454545;"><strong style="color: #0a0a0a;">Nothing here is hard-coded.</strong> Drop photos into <span style="font-family: 'Archivo Narrow', monospace; font-weight: 700; background: #f0f0f0; padding: 1px 7px;">/images/</span> on the server and they appear on the next page load. Sub-folders become the filter buttons above. Filenames become captions &mdash; and alt text.</p>
+    <p style="font-size: 15.5px; color: var(--fg2, rgba(255,255,255,.62));"><strong style="color: var(--fg, #fff);">Nothing here is hard-coded.</strong> Drop photos into <span class="lbl" style="font-size: 13px; background: var(--accent, #d8f000); color: #0a0a0a; padding: 1px 7px;">/images/</span> on the server and they appear on the next page load. Sub-folders become the filter buttons above. Filenames become captions &mdash; and alt text.</p>
   </div>
 
-  <!-- CTA -->
   <div style="margin-top: 60px; background: var(--accent, #d8f000); padding: 64px 52px; display: flex; align-items: flex-end; justify-content: space-between; gap: 50px;">
     <div>
-      <h2 style="font-size: 62px;">Seen something<br>you like?</h2>
+      <h2 style="font-size: 62px; color: #0a0a0a;">Seen something<br>you like?</h2>
       <p style="font-size: 18px; color: rgba(10,10,10,.72); margin-top: 18px; max-width: 460px;">Tell us which photo caught your eye and we&rsquo;ll price something similar for your opening.</p>
     </div>
     <span class="lbl" style="padding: 19px 36px; background: #0a0a0a; color: #fff; font-size: 14px; flex: none;">Get a quote &rarr;</span>
   </div>
 
-  <!-- footer -->
-  <div style="background: #0a0a0a; padding: 40px 52px; display: flex; align-items: center; justify-content: space-between; gap: 30px;">
-    <span style="font-weight: 900; font-size: 19px; color: #fff; letter-spacing: -.04em; text-transform: uppercase;">Westhead Gates</span>
+  <div style="background: var(--bg, #0c0c0c); padding: 40px 52px; display: flex; align-items: center; justify-content: space-between; gap: 30px; border-top: 3px solid var(--strong, #fff);">
+    <span style="font-weight: 900; font-size: 19px; color: var(--fg, #fff); letter-spacing: -.04em; text-transform: uppercase;">Westhead Gates</span>
     <div style="display: flex; gap: 26px;">
-      <span class="lbl" style="font-size: 12px; color: rgba(255,255,255,.6);">Work</span>
-      <span class="lbl" style="font-size: 12px; color: rgba(255,255,255,.6);">Services</span>
-      <span class="lbl" style="font-size: 12px; color: rgba(255,255,255,.6);">Contact</span>
-      <span class="lbl" style="font-size: 12px; color: rgba(255,255,255,.6);">[YOUR PHONE]</span>
+      <span class="lbl" style="font-size: 12px; color: var(--fg2, rgba(255,255,255,.62));">Work</span>
+      <span class="lbl" style="font-size: 12px; color: var(--fg2, rgba(255,255,255,.62));">Services</span>
+      <span class="lbl" style="font-size: 12px; color: var(--fg2, rgba(255,255,255,.62));">Contact</span>
+      <span class="lbl" style="font-size: 12px; color: var(--fg2, rgba(255,255,255,.62));">[YOUR PHONE]</span>
     </div>
-    <span class="lbl" style="font-size: 11px; color: #6a6a6a;">&copy; [Year]</span>
+    <span class="lbl" style="font-size: 11px; color: var(--fg2, rgba(255,255,255,.62)); opacity: .7;">&copy; [Year]</span>
   </div>
 
 </div>
 </x-dc>
-<script data-dc-script data-props='{"accent":{"editor":"color","default":"#d8f000","options":["#d8f000","#ff4d00","#ffd400","#2ee6a8"],"section":"Brand"},"$preview":{"width":1440,"height":2760}}'>
+<script data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark","section":"Brand"},"accent":{"editor":"color","default":"#d8f000","options":["#d8f000","#ff4d00","#ffd400","#2ee6a8"],"section":"Brand"},"$preview":{"width":1440,"height":2760}}'>
 class Component extends DCLogic {
-  renderVals() { return { accent: this.props.accent ?? '#d8f000' }; }
+  renderVals() {
+    var dark = (this.props.theme ?? 'dark') !== 'light';
+    var t = dark
+      ? { bg: '#0c0c0c', fg: '#ffffff', fg2: 'rgba(255,255,255,.62)', rule: 'rgba(255,255,255,.18)', strong: '#ffffff', panel: '#ffffff', panelfg: '#0a0a0a', bar: 'rgba(12,12,12,.92)' }
+      : { bg: '#ffffff', fg: '#0a0a0a', fg2: '#454545', rule: '#d4d4d4', strong: '#0a0a0a', panel: '#0a0a0a', panelfg: '#ffffff', bar: 'rgba(255,255,255,.94)' };
+    t.accent = this.props.accent ?? '#d8f000';
+    return t;
+  }
 }
 </script>
 </body>

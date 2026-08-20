@@ -25,7 +25,7 @@
       "x": 0,
       "y": 0,
       "w": 1440,
-      "h": 4560
+      "h": 4620
     },
     {
       "file": "GalleryD.dc.html",
@@ -167,26 +167,26 @@
     {
       "id": "d-dev",
       "x": 0,
-      "y": -470,
+      "y": -500,
       "w": 560,
       "page": "page-3",
-      "text": "DIRECTION D — DEVELOPED\n\nWhat changed from the sketch you picked:\n\n• Hero now runs into a full-bleed photo band rather than sitting above a tidy grid — the type and the image are one gesture, not two blocks.\n• Services became a numbered index (01–04) on hard rules, not cards. Outlined numerals in the accent tie it to the wordmark.\n• Added the accent ticker strip, the black safety section and an oversized outlined wordmark cropped by the page edge.\n• Captions sit in a white bar across the foot of each photo — keeps hard edges and stays readable over any image.\n• Every photo corner is square. No rounding anywhere. That restraint is what makes this direction work.\n\nTHE ACCENT IS A LIVE CONTROL. Use the tweak chip above the artboard to try the four candidates — acid lime, safety orange, industrial yellow, signal green. It updates the whole page at once."
+      "text": "DIRECTION D — NOW DARK\n\nYou said it felt too light. It was: near enough the whole page was white, and at full height that reads as thin rather than bold.\n\nSame direction, inverted:\n• Near-black ground (#0c0c0c), white type, accent unchanged\n• Photos now sit on black, which is where they carry the most weight — the grid reads as one solid block of work\n• Caption bars went black, keeping the hard edge\n• The safety section flips to WHITE — one bright panel against all that black, so it lands rather than blending in\n• Rules went white and stayed heavy (3px)\n\nTHEME IS A LIVE SWITCH. The tweak chips above the artboard flip dark/light and change the accent. Dark is now the default; light is the version you saw before, kept so you can compare directly rather than from memory."
     },
     {
       "id": "d-accent",
       "x": 620,
-      "y": -470,
+      "y": -500,
       "w": 400,
       "page": "page-3",
-      "text": "ON THE ACID LIME\n\nIt is the most striking of the four and the most divisive. Worth trying the alternates before committing:\n\n• #d8f000 acid lime — loudest, most 'design studio'. Great on screen, awkward on a van.\n• #ff4d00 safety orange — reads as construction and hi-vis. Most natural fit for the trade.\n• #ffd400 industrial yellow — warmer, closer to plant machinery. Safest of the bold options.\n• #2ee6a8 signal green — modern, but least connected to the work.\n\nWhatever you pick has to survive being printed on a van, a business card and a workwear polo. Lime on white is fine; lime on a dark van is not."
+      "text": "ACCENT, ON BLACK\n\nDark ground changes which accent works. Acid lime is far more comfortable here than it was on white — it stops shouting and starts glowing.\n\n• #d8f000 acid lime — best of the four on black\n• #ff4d00 safety orange — still the most 'trade'\n• #ffd400 industrial yellow — warmest\n• #2ee6a8 signal green — cleanest, least connected to the work\n\nThe van test still applies: whatever you pick has to work printed on vehicles and workwear, not just on screen. Dark backgrounds flatter every one of these more than white does, so judge the accent on its own, not on how good it looks here."
     },
     {
       "id": "d-note",
       "x": 1560,
-      "y": -470,
+      "y": -500,
       "w": 400,
       "page": "page-3",
-      "text": "GALLERY IN D\n\nSame auto-loading mechanism as built — drop files in /images/, sub-folders become filters. Only the skin changes.\n\nThe 6px gutters and square corners make the grid read as one block of work rather than a set of separate cards. Captions appear on hover in the white bar.\n\nContact page follows the same rules; I'll build it with the rest rather than mock it separately."
+      "text": "GALLERY + MOBILE, DARK\n\nSame auto-loading mechanism as built — drop files in /images/, sub-folders become filters. Only the skin changed.\n\nThe gallery is the page that gains most from going dark: 6px gutters, square corners and a black ground make twelve photos read as one mass of work rather than twelve separate cards.\n\nContact page follows the same rules; I'll build it with the rest rather than mock it separately."
     },
     {
       "id": "dir-intro",

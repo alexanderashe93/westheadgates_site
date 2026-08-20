@@ -11,7 +11,7 @@
   <style>
     body {
       margin: 0; width: 390px;
-      background: #ffffff; color: #2b2b2b;
+      background: #0c0c0c;
       font-family: "Archivo", system-ui, sans-serif;
       font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased;
     }
@@ -19,38 +19,36 @@
     h1, h2, h3 { font-family: "Archivo", system-ui, sans-serif; margin: 0; color: #0a0a0a; font-weight: 900; letter-spacing: -.045em; line-height: .9; text-transform: uppercase; }
     p { margin: 0; text-wrap: pretty; }
     .lbl { font-family: "Archivo Narrow", sans-serif; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-    .ph { position: relative; overflow: hidden; background-color: #e4e4e4; }
-    .ph::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(10,10,10,.24) 0 3px, transparent 3px 26px), linear-gradient(165deg, #d2d2d2 0%, #9c9c9c 60%, #6a6a6a 100%); }
-    .ph::after { content: ""; position: absolute; left: 8%; right: 8%; top: 13%; bottom: -8%; border: 3px solid rgba(10,10,10,.26); border-bottom: 0; border-radius: 200px 200px 0 0; }
-    .ph--dark::before { background: repeating-linear-gradient(90deg, rgba(255,255,255,.14) 0 3px, transparent 3px 26px), linear-gradient(165deg, #4a4a4a 0%, #2a2a2a 60%, #141414 100%); }
-    .ph--dark::after { border-color: rgba(255,255,255,.2); }
-    .capbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; justify-content: space-between; padding: 10px 13px; background: rgba(255,255,255,.94); }
+    .ph { position: relative; overflow: hidden; background-color: #2a2a2a; }
+    .ph::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 3px, transparent 3px 26px), linear-gradient(165deg, #5c5c5c 0%, #333 60%, #1a1a1a 100%); }
+    .ph::after { content: ""; position: absolute; left: 8%; right: 8%; top: 13%; bottom: -8%; border: 3px solid rgba(255,255,255,.22); border-bottom: 0; border-radius: 200px 200px 0 0; }
+    .capbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; justify-content: space-between; padding: 10px 13px; background: var(--bar, rgba(12,12,12,.92)); }
   </style>
 </helmet>
 
-<div style="--accent: {{accent}}; display: flex; flex-direction: column;">
+<div style="--bg: {{bg}}; --fg: {{fg}}; --fg2: {{fg2}}; --rule: {{rule}}; --strong: {{strong}}; --panel: {{panel}}; --panelfg: {{panelfg}}; --bar: {{bar}}; --accent: {{accent}}; background: var(--bg, #0c0c0c); color: var(--fg2, rgba(255,255,255,.62)); display: flex; flex-direction: column;">
 
-  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 66px; border-bottom: 3px solid #0a0a0a;">
-    <span style="font-weight: 900; font-size: 16px; color: #0a0a0a; letter-spacing: -.04em; text-transform: uppercase;">Westhead Gates</span>
-    <div style="width: 44px; height: 44px; border: 2px solid #0a0a0a; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
-      <span style="width: 18px; height: 2.5px; background: #0a0a0a; display: block;"></span>
-      <span style="width: 18px; height: 2.5px; background: #0a0a0a; display: block;"></span>
-      <span style="width: 18px; height: 2.5px; background: #0a0a0a; display: block;"></span>
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 66px; border-bottom: 3px solid var(--strong, #fff);">
+    <span style="font-weight: 900; font-size: 16px; color: var(--fg, #fff); letter-spacing: -.04em; text-transform: uppercase;">Westhead Gates</span>
+    <div style="width: 44px; height: 44px; border: 2px solid var(--fg, #fff); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+      <span style="width: 18px; height: 2.5px; background: var(--fg, #fff); display: block;"></span>
+      <span style="width: 18px; height: 2.5px; background: var(--fg, #fff); display: block;"></span>
+      <span style="width: 18px; height: 2.5px; background: var(--fg, #fff); display: block;"></span>
     </div>
   </div>
 
   <div style="padding: 30px 20px 24px;">
-    <span class="lbl" style="font-size: 10.5px; color: #767676;">[Est. 1998] &middot; [Your area]</span>
-    <h1 style="font-size: 52px; margin-top: 14px;">Built to<br>outlast<br><span style="-webkit-text-stroke: 1.6px #0a0a0a; color: transparent;">the house.</span></h1>
-    <p style="font-size: 16px; color: #454545; margin-top: 18px;">Bespoke driveway gates, railings and automation &mdash; drawn, built and fitted by one team.</p>
+    <span class="lbl" style="font-size: 10.5px; color: var(--fg2, rgba(255,255,255,.62));">[Est. 1998] &middot; [Your area]</span>
+    <h1 style="font-size: 52px; margin-top: 14px; color: var(--fg, #fff);">Built to<br>outlast<br><span style="-webkit-text-stroke: 1.6px var(--fg, #fff); color: transparent;">the house.</span></h1>
+    <p style="font-size: 16px; color: var(--fg2, rgba(255,255,255,.62)); margin-top: 18px;">Bespoke driveway gates, railings and automation &mdash; drawn, built and fitted by one team.</p>
     <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 22px;">
-      <span class="lbl" style="padding: 17px; background: #0a0a0a; color: #fff; font-size: 13px; text-align: center;">Get a free quote &rarr;</span>
-      <span class="lbl" style="padding: 17px; border: 3px solid #0a0a0a; color: #0a0a0a; font-size: 13px; text-align: center;">[YOUR PHONE]</span>
+      <span class="lbl" style="padding: 17px; background: var(--accent, #d8f000); color: #0a0a0a; font-size: 13px; text-align: center;">Get a free quote &rarr;</span>
+      <span class="lbl" style="padding: 17px; border: 3px solid var(--fg, #fff); color: #0a0a0a; font-size: 13px; text-align: center;">[YOUR PHONE]</span>
     </div>
   </div>
 
-  <div class="ph ph--dark" style="height: 300px;">
-    <div class="capbar"><span class="lbl" style="font-size: 10.5px; color: #767676;">[Town]</span><span class="lbl" style="font-size: 10.5px; color: #0a0a0a;">Automated pair</span></div>
+  <div class="ph" style="height: 300px;">
+    <div class="capbar"><span class="lbl" style="font-size: 10.5px; color: var(--fg2, rgba(255,255,255,.62));">[Town]</span><span class="lbl" style="font-size: 10.5px; color: #0a0a0a;">Automated pair</span></div>
   </div>
 
   <div style="background: var(--accent, #d8f000); padding: 15px 20px; display: flex; flex-wrap: wrap; gap: 10px 14px;">
@@ -62,52 +60,59 @@
   </div>
 
   <div style="padding: 34px 20px 20px;">
-    <h2 style="font-size: 38px;">What we<br>make</h2>
+    <h2 style="font-size: 38px; color: var(--fg, #fff);">What we<br>make</h2>
     <div style="margin-top: 22px;">
-      <div style="display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: center; padding: 18px 0; border-top: 3px solid #0a0a0a;">
-        <span style="font-weight: 900; font-size: 24px; letter-spacing: -.04em; color: var(--accent, #d8f000); -webkit-text-stroke: 1.2px #0a0a0a;">01</span>
-        <h3 style="font-size: 21px;">Driveway gates</h3>
+      <div style="display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: center; padding: 18px 0; border-top: 3px solid var(--strong, #fff);">
+        <span style="font-weight: 900; font-size: 24px; letter-spacing: -.04em; color: var(--accent, #d8f000); -webkit-text-stroke: 1.2px var(--bg, #0c0c0c);">01</span>
+        <h3 style="font-size: 21px; color: var(--fg, #fff);">Driveway gates</h3>
       </div>
-      <div style="display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: center; padding: 18px 0; border-top: 1px solid #d4d4d4;">
-        <span style="font-weight: 900; font-size: 24px; letter-spacing: -.04em; color: var(--accent, #d8f000); -webkit-text-stroke: 1.2px #0a0a0a;">02</span>
-        <h3 style="font-size: 21px;">Automation</h3>
+      <div style="display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: center; padding: 18px 0; border-top: 1px solid var(--rule, rgba(255,255,255,.18));">
+        <span style="font-weight: 900; font-size: 24px; letter-spacing: -.04em; color: var(--accent, #d8f000); -webkit-text-stroke: 1.2px var(--bg, #0c0c0c);">02</span>
+        <h3 style="font-size: 21px; color: var(--fg, #fff);">Automation</h3>
       </div>
-      <div style="display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: center; padding: 18px 0; border-top: 1px solid #d4d4d4;">
-        <span style="font-weight: 900; font-size: 24px; letter-spacing: -.04em; color: var(--accent, #d8f000); -webkit-text-stroke: 1.2px #0a0a0a;">03</span>
-        <h3 style="font-size: 21px;">Railings</h3>
+      <div style="display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: center; padding: 18px 0; border-top: 1px solid var(--rule, rgba(255,255,255,.18));">
+        <span style="font-weight: 900; font-size: 24px; letter-spacing: -.04em; color: var(--accent, #d8f000); -webkit-text-stroke: 1.2px var(--bg, #0c0c0c);">03</span>
+        <h3 style="font-size: 21px; color: var(--fg, #fff);">Railings</h3>
       </div>
-      <div style="display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: center; padding: 18px 0; border-top: 1px solid #d4d4d4; border-bottom: 3px solid #0a0a0a;">
-        <span style="font-weight: 900; font-size: 24px; letter-spacing: -.04em; color: var(--accent, #d8f000); -webkit-text-stroke: 1.2px #0a0a0a;">04</span>
-        <h3 style="font-size: 21px;">Repairs</h3>
+      <div style="display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: center; padding: 18px 0; border-top: 1px solid var(--rule, rgba(255,255,255,.18)); border-bottom: 3px solid var(--strong, #fff);">
+        <span style="font-weight: 900; font-size: 24px; letter-spacing: -.04em; color: var(--accent, #d8f000); -webkit-text-stroke: 1.2px var(--bg, #0c0c0c);">04</span>
+        <h3 style="font-size: 21px; color: var(--fg, #fff);">Repairs</h3>
       </div>
     </div>
   </div>
 
   <div style="padding: 24px 20px 0;">
-    <h2 style="font-size: 38px;">Recent work</h2>
+    <h2 style="font-size: 38px; color: var(--fg, #fff);">Recent work</h2>
   </div>
   <div style="display: flex; flex-direction: column; gap: 5px; padding: 18px 20px 0;">
-    <div class="ph" style="height: 230px;"><div class="capbar"><span class="lbl" style="font-size: 10.5px; color: #767676;">Driveway gates</span><span class="lbl" style="font-size: 10.5px; color: #0a0a0a;">Oak-clad pair</span></div></div>
-    <div class="ph" style="height: 280px;"><div class="capbar"><span class="lbl" style="font-size: 10.5px; color: #767676;">Railings</span><span class="lbl" style="font-size: 10.5px; color: #0a0a0a;">Estate run</span></div></div>
+    <div class="ph" style="height: 230px;"><div class="capbar"><span class="lbl" style="font-size: 10.5px; color: var(--fg2, rgba(255,255,255,.62));">Driveway gates</span><span class="lbl" style="font-size: 10.5px; color: #0a0a0a;">Oak-clad pair</span></div></div>
+    <div class="ph" style="height: 280px;"><div class="capbar"><span class="lbl" style="font-size: 10.5px; color: var(--fg2, rgba(255,255,255,.62));">Railings</span><span class="lbl" style="font-size: 10.5px; color: #0a0a0a;">Estate run</span></div></div>
   </div>
 
-  <div style="margin-top: 34px; background: #0a0a0a; padding: 40px 20px;">
+  <div style="margin-top: 34px; background: var(--panel, #fff); padding: 40px 20px;">
     <span class="lbl" style="font-size: 11px; color: var(--accent, #d8f000);">Safety &amp; compliance</span>
-    <h2 style="font-size: 38px; color: #fff; margin-top: 14px;">A powered<br>gate is<br>machinery.</h2>
-    <p style="font-size: 15.5px; color: rgba(255,255,255,.66); margin-top: 16px;">Force-tested and certified on handover, with the file to prove it.</p>
+    <h2 style="font-size: 38px; color: var(--panelfg, #0a0a0a); margin-top: 14px;">A powered<br>gate is<br>machinery.</h2>
+    <p style="font-size: 15.5px; color: var(--panelfg, #0a0a0a); opacity: .68; margin-top: 16px;">Force-tested and certified on handover, with the file to prove it.</p>
     <span class="lbl" style="display: block; margin-top: 22px; padding: 16px; background: var(--accent, #d8f000); color: #0a0a0a; font-size: 12.5px; text-align: center;">Book an inspection &rarr;</span>
   </div>
 
   <div style="background: var(--accent, #d8f000); padding: 44px 20px;">
-    <h2 style="font-size: 40px;">Send us a photo of your driveway.</h2>
-    <span class="lbl" style="display: block; margin-top: 22px; padding: 17px; background: #0a0a0a; color: #fff; font-size: 13px; text-align: center;">Request a quote &rarr;</span>
+    <h2 style="font-size: 40px; color: #0a0a0a;">Send us a photo of your driveway.</h2>
+    <span class="lbl" style="display: block; margin-top: 22px; padding: 17px; background: var(--accent, #d8f000); color: #0a0a0a; font-size: 13px; text-align: center;">Request a quote &rarr;</span>
   </div>
 
 </div>
 </x-dc>
-<script data-dc-script data-props='{"accent":{"editor":"color","default":"#d8f000","options":["#d8f000","#ff4d00","#ffd400","#2ee6a8"],"section":"Brand"},"$preview":{"width":390,"height":2380}}'>
+<script data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark","section":"Brand"},"accent":{"editor":"color","default":"#d8f000","options":["#d8f000","#ff4d00","#ffd400","#2ee6a8"],"section":"Brand"},"$preview":{"width":390,"height":2380}}'>
 class Component extends DCLogic {
-  renderVals() { return { accent: this.props.accent ?? '#d8f000' }; }
+  renderVals() {
+    var dark = (this.props.theme ?? 'dark') !== 'light';
+    var t = dark
+      ? { bg: '#0c0c0c', fg: '#ffffff', fg2: 'rgba(255,255,255,.62)', rule: 'rgba(255,255,255,.18)', strong: '#ffffff', panel: '#ffffff', panelfg: '#0a0a0a', bar: 'rgba(12,12,12,.92)' }
+      : { bg: '#ffffff', fg: '#0a0a0a', fg2: '#454545', rule: '#d4d4d4', strong: '#0a0a0a', panel: '#0a0a0a', panelfg: '#ffffff', bar: 'rgba(255,255,255,.94)' };
+    t.accent = this.props.accent ?? '#d8f000';
+    return t;
+  }
 }
 </script>
 </body>
