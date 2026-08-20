@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body {
+      margin: 0; width: 1200px;
+      background: #fbfbf9; color: #3d4550;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-size: 15.5px; line-height: 1.62; -webkit-font-smoothing: antialiased;
+    }
+    a { color: #1b4d8f; text-decoration: none; }
+    a:hover { color: #123663; }
+    h1, h2, h3 { font-family: "Space Grotesk", system-ui, sans-serif; margin: 0; color: #10151c; letter-spacing: -.028em; line-height: 1.05; }
+    p { margin: 0; text-wrap: pretty; }
+    .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(27,77,143,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(27,77,143,.07) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .ph { position: relative; overflow: hidden; background-color: #dfe3e8; }
+    .ph::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(27,77,143,.22) 0 2px, transparent 2px 24px), linear-gradient(165deg, #cbd3dc 0%, #9aa6b4 60%, #6f7c8b 100%); }
+    .ph::after { content: ""; position: absolute; left: 8%; right: 8%; top: 14%; bottom: -8%; border: 2px solid rgba(27,77,143,.3); border-bottom: 0; border-radius: 220px 220px 0 0; }
+    .sw { height: 52px; border-radius: 3px; display: flex; align-items: flex-end; padding: 8px; font-size: 10px; font-weight: 500; font-family: "IBM Plex Mono", monospace; }
+    .dim { position: absolute; font-family: "IBM Plex Mono", monospace; font-size: 10px; color: #1b4d8f; letter-spacing: .05em; }
+  </style>
+</helmet>
+
+<div class="grid-bg" style="display: flex; flex-direction: column;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 74px; border-bottom: 1px solid #d3d9e0; background: #fbfbf9;">
+    <div style="display: flex; align-items: baseline; gap: 12px;">
+      <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 19px; color: #10151c; letter-spacing: -.02em;">WESTHEAD GATES</span>
+      <span class="mono" style="font-size: 10.5px; color: #7b8794;">EST. [1998]</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 24px; font-size: 14.5px; color: #4d5866;">
+      <span class="mono" style="font-size: 12.5px;">01 WORK</span>
+      <span class="mono" style="font-size: 12.5px;">02 SERVICES</span>
+      <span class="mono" style="font-size: 12.5px;">03 CONTACT</span>
+      <span style="padding: 10px 19px; border-radius: 3px; background: #1b4d8f; color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13.5px;">Request survey</span>
+    </div>
+  </div>
+
+  <div style="position: relative; padding: 58px 56px 50px; display: grid; grid-template-columns: 1fr .88fr; gap: 44px; align-items: center;">
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+        <span style="width: 26px; height: 1px; background: #1b4d8f; display: block;"></span>
+        <span class="mono" style="font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #1b4d8f;">Designed &middot; Fabricated &middot; Certified</span>
+      </div>
+      <h1 style="font-size: 60px; font-weight: 700;">Every gate<br>starts as a<br>drawing.</h1>
+      <p style="margin-top: 22px; font-size: 17px; color: #4d5866; max-width: 420px;">Bespoke driveway gates and automation, engineered to your opening &mdash; not cut down from a catalogue size. Force-tested and certified on handover.</p>
+      <div style="display: flex; gap: 10px; margin-top: 30px;">
+        <span style="padding: 15px 26px; border-radius: 3px; background: #1b4d8f; color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600;">Book a site survey</span>
+        <span style="padding: 15px 26px; border-radius: 3px; border: 1px solid #b6c0cb; color: #10151c; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600;">[YOUR PHONE]</span>
+      </div>
+    </div>
+
+    <!-- technical drawing framing -->
+    <div style="position: relative; padding: 26px 22px 30px;">
+      <div class="ph" style="height: 350px; border-radius: 3px;"></div>
+      <span class="dim" style="top: 6px; left: 22px; right: 22px; text-align: center; border-top: 1px solid #1b4d8f; padding-top: 3px;">[3200] mm</span>
+      <span class="dim" style="left: 2px; top: 50%; transform: rotate(-90deg) translateX(-50%); transform-origin: left center;">[1800] mm</span>
+      <span class="dim" style="bottom: 8px; right: 22px;">DWG-[0142] &middot; REV [B]</span>
+    </div>
+  </div>
+
+  <div style="padding: 40px 56px; background: #10151c; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;">
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <span class="mono" style="font-size: 10.5px; letter-spacing: .14em; color: #6f8fb8;">STANDARD</span>
+      <strong style="font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; color: #fff;">BS EN 12453</strong>
+      <span style="font-size: 13px; color: rgba(255,255,255,.5);">Safety in use</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <span class="mono" style="font-size: 10.5px; letter-spacing: .14em; color: #6f8fb8;">STANDARD</span>
+      <strong style="font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; color: #fff;">BS EN 12604</strong>
+      <span style="font-size: 13px; color: rgba(255,255,255,.5);">Mechanical</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <span class="mono" style="font-size: 10.5px; letter-spacing: .14em; color: #6f8fb8;">REGULATION</span>
+      <strong style="font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; color: #fff;">SMSR 2008</strong>
+      <span style="font-size: 13px; color: rgba(255,255,255,.5);">Machinery</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <span class="mono" style="font-size: 10.5px; letter-spacing: .14em; color: #6f8fb8;">ON HANDOVER</span>
+      <strong style="font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; color: #7fb0e8;">Full file</strong>
+      <span style="font-size: 13px; color: rgba(255,255,255,.5);">Tests + DoC</span>
+    </div>
+  </div>
+
+  <div style="padding: 48px 56px; background: #fbfbf9;">
+    <div style="display: flex; align-items: baseline; gap: 14px;">
+      <h2 style="font-size: 32px; font-weight: 600;">Recent work</h2>
+      <span class="mono" style="font-size: 12px; color: #7b8794;">[24] PROJECTS</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px;">
+      <div style="display: flex; flex-direction: column; gap: 9px;">
+        <div class="ph" style="height: 180px; border-radius: 3px;"></div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <strong style="font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; color: #10151c;">Electric swing pair</strong>
+          <span class="mono" style="font-size: 11px; color: #7b8794;">[3.2]m</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 9px;">
+        <div class="ph" style="height: 180px; border-radius: 3px;"></div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <strong style="font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; color: #10151c;">Cantilever slider</strong>
+          <span class="mono" style="font-size: 11px; color: #7b8794;">[5.0]m</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 9px;">
+        <div class="ph" style="height: 180px; border-radius: 3px;"></div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <strong style="font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; color: #10151c;">Estate railings</strong>
+          <span class="mono" style="font-size: 11px; color: #7b8794;">[42]m run</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 28px 56px 38px; border-top: 1px solid #d3d9e0; background: #fbfbf9; display: grid; grid-template-columns: 1.1fr 1fr; gap: 46px;">
+    <div>
+      <span class="mono" style="font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #7b8794;">Palette</span>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 11px;">
+        <div class="sw" style="background: #fbfbf9; border: 1px solid #d3d9e0; color: #4d5866;">#fbfbf9</div>
+        <div class="sw" style="background: #10151c; color: rgba(255,255,255,.75);">#10151c</div>
+        <div class="sw" style="background: #1b4d8f; color: rgba(255,255,255,.85);">#1b4d8f</div>
+        <div class="sw" style="background: #9aa6b4; color: rgba(255,255,255,.9);">#9aa6b4</div>
+      </div>
+    </div>
+    <div>
+      <span class="mono" style="font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #7b8794;">Type</span>
+      <p style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: #10151c; margin-top: 8px; letter-spacing: -.028em;">Space Grotesk</p>
+      <p style="font-size: 14.5px; color: #4d5866;">IBM Plex Sans + Plex Mono for figures</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1200,"height":1300}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

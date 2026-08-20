@@ -1,28 +1,237 @@
 {
   "pages": [
-    { "id": "page-1", "name": "Site — built" },
-    { "id": "page-2", "name": "SEO plan" }
+    {
+      "id": "page-0",
+      "name": "Directions — pick one"
+    },
+    {
+      "id": "page-1",
+      "name": "Site — built (old look)"
+    },
+    {
+      "id": "page-2",
+      "name": "SEO plan"
+    }
   ],
   "artboards": [
-    { "file": "HomeSimple.dc.html", "title": "Home — simplified (proposed)", "page": "page-1", "x": 0,    "y": 0,    "w": 1440, "h": 3560 },
-    { "file": "Main.dc.html",       "title": "Home — as built",              "page": "page-1", "x": 1560, "y": 0,    "w": 1440, "h": 4290 },
-    { "file": "Gallery.dc.html",    "title": "Gallery",                      "page": "page-1", "x": 3120, "y": 0,    "w": 1440, "h": 2280 },
-    { "file": "Lightbox.dc.html",   "title": "Gallery — lightbox",           "page": "page-1", "x": 3120, "y": 2420, "w": 1100, "h": 760 },
-    { "file": "Contact.dc.html",    "title": "Contact",                      "page": "page-1", "x": 4680, "y": 0,    "w": 1440, "h": 2560 },
-    { "file": "Mobile.dc.html",     "title": "Mobile — home",                "page": "page-1", "x": 6240, "y": 0,    "w": 390,  "h": 1330 },
-
-    { "file": "Architecture.dc.html", "title": "1 — Site architecture",      "page": "page-2", "x": 0,    "y": 0, "w": 1440, "h": 1720 },
-    { "file": "Service.dc.html",      "title": "2 — Service page template",  "page": "page-2", "x": 1560, "y": 0, "w": 1440, "h": 1980 },
-    { "file": "SEOSpec.dc.html",      "title": "3 — Technical SEO spec",     "page": "page-2", "x": 3120, "y": 0, "w": 1200, "h": 2280 }
+    {
+      "file": "DirA.dc.html",
+      "title": "A · Yard",
+      "page": "page-0",
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 1290
+    },
+    {
+      "file": "DirB.dc.html",
+      "title": "B · Blueprint",
+      "page": "page-0",
+      "x": 1320,
+      "y": 0,
+      "w": 1200,
+      "h": 1300
+    },
+    {
+      "file": "DirC.dc.html",
+      "title": "C · Estate",
+      "page": "page-0",
+      "x": 2640,
+      "y": 0,
+      "w": 1200,
+      "h": 1560
+    },
+    {
+      "file": "DirD.dc.html",
+      "title": "D · Contrast",
+      "page": "page-0",
+      "x": 3960,
+      "y": 0,
+      "w": 1200,
+      "h": 1520
+    },
+    {
+      "file": "HomeSimple.dc.html",
+      "title": "Home — simplified (proposed)",
+      "page": "page-1",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 3560
+    },
+    {
+      "file": "Main.dc.html",
+      "title": "Home — as built",
+      "page": "page-1",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 4290
+    },
+    {
+      "file": "Gallery.dc.html",
+      "title": "Gallery",
+      "page": "page-1",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 2280
+    },
+    {
+      "file": "Lightbox.dc.html",
+      "title": "Gallery — lightbox",
+      "page": "page-1",
+      "x": 3120,
+      "y": 2420,
+      "w": 1100,
+      "h": 760
+    },
+    {
+      "file": "Contact.dc.html",
+      "title": "Contact",
+      "page": "page-1",
+      "x": 4680,
+      "y": 0,
+      "w": 1440,
+      "h": 2560
+    },
+    {
+      "file": "Mobile.dc.html",
+      "title": "Mobile — home",
+      "page": "page-1",
+      "x": 6240,
+      "y": 0,
+      "w": 390,
+      "h": 1330
+    },
+    {
+      "file": "Architecture.dc.html",
+      "title": "1 — Site architecture",
+      "page": "page-2",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1720
+    },
+    {
+      "file": "Service.dc.html",
+      "title": "2 — Service page template",
+      "page": "page-2",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1980
+    },
+    {
+      "file": "SEOSpec.dc.html",
+      "title": "3 — Technical SEO spec",
+      "page": "page-2",
+      "x": 3120,
+      "y": 0,
+      "w": 1200,
+      "h": 2280
+    }
   ],
   "annotations": [
-    { "id": "simple-note", "x": 0, "y": -330, "w": 520, "page": "page-1", "text": "HOME — SIMPLIFIED  ← the new one\n\nNine sections cut to five. The photos do the selling; the copy gets out of the way.\n\n• Full-bleed hero: one line, one button\n• One sentence on how you work\n• A big editorial grid of the work — mixed sizes, one running edge to edge\n• Safety, stated once, with the numbers beside it\n• One closing ask: \"send us a photo of your driveway\"\n\nGone: the four service cards, the four-step process, the testimonial row, the trust strip. All still available on their own pages.\n\nThis needs GOOD photography to work. With weak photos it will look emptier than the version on the right, not cleaner." },
-    { "id": "built-note", "x": 1560, "y": -330, "w": 420, "page": "page-1", "text": "HOME — AS BUILT  ← the current one\n\nThis is what is live in the repo right now. Kept here for comparison.\n\nMore explanatory, more sections, more words. Safer if the photos aren't ready yet — the copy carries it." },
-    { "id": "gallery-note", "x": 3120, "y": -330, "w": 420, "page": "page-1", "text": "GALLERY — the auto-loading bit\nNo hard-coded image list. A PHP script reads /images/ and builds this grid at page load.\n\nDrop a JPEG in → it appears. Sub-folders become the filter buttons. Filenames become captions — and, for SEO, alt text.\n\nThe simplified home page pulls from the same folder, so it stays current on its own." },
-    { "id": "contact-note", "x": 4680, "y": -330, "w": 420, "page": "page-1", "text": "CONTACT\nForm posts to a PHP handler on the same server and emails you — no third-party form service.\n\nHoneypot, time-trap and per-IP rate limit built in. Works with JavaScript off." },
-    { "id": "seo-intro", "x": 0, "y": -300, "w": 620, "page": "page-2", "text": "HEAVILY SEO'd — what that actually means\n\nYou rank a page, not a site. Four pages can compete for about four phrases, so \"heavy SEO\" is mostly an ARCHITECTURE decision, not a markup one: roughly 28 pages instead of 4.\n\nRead these three in order:\n  1. Site architecture — the page tree and what each page targets\n  2. Service page template — the anatomy that does the ranking\n  3. Technical SEO spec — head tags, schema, images, build order\n\nTwo things I'd want you to read properly rather than skim: the doorway-page warning on board 1, and section 5 on board 3 — the part that isn't the website.\n\nNothing here is built yet. This is the plan to approve or cut down." },
-    { "id": "seo-decision", "x": 660, "y": -300, "w": 420, "page": "page-2", "text": "DECISIONS I NEED FROM YOU\n\n• Which towns do you genuinely work in, in priority order?\n• Which services earn the most, and which do you want more of? (Those get pages first.)\n• Real price ranges — the single highest-value content on the site.\n• Are you happy to commit to one guide a month? If not, we cut /guides/ from the plan rather than build a section that goes stale." },
-    { "id": "seo-vs-simple", "x": 1120, "y": -300, "w": 400, "page": "page-2", "text": "NOTE ON THE SIMPLIFIED HOME PAGE\n\nA sparse, image-led home page has little text for Google to read. That is fine — but only because the six service pages do the ranking work.\n\nIf the SEO plan is cut and the home page is ALSO stripped back, the site has almost nothing to rank with. These two decisions are linked." }
+    {
+      "id": "dir-intro",
+      "x": 0,
+      "y": -430,
+      "w": 560,
+      "page": "page-0",
+      "text": "FOUR DIRECTIONS — pick one, or pick bits of several\n\nThese are genuinely different aesthetics, not four shades of the same one. Judge them on how they FEEL for your business — the layouts are interchangeable, the personality isn't.\n\nEach board shows a header, hero, work grid and the palette and fonts underneath.\n\nThe striped grey panels are photo placeholders.\n\nYou can also say \"B but warmer\" or \"C's type on D's layout\" — mixing is fine and often better than picking one whole."
+    },
+    {
+      "id": "dir-a",
+      "x": 0,
+      "y": -170,
+      "w": 380,
+      "page": "page-0",
+      "text": "A · YARD\nWarm, plain-spoken, honest trade.\n\nBone paper, near-black ink, a burnt-orange accent. Chunky grotesk type. Reads like a good local firm that does solid work — approachable rather than expensive.\n\nBest if most of your work is domestic and you want people to feel they can just ring you up."
+    },
+    {
+      "id": "dir-b",
+      "x": 1320,
+      "y": -170,
+      "w": 380,
+      "page": "page-0",
+      "text": "B · BLUEPRINT\nTechnical, precise, engineered.\n\nPaper white on a faint drafting grid, deep blue, monospace figures and dimension lines. Leans hard on the compliance story — the standards sit in the header band, not buried.\n\nBest if you want commercial and security work, and to look like the firm that does it properly."
+    },
+    {
+      "id": "dir-c",
+      "x": 2640,
+      "y": -170,
+      "w": 380,
+      "page": "page-0",
+      "text": "C · ESTATE\nQuiet, refined, expensive.\n\nCream, ink, a muted olive. A modern serif set large and calm, generous space, centred composition. Lets one big photograph do the talking.\n\nBest if you're chasing larger residential jobs — long driveways, bigger budgets, clients who compare on quality not price."
+    },
+    {
+      "id": "dir-d",
+      "x": 3960,
+      "y": -170,
+      "w": 380,
+      "page": "page-0",
+      "text": "D · CONTRAST\nLoud, confident, modern.\n\nWhite, true black, and one electric accent. Enormous condensed caps, hard rules, tight image grid. Impossible to ignore and completely unlike any other gate company site.\n\nBest if you want to look like the biggest, most modern outfit in the area. The riskiest of the four — strongest personality, least middle ground."
+    },
+    {
+      "id": "simple-note",
+      "x": 0,
+      "y": -330,
+      "w": 520,
+      "page": "page-1",
+      "text": "HOME — SIMPLIFIED  ← the new one\n\nNine sections cut to five. The photos do the selling; the copy gets out of the way.\n\n• Full-bleed hero: one line, one button\n• One sentence on how you work\n• A big editorial grid of the work — mixed sizes, one running edge to edge\n• Safety, stated once, with the numbers beside it\n• One closing ask: \"send us a photo of your driveway\"\n\nGone: the four service cards, the four-step process, the testimonial row, the trust strip. All still available on their own pages.\n\nThis needs GOOD photography to work. With weak photos it will look emptier than the version on the right, not cleaner."
+    },
+    {
+      "id": "built-note",
+      "x": 1560,
+      "y": -330,
+      "w": 420,
+      "page": "page-1",
+      "text": "HOME — AS BUILT  ← the current one\n\nThis is what is live in the repo right now. Kept here for comparison.\n\nMore explanatory, more sections, more words. Safer if the photos aren't ready yet — the copy carries it."
+    },
+    {
+      "id": "gallery-note",
+      "x": 3120,
+      "y": -330,
+      "w": 420,
+      "page": "page-1",
+      "text": "GALLERY — the auto-loading bit\nNo hard-coded image list. A PHP script reads /images/ and builds this grid at page load.\n\nDrop a JPEG in → it appears. Sub-folders become the filter buttons. Filenames become captions — and, for SEO, alt text.\n\nThe simplified home page pulls from the same folder, so it stays current on its own."
+    },
+    {
+      "id": "contact-note",
+      "x": 4680,
+      "y": -330,
+      "w": 420,
+      "page": "page-1",
+      "text": "CONTACT\nForm posts to a PHP handler on the same server and emails you — no third-party form service.\n\nHoneypot, time-trap and per-IP rate limit built in. Works with JavaScript off."
+    },
+    {
+      "id": "seo-intro",
+      "x": 0,
+      "y": -300,
+      "w": 620,
+      "page": "page-2",
+      "text": "HEAVILY SEO'd — what that actually means\n\nYou rank a page, not a site. Four pages can compete for about four phrases, so \"heavy SEO\" is mostly an ARCHITECTURE decision, not a markup one: roughly 28 pages instead of 4.\n\nRead these three in order:\n  1. Site architecture — the page tree and what each page targets\n  2. Service page template — the anatomy that does the ranking\n  3. Technical SEO spec — head tags, schema, images, build order\n\nTwo things I'd want you to read properly rather than skim: the doorway-page warning on board 1, and section 5 on board 3 — the part that isn't the website.\n\nNothing here is built yet. This is the plan to approve or cut down."
+    },
+    {
+      "id": "seo-decision",
+      "x": 660,
+      "y": -300,
+      "w": 420,
+      "page": "page-2",
+      "text": "DECISIONS I NEED FROM YOU\n\n• Which towns do you genuinely work in, in priority order?\n• Which services earn the most, and which do you want more of? (Those get pages first.)\n• Real price ranges — the single highest-value content on the site.\n• Are you happy to commit to one guide a month? If not, we cut /guides/ from the plan rather than build a section that goes stale."
+    },
+    {
+      "id": "seo-vs-simple",
+      "x": 1120,
+      "y": -300,
+      "w": 400,
+      "page": "page-2",
+      "text": "NOTE ON THE SIMPLIFIED HOME PAGE\n\nA sparse, image-led home page has little text for Google to read. That is fine — but only because the six service pages do the ranking work.\n\nIf the SEO plan is cut and the home page is ALSO stripped back, the site has almost nothing to rank with. These two decisions are linked."
+    }
   ],
-  "launch": { "view": "canvas", "page": "page-1" }
+  "launch": {
+    "view": "canvas",
+    "page": "page-0"
+  }
 }

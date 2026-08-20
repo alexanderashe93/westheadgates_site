@@ -5,6 +5,21 @@ truth — the published canvas is regenerated from them, never edited directly.
 
 The canvas has two pages, switched from the toolbar's pages menu.
 
+## Page 0 — "Directions — pick one"
+
+Four genuinely different aesthetic directions, rendered so they can be judged
+on sight. The dark charcoal + brass "Forged" direction was rejected; these
+replace it. Nothing is chosen yet.
+
+| File            | Direction     | Feel                                  |
+|-----------------|---------------|---------------------------------------|
+| `DirA.dc.html`  | A · Yard      | Warm, plain-spoken, honest trade      |
+| `DirB.dc.html`  | B · Blueprint | Technical, precise, engineered        |
+| `DirC.dc.html`  | C · Estate    | Quiet, refined, expensive             |
+| `DirD.dc.html`  | D · Contrast  | Loud, confident, modern               |
+
+Each board carries its own palette and type specimen at the foot.
+
 ## Page 1 — "Site — built"
 
 The pages that are built, tested and pushed — plus one proposal.
@@ -33,8 +48,11 @@ Proposed, not built. Awaiting approval.
 
 ## Conventions
 
-Direction: **Forged** — charcoal `#0e1114` + brass `#c8a24a`,
-Sora (headings) / Instrument Sans (body).
+Direction: **undecided** — the pages on page 1 are still in the rejected
+"Forged" style (charcoal + brass, Sora / Instrument Sans). They will be
+re-skinned once a direction is picked from page 0. Because the stylesheet
+is driven by CSS custom properties, that is a palette-and-font swap rather
+than a rebuild.
 
 Anything in `[SQUARE BRACKETS]` is a placeholder awaiting real business
 detail (phone, email, area covered, address, prices, reviews, towns).

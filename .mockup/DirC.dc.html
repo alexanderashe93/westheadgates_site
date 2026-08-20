@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Karla:wght@400;500;600&display=swap">
+  <style>
+    body {
+      margin: 0; width: 1200px;
+      background: #f6f3ec; color: #4a4842;
+      font-family: "Karla", system-ui, sans-serif;
+      font-size: 16px; line-height: 1.68; -webkit-font-smoothing: antialiased;
+    }
+    a { color: #5c6b4a; text-decoration: none; }
+    a:hover { color: #414d34; }
+    h1, h2, h3 { font-family: "Newsreader", Georgia, serif; margin: 0; color: #1c1b18; font-weight: 400; letter-spacing: -.012em; line-height: 1.08; }
+    p { margin: 0; text-wrap: pretty; }
+    .ph { position: relative; overflow: hidden; background-color: #ddd8cb; }
+    .ph::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(28,27,24,.16) 0 2px, transparent 2px 28px), linear-gradient(165deg, #cec8b8 0%, #a29c8b 60%, #767162 100%); }
+    .ph::after { content: ""; position: absolute; left: 9%; right: 9%; top: 15%; bottom: -8%; border: 2px solid rgba(28,27,24,.2); border-bottom: 0; border-radius: 240px 240px 0 0; }
+    .rule { display: flex; align-items: center; gap: 14px; }
+    .rule::before, .rule::after { content: ""; height: 1px; background: rgba(28,27,24,.2); flex: 1; }
+    .sw { height: 52px; border-radius: 2px; display: flex; align-items: flex-end; padding: 8px; font-size: 10px; font-weight: 600; letter-spacing: .05em; }
+  </style>
+</helmet>
+
+<div style="display: flex; flex-direction: column;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 60px; height: 84px;">
+    <div style="display: flex; flex-direction: column; line-height: 1.1;">
+      <span style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 23px; color: #1c1b18; letter-spacing: .02em;">Westhead Gates</span>
+      <span style="font-size: 9.5px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: #8a867a;">Since [1998]</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 30px; font-size: 14.5px; color: #4a4842;">
+      <span>Our work</span><span>Services</span><span>Contact</span>
+      <span style="padding: 12px 24px; border: 1px solid #1c1b18; border-radius: 2px; color: #1c1b18; font-size: 12.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;">Enquire</span>
+    </div>
+  </div>
+
+  <div style="padding: 20px 60px 0;"><div style="height: 1px; background: rgba(28,27,24,.16);"></div></div>
+
+  <div style="padding: 58px 60px 52px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color: #8a867a;">Bespoke gates &amp; ironwork</span>
+    <h1 style="font-size: 68px; margin-top: 24px; max-width: 780px;">The first thing<br>your visitors see.</h1>
+    <p style="margin-top: 24px; font-size: 18px; color: #565349; max-width: 520px;">Driveway gates, railings and automation, drawn for your property and made by hand in our [Town] workshop.</p>
+    <div style="display: flex; gap: 12px; margin-top: 32px;">
+      <span style="padding: 15px 30px; border-radius: 2px; background: #1c1b18; color: #f6f3ec; font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;">Request a quote</span>
+      <span style="padding: 15px 30px; border-radius: 2px; border: 1px solid rgba(28,27,24,.3); color: #1c1b18; font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;">View our work</span>
+    </div>
+  </div>
+
+  <div style="padding: 0 60px;">
+    <div class="ph" style="height: 400px; border-radius: 3px;"></div>
+  </div>
+
+  <div style="padding: 54px 60px 46px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: #5c6b4a;">I</span>
+      <h3 style="font-size: 25px;">Drawn</h3>
+      <p style="font-size: 15px; color: #565349;">We measure your opening, check the levels, and draw the gate in place before a price is quoted.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: #5c6b4a;">II</span>
+      <h3 style="font-size: 25px;">Made</h3>
+      <p style="font-size: 15px; color: #565349;">Cut, welded, galvanised and powder-coated in our own workshop. Any RAL colour you like.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: #5c6b4a;">III</span>
+      <h3 style="font-size: 25px;">Fitted</h3>
+      <p style="font-size: 15px; color: #565349;">Posts set, motors wired, safety tested and certified &mdash; by the people who built it.</p>
+    </div>
+  </div>
+
+  <div style="padding: 0 60px 50px;">
+    <div class="rule"><span style="font-size: 10.5px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; color: #8a867a;">Selected work</span></div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="ph" style="height: 210px; border-radius: 3px;"></div>
+        <div><strong style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 18px; color: #1c1b18;">Oak-clad entrance gates</strong><br><span style="font-size: 13px; color: #8a867a;">[Town]</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="ph" style="height: 210px; border-radius: 3px;"></div>
+        <div><strong style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 18px; color: #1c1b18;">Estate railings</strong><br><span style="font-size: 13px; color: #8a867a;">[Town]</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="ph" style="height: 210px; border-radius: 3px;"></div>
+        <div><strong style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 18px; color: #1c1b18;">Automated sliding gate</strong><br><span style="font-size: 13px; color: #8a867a;">[Town]</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 28px 60px 38px; border-top: 1px solid rgba(28,27,24,.16); display: grid; grid-template-columns: 1.1fr 1fr; gap: 46px;">
+    <div>
+      <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #8a867a;">Palette</span>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 11px;">
+        <div class="sw" style="background: #f6f3ec; border: 1px solid #ddd8cb; color: #565349;">#f6f3ec</div>
+        <div class="sw" style="background: #1c1b18; color: rgba(255,255,255,.75);">#1c1b18</div>
+        <div class="sw" style="background: #5c6b4a; color: rgba(255,255,255,.85);">#5c6b4a</div>
+        <div class="sw" style="background: #a29c8b; color: rgba(255,255,255,.9);">#a29c8b</div>
+      </div>
+    </div>
+    <div>
+      <span style="font-size: 10.5px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #8a867a;">Type</span>
+      <p style="font-family: 'Newsreader', serif; font-size: 30px; color: #1c1b18; margin-top: 6px;">Newsreader</p>
+      <p style="font-size: 14.5px; color: #565349;">Karla &mdash; body copy and labels</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1200,"height":1560}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>
