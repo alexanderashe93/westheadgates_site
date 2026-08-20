@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@500;600;700&display=swap">
+  <style>
+    body {
+      margin: 0; width: 1440px;
+      background: #ffffff; color: #2b2b2b;
+      font-family: "Archivo", system-ui, sans-serif;
+      font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+    }
+    a { color: #0a0a0a; text-decoration: none; }
+    a:hover { color: #454545; }
+    h1, h2, h3 { font-family: "Archivo", system-ui, sans-serif; margin: 0; color: #0a0a0a; font-weight: 900; letter-spacing: -.045em; line-height: .9; text-transform: uppercase; }
+    p { margin: 0; text-wrap: pretty; }
+    ul { margin: 0; padding: 0; list-style: none; }
+
+    .lbl { font-family: "Archivo Narrow", sans-serif; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .num { font-family: "Archivo", sans-serif; font-weight: 900; letter-spacing: -.04em; }
+
+    /* Photo placeholders — hard edges, no rounding: that is the whole point of D */
+    .ph { position: relative; overflow: hidden; background-color: #e4e4e4; }
+    .ph::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(10,10,10,.24) 0 3px, transparent 3px 30px), linear-gradient(165deg, #d2d2d2 0%, #9c9c9c 60%, #6a6a6a 100%); }
+    .ph::after { content: ""; position: absolute; left: 8%; right: 8%; top: 13%; bottom: -8%; border: 3px solid rgba(10,10,10,.26); border-bottom: 0; border-radius: 240px 240px 0 0; }
+    .ph--dark::before { background: repeating-linear-gradient(90deg, rgba(255,255,255,.14) 0 3px, transparent 3px 30px), linear-gradient(165deg, #4a4a4a 0%, #2a2a2a 60%, #141414 100%); }
+    .ph--dark::after { border-color: rgba(255,255,255,.2); }
+
+    .capbar {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px;
+      background: rgba(255,255,255,.94);
+    }
+  </style>
+</helmet>
+
+<div style="--accent: {{accent}}; display: flex; flex-direction: column;">
+
+  <!-- ============================== NAV ============================== -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 52px; height: 80px; border-bottom: 3px solid #0a0a0a;">
+    <span style="font-weight: 900; font-size: 22px; color: #0a0a0a; letter-spacing: -.04em; text-transform: uppercase;">Westhead Gates</span>
+    <div style="display: flex; align-items: center; gap: 30px;">
+      <span class="lbl" style="font-size: 13px; color: #2b2b2b;">Work</span>
+      <span class="lbl" style="font-size: 13px; color: #2b2b2b;">Services</span>
+      <span class="lbl" style="font-size: 13px; color: #2b2b2b;">Safety</span>
+      <span class="lbl" style="font-size: 13px; color: #2b2b2b;">Contact</span>
+      <span class="lbl" style="padding: 13px 24px; background: var(--accent, #d8f000); color: #0a0a0a; font-size: 13px;">Get a quote</span>
+    </div>
+  </div>
+
+  <!-- ============================== HERO ============================== -->
+  <div style="padding: 56px 52px 40px; display: flex; flex-direction: column;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 26px;">
+      <span class="lbl" style="font-size: 12px; color: #767676;">[Est. 1998]</span>
+      <span style="flex: 1; height: 1px; background: #d4d4d4;"></span>
+      <span class="lbl" style="font-size: 12px; color: #767676;">Gates &middot; Automation &middot; Railings</span>
+      <span style="flex: 1; height: 1px; background: #d4d4d4;"></span>
+      <span class="lbl" style="font-size: 12px; color: #767676;">[Your area]</span>
+    </div>
+    <h1 style="font-size: 132px;">Built to<br>outlast<br><span style="-webkit-text-stroke: 2.5px #0a0a0a; color: transparent;">the house.</span></h1>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; margin-top: 36px;">
+      <p style="font-size: 20px; color: #454545; max-width: 500px; line-height: 1.48;">Bespoke driveway gates, railings and automation &mdash; drawn, fabricated and fitted by one team. No sub-contractors, no catalogue sizes.</p>
+      <div style="display: flex; gap: 10px; flex: none;">
+        <span class="lbl" style="padding: 18px 34px; background: #0a0a0a; color: #fff; font-size: 14px;">Get a free quote &rarr;</span>
+        <span class="lbl" style="padding: 18px 34px; border: 3px solid #0a0a0a; color: #0a0a0a; font-size: 14px;">[YOUR PHONE]</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- full-bleed hero image, edge to edge -->
+  <div class="ph ph--dark" style="height: 540px; margin-top: 18px;">
+    <div class="capbar">
+      <span class="lbl" style="font-size: 12px; color: #767676;">Estate entrance, [Town]</span>
+      <span class="lbl" style="font-size: 12px; color: #0a0a0a;">Automated pair &middot; [3.6]m &middot; RAL [7016]</span>
+    </div>
+  </div>
+
+  <!-- ============================ TICKER ============================ -->
+  <div style="background: var(--accent, #d8f000); padding: 20px 52px; display: flex; align-items: center; justify-content: space-between; gap: 24px; overflow: hidden;">
+    <span class="lbl" style="font-size: 13.5px; color: #0a0a0a;">Free site survey</span>
+    <span style="width: 7px; height: 7px; background: #0a0a0a; flex: none;"></span>
+    <span class="lbl" style="font-size: 13.5px; color: #0a0a0a;">Fixed written quotes</span>
+    <span style="width: 7px; height: 7px; background: #0a0a0a; flex: none;"></span>
+    <span class="lbl" style="font-size: 13.5px; color: #0a0a0a;">Force-tested &amp; certified</span>
+    <span style="width: 7px; height: 7px; background: #0a0a0a; flex: none;"></span>
+    <span class="lbl" style="font-size: 13.5px; color: #0a0a0a;">[12] month warranty</span>
+    <span style="width: 7px; height: 7px; background: #0a0a0a; flex: none;"></span>
+    <span class="lbl" style="font-size: 13.5px; color: #0a0a0a;">Fully insured</span>
+  </div>
+
+  <!-- ============================ SERVICES ============================ -->
+  <div style="padding: 76px 52px 20px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 40px;">
+      <h2 style="font-size: 62px;">What we<br>make</h2>
+      <p style="font-size: 17px; color: #454545; max-width: 380px; padding-bottom: 8px;">Four things, done properly, rather than a list of twenty we&rsquo;d have to sub out.</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: grid; grid-template-columns: 88px 1fr 340px 130px; gap: 28px; align-items: center; padding: 26px 0; border-top: 3px solid #0a0a0a;">
+        <span class="num" style="font-size: 34px; color: var(--accent, #d8f000); -webkit-text-stroke: 1.5px #0a0a0a;">01</span>
+        <h3 style="font-size: 30px;">Driveway gates</h3>
+        <p style="font-size: 15.5px; color: #454545;">Swing and sliding, in steel, aluminium or hardwood. Made to your opening.</p>
+        <span class="lbl" style="font-size: 12.5px; color: #767676; text-align: right;">View &rarr;</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 88px 1fr 340px 130px; gap: 28px; align-items: center; padding: 26px 0; border-top: 1px solid #d4d4d4;">
+        <span class="num" style="font-size: 34px; color: var(--accent, #d8f000); -webkit-text-stroke: 1.5px #0a0a0a;">02</span>
+        <h3 style="font-size: 30px;">Automation</h3>
+        <p style="font-size: 15.5px; color: #454545;">Underground, ram and sliding motors. Intercom, keypad, app control, safety edges.</p>
+        <span class="lbl" style="font-size: 12.5px; color: #767676; text-align: right;">View &rarr;</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 88px 1fr 340px 130px; gap: 28px; align-items: center; padding: 26px 0; border-top: 1px solid #d4d4d4;">
+        <span class="num" style="font-size: 34px; color: var(--accent, #d8f000); -webkit-text-stroke: 1.5px #0a0a0a;">03</span>
+        <h3 style="font-size: 30px;">Railings &amp; fencing</h3>
+        <p style="font-size: 15.5px; color: #454545;">Matching railings, balustrade and estate fencing, so the frontage reads as one piece.</p>
+        <span class="lbl" style="font-size: 12.5px; color: #767676; text-align: right;">View &rarr;</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 88px 1fr 340px 130px; gap: 28px; align-items: center; padding: 26px 0; border-top: 1px solid #d4d4d4; border-bottom: 3px solid #0a0a0a;">
+        <span class="num" style="font-size: 34px; color: var(--accent, #d8f000); -webkit-text-stroke: 1.5px #0a0a0a;">04</span>
+        <h3 style="font-size: 30px;">Repairs &amp; servicing</h3>
+        <p style="font-size: 15.5px; color: #454545;">Most makes of motor, including gates we didn&rsquo;t install. Call-outs across [your area].</p>
+        <span class="lbl" style="font-size: 12.5px; color: #767676; text-align: right;">View &rarr;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== WORK ============================== -->
+  <div style="padding: 72px 52px 0;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 26px;">
+      <h2 style="font-size: 62px;">Recent work</h2>
+      <span class="lbl" style="font-size: 13px; color: #767676;">All [24] projects &rarr;</span>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 6px; padding: 0 52px;">
+    <div class="ph" style="height: 460px;">
+      <div class="capbar"><span class="lbl" style="font-size: 12px; color: #767676;">Driveway gates</span><span class="lbl" style="font-size: 12px; color: #0a0a0a;">Oak-clad pair, [Town]</span></div>
+    </div>
+    <div class="ph" style="height: 460px;">
+      <div class="capbar"><span class="lbl" style="font-size: 12px; color: #767676;">Railings</span><span class="lbl" style="font-size: 12px; color: #0a0a0a;">Estate run</span></div>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 6px 52px 0;">
+    <div class="ph" style="height: 280px;"><div class="capbar"><span class="lbl" style="font-size: 12px; color: #767676;">Sliding</span><span class="lbl" style="font-size: 12px; color: #0a0a0a;">Cantilever</span></div></div>
+    <div class="ph" style="height: 280px;"><div class="capbar"><span class="lbl" style="font-size: 12px; color: #767676;">Automation</span><span class="lbl" style="font-size: 12px; color: #0a0a0a;">Underground motors</span></div></div>
+    <div class="ph" style="height: 280px;"><div class="capbar"><span class="lbl" style="font-size: 12px; color: #767676;">Pedestrian</span><span class="lbl" style="font-size: 12px; color: #0a0a0a;">Matching side gate</span></div></div>
+  </div>
+
+  <!-- ============================= SAFETY ============================= -->
+  <div style="margin-top: 76px; background: #0a0a0a; padding: 76px 52px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start;">
+      <div>
+        <span class="lbl" style="font-size: 12.5px; color: var(--accent, #d8f000);">Safety &amp; compliance</span>
+        <h2 style="font-size: 62px; color: #fff; margin-top: 18px;">A powered<br>gate is<br>machinery.</h2>
+        <p style="font-size: 17.5px; color: rgba(255,255,255,.66); margin-top: 24px; max-width: 440px;">It can apply enough force to injure or kill. Every installation we hand over is force-tested and certified &mdash; and you get the file to prove it.</p>
+        <span class="lbl" style="display: inline-block; margin-top: 28px; padding: 17px 32px; background: var(--accent, #d8f000); color: #0a0a0a; font-size: 14px;">Book a safety inspection &rarr;</span>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.2);">
+          <span class="lbl" style="font-size: 13px; color: var(--accent, #d8f000);">BS EN 12453</span>
+          <span style="font-size: 15px; color: rgba(255,255,255,.72);">[CONFIRM &mdash; safety in use, force limitation, safety devices.]</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.2);">
+          <span class="lbl" style="font-size: 13px; color: var(--accent, #d8f000);">BS EN 12604</span>
+          <span style="font-size: 15px; color: rgba(255,255,255,.72);">[CONFIRM &mdash; mechanical aspects, anti-fall and anti-derailment.]</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.2);">
+          <span class="lbl" style="font-size: 13px; color: var(--accent, #d8f000);">SMSR 2008</span>
+          <span style="font-size: 15px; color: rgba(255,255,255,.72);">[CONFIRM &mdash; who carries the legal duty once a gate is automated.]</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2);">
+          <span class="lbl" style="font-size: 13px; color: var(--accent, #d8f000);">On handover</span>
+          <span style="font-size: 15px; color: rgba(255,255,255,.72);">Risk assessment, force test results, Declaration of Conformity, log book.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== CTA ============================== -->
+  <div style="background: var(--accent, #d8f000); padding: 84px 52px; display: flex; align-items: flex-end; justify-content: space-between; gap: 50px;">
+    <div>
+      <h2 style="font-size: 76px;">Send us a photo<br>of your driveway.</h2>
+      <p style="font-size: 19px; color: rgba(10,10,10,.72); margin-top: 20px; max-width: 500px;">That and a rough width is enough for an honest steer on what will work, and what it&rsquo;ll cost.</p>
+    </div>
+    <div style="display: flex; gap: 10px; flex: none;">
+      <span class="lbl" style="padding: 19px 36px; background: #0a0a0a; color: #fff; font-size: 14px;">Request a quote &rarr;</span>
+    </div>
+  </div>
+
+  <!-- ============================= FOOTER ============================= -->
+  <div style="background: #0a0a0a; padding: 60px 52px 34px;">
+    <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 46px;">
+      <div>
+        <span class="lbl" style="font-size: 11px; color: #6a6a6a;">Westhead Gates</span>
+        <p style="font-size: 15px; color: rgba(255,255,255,.6); margin-top: 14px; max-width: 280px;">Bespoke gates, railings and automation. Built in [Your town], fitted across [your area].</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="lbl" style="font-size: 11px; color: #6a6a6a;">Pages</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.72);">Work</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.72);">Services</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.72);">Contact</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="lbl" style="font-size: 11px; color: #6a6a6a;">Services</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.72);">Driveway gates</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.72);">Automation</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.72);">Railings</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.72);">Repairs</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="lbl" style="font-size: 11px; color: #6a6a6a;">Contact</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.72);">[YOUR PHONE]</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.72);">[YOUR EMAIL]</span>
+        <span style="font-size: 15px; color: rgba(255,255,255,.72);">[Town, Postcode]</span>
+      </div>
+    </div>
+    <!-- oversized wordmark, cropped by the page edge -->
+    <div style="margin-top: 54px; overflow: hidden;">
+      <span style="display: block; font-weight: 900; font-size: 148px; line-height: .8; letter-spacing: -.055em; text-transform: uppercase; color: transparent; -webkit-text-stroke: 2px rgba(255,255,255,.22); white-space: nowrap;">Westhead Gates</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 34px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.16);">
+      <span class="lbl" style="font-size: 11px; color: #6a6a6a;">&copy; [Year] Westhead Gates</span>
+      <span class="lbl" style="font-size: 11px; color: #6a6a6a;">Company [No.] &middot; VAT [No.] &middot; Privacy</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#d8f000","options":["#d8f000","#ff4d00","#ffd400","#2ee6a8"],"section":"Brand"},"$preview":{"width":1440,"height":4560}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#d8f000' };
+  }
+}
+</script>
+</body>
+</html>

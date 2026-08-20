@@ -5,11 +5,28 @@ truth — the published canvas is regenerated from them, never edited directly.
 
 The canvas has two pages, switched from the toolbar's pages menu.
 
-## Page 0 — "Directions — pick one"
+## Page 3 — "Direction D — developed"  ← current
 
-Four genuinely different aesthetic directions, rendered so they can be judged
-on sight. The dark charcoal + brass "Forged" direction was rejected; these
-replace it. Nothing is chosen yet.
+**Direction D (Contrast) is the chosen look.** White, true black, one
+electric accent; Archivo Black caps, hard rules, square corners everywhere.
+
+| File               | Artboard |
+|--------------------|----------|
+| `HomeD.dc.html`    | Home     |
+| `GalleryD.dc.html` | Gallery  |
+| `MobileD.dc.html`  | Mobile   |
+
+The accent is a live tweak on each artboard (`accent` prop, colour editor)
+with four candidates: `#d8f000` acid lime (default), `#ff4d00` safety
+orange, `#ffd400` industrial yellow, `#2ee6a8` signal green. It drives a
+`--accent` custom property, so one change re-skins the whole artboard.
+
+Not built yet. The live site still carries the old charcoal-and-brass style.
+
+## Page 0 — "Directions — all four"
+
+Four aesthetic directions, rendered so they could be judged on sight.
+**D was chosen** — see page 3. Kept for reference.
 
 | File            | Direction     | Feel                                  |
 |-----------------|---------------|---------------------------------------|

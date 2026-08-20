@@ -1,12 +1,16 @@
 {
   "pages": [
     {
+      "id": "page-3",
+      "name": "Direction D — developed"
+    },
+    {
       "id": "page-0",
-      "name": "Directions — pick one"
+      "name": "Directions — all four"
     },
     {
       "id": "page-1",
-      "name": "Site — built (old look)"
+      "name": "Old look (superseded)"
     },
     {
       "id": "page-2",
@@ -14,6 +18,33 @@
     }
   ],
   "artboards": [
+    {
+      "file": "HomeD.dc.html",
+      "title": "Home",
+      "page": "page-3",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 4560
+    },
+    {
+      "file": "GalleryD.dc.html",
+      "title": "Gallery",
+      "page": "page-3",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2760
+    },
+    {
+      "file": "MobileD.dc.html",
+      "title": "Mobile",
+      "page": "page-3",
+      "x": 3120,
+      "y": 0,
+      "w": 390,
+      "h": 2380
+    },
     {
       "file": "DirA.dc.html",
       "title": "A · Yard",
@@ -134,6 +165,30 @@
   ],
   "annotations": [
     {
+      "id": "d-dev",
+      "x": 0,
+      "y": -470,
+      "w": 560,
+      "page": "page-3",
+      "text": "DIRECTION D — DEVELOPED\n\nWhat changed from the sketch you picked:\n\n• Hero now runs into a full-bleed photo band rather than sitting above a tidy grid — the type and the image are one gesture, not two blocks.\n• Services became a numbered index (01–04) on hard rules, not cards. Outlined numerals in the accent tie it to the wordmark.\n• Added the accent ticker strip, the black safety section and an oversized outlined wordmark cropped by the page edge.\n• Captions sit in a white bar across the foot of each photo — keeps hard edges and stays readable over any image.\n• Every photo corner is square. No rounding anywhere. That restraint is what makes this direction work.\n\nTHE ACCENT IS A LIVE CONTROL. Use the tweak chip above the artboard to try the four candidates — acid lime, safety orange, industrial yellow, signal green. It updates the whole page at once."
+    },
+    {
+      "id": "d-accent",
+      "x": 620,
+      "y": -470,
+      "w": 400,
+      "page": "page-3",
+      "text": "ON THE ACID LIME\n\nIt is the most striking of the four and the most divisive. Worth trying the alternates before committing:\n\n• #d8f000 acid lime — loudest, most 'design studio'. Great on screen, awkward on a van.\n• #ff4d00 safety orange — reads as construction and hi-vis. Most natural fit for the trade.\n• #ffd400 industrial yellow — warmer, closer to plant machinery. Safest of the bold options.\n• #2ee6a8 signal green — modern, but least connected to the work.\n\nWhatever you pick has to survive being printed on a van, a business card and a workwear polo. Lime on white is fine; lime on a dark van is not."
+    },
+    {
+      "id": "d-note",
+      "x": 1560,
+      "y": -470,
+      "w": 400,
+      "page": "page-3",
+      "text": "GALLERY IN D\n\nSame auto-loading mechanism as built — drop files in /images/, sub-folders become filters. Only the skin changes.\n\nThe 6px gutters and square corners make the grid read as one block of work rather than a set of separate cards. Captions appear on hover in the white bar.\n\nContact page follows the same rules; I'll build it with the rest rather than mock it separately."
+    },
+    {
       "id": "dir-intro",
       "x": 0,
       "y": -430,
@@ -232,6 +287,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-0"
+    "page": "page-3"
   }
 }
