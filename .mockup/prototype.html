@@ -192,9 +192,7 @@ p  { text-wrap: pretty; }
 .card:hover { box-shadow: 0 10px 26px rgba(23,53,42,.1); transform: translateY(-3px); }
 .card__body { padding: 1.25rem; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
 .card p { color: var(--ink-soft); font-size: 1rem; }
-.price { font-size: .97rem; color: var(--muted); margin-top: auto; padding-top: .4rem; }
-.price b { font-family: "Bitter", Georgia, serif; font-size: 1.25rem; color: var(--orange); }
-.card__more { font-weight: 600; color: var(--green); border-bottom: 2px solid var(--orange); align-self: flex-start; }
+.card__more { font-weight: 600; color: var(--green); border-bottom: 2px solid var(--orange); align-self: flex-start; margin-top: auto; padding-top: .5rem; }
 
 /* --- Steps ---------------------------------------------------------------- */
 .steps { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin-top: 1.75rem; }
@@ -424,7 +422,7 @@ body.locked { overflow: hidden; }
   <section class="section">
     <div class="wrap">
       <h2>What we do</h2>
-      <p class="lede">Four things, done properly. Prices are typical fitted costs — your survey gives you an exact figure.</p>
+      <p class="lede">Four things, done properly. Every job starts with a free site survey and a fixed written quote.</p>
       <div class="grid grid--4" style="margin-top:1.75rem" id="services"></div>
     </div>
   </section>
@@ -723,10 +721,10 @@ body.locked { overflow: hidden; }
 
   /* ----------------------------------------------------------- content -- */
   var SERVICES = [
-    { t: 'Electric driveway gates', d: 'Swing or sliding, in steel, aluminium or hardwood. Made to your opening, not cut down from a catalogue size.', p: 'Typically <b>£[X]–£[Y]</b> fitted', m: 'More about gates' },
-    { t: 'Gate automation', d: 'Motors, intercom, keypad and app control — on new gates or the ones you already have.', p: 'Typically <b>£[X]–£[Y]</b> fitted', m: 'More about automation' },
-    { t: 'Railings &amp; fencing', d: 'Matching railings, balustrade and estate fencing, so the whole frontage looks like one job.', p: 'Typically <b>£[X]</b> per metre', m: 'More about railings' },
-    { t: 'Repairs &amp; servicing', d: 'Gate stuck or not closing? We repair most makes of motor — including gates we didn’t fit.', p: 'Call-out from <b>£[X]</b>', m: 'Book a repair' }
+    { t: 'Electric driveway gates', d: 'Swing or sliding, in steel, aluminium or hardwood. Made to your opening, not cut down from a catalogue size.', m: 'About gates' },
+    { t: 'Gate automation', d: 'Motors, intercom, keypad and app control — on new gates or the ones you already have.', m: 'About automation' },
+    { t: 'Railings &amp; fencing', d: 'Matching railings, balustrade and estate fencing, so the whole frontage looks like one job.', m: 'About railings' },
+    { t: 'Repairs &amp; servicing', d: 'Gate stuck or not closing? We repair most makes of motor — including gates we didn’t fit.', m: 'Book a repair' }
   ];
 
   var PHOTOS = [
@@ -767,7 +765,6 @@ body.locked { overflow: hidden; }
     return '<article class="card">' +
       '<img src="' + photo(800, 520, c[0], c[1], 20) + '" alt="" loading="lazy">' +
       '<div class="card__body"><h3>' + s.t + '</h3><p>' + s.d + '</p>' +
-      '<p class="price">' + s.p + '</p>' +
       '<span class="card__more">' + s.m + ' →</span></div></article>';
   }).join('');
 
