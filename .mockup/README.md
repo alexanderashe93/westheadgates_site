@@ -5,6 +5,34 @@ truth — the published canvas is regenerated from them, never edited directly.
 
 The canvas has two pages, switched from the toolbar's pages menu.
 
+## Page 4 — "Trade site — current"  ← current direction
+
+A change of premise, not another skin. Every earlier attempt was an
+agency-looking site; this is built for the actual customer — 45–70, has a
+driveway, deciding whether to trust a stranger with several thousand pounds.
+
+| File               | Artboard |
+|--------------------|----------|
+| `HomeT.dc.html`    | Home     |
+| `MobileT.dc.html`  | Mobile   |
+
+**Rules this direction follows**
+
+- Prices published on every service. Competitors hide them.
+- Phone number in the top bar, header, hero, CTA and footer; a sticky
+  two-button call bar on mobile.
+- Reviews carry names, towns and dates, badged as verified.
+- 17px body text, high contrast — the audience wears reading glasses.
+- Conventional layout, familiar on purpose, so nothing gets missed.
+- Buttons that look like buttons.
+
+Palette: `#17352a` deep green, `#c2410c` burnt orange for every action,
+`#f7f6f3` warm off-white ground.
+Type: Bitter (headings, sturdy slab) / Libre Franklin (body, plainly
+readable).
+
+Pages 0–3 below are superseded and kept only as a record of what was tried.
+
 ## Page 3 — "Direction D — developed"  ← current
 
 **Direction D (Contrast) is the chosen look.** White, true black, one

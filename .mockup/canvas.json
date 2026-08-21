@@ -1,6 +1,10 @@
 {
   "pages": [
     {
+      "id": "page-4",
+      "name": "Trade site — current"
+    },
+    {
       "id": "page-3",
       "name": "Direction D — developed"
     },
@@ -18,6 +22,24 @@
     }
   ],
   "artboards": [
+    {
+      "file": "HomeT.dc.html",
+      "title": "Home",
+      "page": "page-4",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 4380
+    },
+    {
+      "file": "MobileT.dc.html",
+      "title": "Mobile",
+      "page": "page-4",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 2560
+    },
     {
       "file": "HomeD.dc.html",
       "title": "Home",
@@ -165,6 +187,22 @@
   ],
   "annotations": [
     {
+      "id": "trade-note",
+      "x": 0,
+      "y": -560,
+      "w": 620,
+      "page": "page-4",
+      "text": "A REALLY GOOD TRADE SITE\n\nDifferent premise, not a re-skin. Everything before this was an agency site. This is built for someone 45-70 with a driveway, deciding whether to let a stranger take £8k off them.\n\nWhat changed, and why:\n\n• PRICES ON THE PAGE. Every service shows a typical fitted range. Most competitors hide this. Publishing it wins the trust and filters out the wrong enquiries before they cost you a survey.\n• PHONE NUMBER EVERYWHERE. Top bar, header in 25px orange, hero button, final CTA, footer. On mobile a sticky call bar that never scrolls away. That bar alone typically does more than the rest of the site combined.\n• REVIEWS WITH NAMES, TOWNS AND DATES, badged as verified Google reviews. Anonymous testimonials read as invented.\n• 17px BODY TEXT, not 15px. High contrast. Your customers wear reading glasses.\n• ORDINARY LAYOUT. Header, hero, trust row, services, process, work, reviews, areas, CTA, footer. Familiar on purpose — people know where to look, so nothing gets missed.\n• AREAS COVERED as a real list. Doubles as the internal linking the SEO plan needs.\n• BUTTONS THAT LOOK LIKE BUTTONS — solid orange, slight drop shadow, obvious affordance.\n\nColours: deep green #17352a (established, unfussy), burnt orange #c2410c for every action, warm off-white ground.\nType: Bitter for headings (sturdy slab, reads traditional without being fussy), Libre Franklin for body (plainly readable).\n\nThis is deliberately unfashionable. It should look like the most credible gate company in the area, not the most designed."
+    },
+    {
+      "id": "trade-mobile",
+      "x": 1560,
+      "y": -560,
+      "w": 400,
+      "page": "page-4",
+      "text": "MOBILE\n\nMost of your enquiries will arrive on this. Someone is standing on their driveway holding a phone.\n\n• Sticky bottom bar: Call now / Get a quote. Always visible, thumb-height, 56px tall.\n• Everything single column, nothing to pinch.\n• Same 17px body text.\n• Photos big enough to actually judge the work.\n\nThe two-button sticky bar is the highest-converting element on a trade site. It is worth more than any amount of styling above it."
+    },
+    {
       "id": "d-dev",
       "x": 0,
       "y": -520,
@@ -287,6 +325,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-3"
+    "page": "page-4"
   }
 }
