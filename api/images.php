@@ -17,7 +17,7 @@
  *
  * To set a caption by hand, create images/captions.json:
  *
- *   { "driveway-gates/estate.jpg": "Estate gates, Ormskirk" }
+ *   { "driveway-gates/estate.jpg": "Estate gates in oak" }
  */
 
 declare(strict_types=1);

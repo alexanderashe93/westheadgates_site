@@ -32,7 +32,7 @@ The filename becomes the caption, so name files properly:
 To set captions by hand instead, create a file here called captions.json:
 
     {
-      "driveway-gates/oak-gates.jpg": "Oak-clad gates, Ormskirk",
+      "driveway-gates/oak-gates.jpg": "Oak-clad gates, powder-coated black",
       "railings/balcony.jpg": "Juliet balcony, powder-coated black"
     }
 
