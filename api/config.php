@@ -12,7 +12,7 @@ return array(
     // Where enquiries are sent. Add more addresses to send to several people.
     // ---------------------------------------------------------------------
     'enquiry_recipients' => array(
-        '[YOUR EMAIL]',
+        'info@westhead-gates.co.uk',
     ),
 
     // ---------------------------------------------------------------------
@@ -22,7 +22,7 @@ return array(
     // real mailbox created in Plesk. Using the visitor's own address here is
     // what lands enquiries in spam or gets them rejected outright by SPF.
     // ---------------------------------------------------------------------
-    'mail_from'      => 'website@[YOUR-DOMAIN]',
+    'mail_from'      => 'website@westhead-gates.co.uk',
     'mail_from_name' => 'Westhead Gates website',
 
     // Subject line prefix, so enquiries are easy to filter in your inbox.

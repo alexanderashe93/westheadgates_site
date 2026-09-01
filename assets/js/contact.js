@@ -7,12 +7,12 @@
 (function () {
   'use strict';
 
-  var form = document.getElementById('contactForm');
+  var form = document.getElementById('form');
   if (!form) { return; }
 
-  var statusEl = document.getElementById('formStatus');
-  var button   = document.getElementById('contactSubmit');
-  var label    = button ? button.querySelector('[data-submit-label]') : null;
+  var statusEl = document.getElementById('result');
+  var button   = document.getElementById('submit');
+  var label    = button ? button.querySelector('[data-label]') : null;
 
   /* Timestamp the render, so the server can reject instant bot submissions. */
   var loadedAt = document.getElementById('loadedAt');
@@ -47,11 +47,11 @@
   };
 
   function setError(name, message) {
-    var slot = form.querySelector('[data-error-for="' + name + '"]');
+    var slot = form.querySelector('[data-for="' + name + '"]');
     var field = form.querySelector('[name="' + name + '"]');
     if (slot) { slot.textContent = message || ''; }
     if (field && field.closest('.field')) {
-      field.closest('.field').classList.toggle('has-error', Boolean(message));
+      field.closest('.field').classList.toggle('bad', Boolean(message));
     }
     if (field) {
       field.setAttribute('aria-invalid', message ? 'true' : 'false');
@@ -85,7 +85,7 @@
 
   function show(kind, message) {
     if (!statusEl) { return; }
-    statusEl.className = 'form-status form-status--' + kind;
+    statusEl.className = 'result result--' + kind;
     statusEl.textContent = message;
     statusEl.hidden = false;
   }

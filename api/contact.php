@@ -31,7 +31,7 @@ function respond(bool $ok, string $message, int $status = 200): void
         echo json_encode(array('ok' => $ok, 'message' => $message));
     } else {
         $query = $ok ? 'sent=1' : 'error=' . rawurlencode($message);
-        header('Location: ../contact.html?' . $query . '#contactForm', true, 303);
+        header('Location: ../contact.html?' . $query . '#form', true, 303);
     }
     exit;
 }

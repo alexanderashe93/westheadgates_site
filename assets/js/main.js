@@ -1,67 +1,49 @@
-/* Westhead Gates — site behaviour.
-   Small, dependency-free, and safe to load on every page. */
+/* Westhead Gates — site behaviour. Loaded on every page. */
 (function () {
   'use strict';
 
   /* --- Mobile navigation ------------------------------------------------- */
-  var toggle = document.getElementById('navToggle');
-  var links = document.getElementById('navLinks');
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+  var top = document.getElementById('top');
 
-  if (toggle && links) {
-    toggle.addEventListener('click', function () {
-      var open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      links.classList.toggle('is-open', !open);
-    });
-
-    // Close when a link is followed, or on Escape.
-    links.addEventListener('click', function (e) {
-      if (e.target.closest('a')) {
-        toggle.setAttribute('aria-expanded', 'false');
-        links.classList.remove('is-open');
-      }
+  if (burger && nav) {
+    burger.addEventListener('click', function () {
+      var open = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('open', !open);
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && links.classList.contains('is-open')) {
-        toggle.setAttribute('aria-expanded', 'false');
-        links.classList.remove('is-open');
-        toggle.focus();
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        burger.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('open');
+        burger.focus();
       }
     });
   }
 
-  /* --- Header shadow once scrolled -------------------------------------- */
-  var header = document.getElementById('siteHeader');
-  if (header) {
-    var onScroll = function () {
-      header.classList.toggle('is-stuck', window.scrollY > 8);
+  /* Keep the dropdown pinned directly under the sticky header. */
+  if (top) {
+    var place = function () {
+      document.documentElement.style.setProperty('--menutop', top.getBoundingClientRect().bottom + 'px');
     };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    place();
+    window.addEventListener('resize', place);
+    window.addEventListener('scroll', place, { passive: true });
   }
 
-  /* --- Reveal on scroll -------------------------------------------------- */
-  var revealables = document.querySelectorAll('[data-reveal]');
-  if (revealables.length) {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (reduce || !('IntersectionObserver' in window)) {
-      revealables.forEach(function (el) { el.classList.add('is-visible'); });
-    } else {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
-
-      revealables.forEach(function (el) { observer.observe(el); });
-    }
-  }
+  /* --- Optional photography ---------------------------------------------
+     hero.jpg and workshop.jpg are decorative. Until they are uploaded the
+     browser would draw an empty framed box with alt text in it, so hide any
+     that fail to load and let the layout close up. ---------------------- */
+  Array.prototype.forEach.call(document.querySelectorAll('img[data-optional]'), function (img) {
+    var drop = function () { img.style.display = 'none'; };
+    img.addEventListener('error', drop);
+    // Covers a cached failure that fired before this script ran.
+    if (img.complete && img.naturalWidth === 0) { drop(); }
+  });
 
   /* --- Footer year ------------------------------------------------------- */
-  var year = document.getElementById('year');
-  if (year) { year.textContent = String(new Date().getFullYear()); }
+  var yr = document.getElementById('yr');
+  if (yr) { yr.textContent = String(new Date().getFullYear()); }
 })();

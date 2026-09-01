@@ -16,9 +16,9 @@
   var teaser   = document.querySelector('[data-gallery-teaser]');
   if (!grid && !teaser) { return; }
 
-  var filtersEl = document.getElementById('galleryFilters');
-  var countEl   = document.getElementById('galleryCount');
-  var noteEl    = document.getElementById('galleryNote');
+  var filtersEl = document.getElementById('filters');
+  var countEl   = document.getElementById('count');
+  var noteEl    = document.getElementById('note');
 
   var SOURCES = ['api/images.php', 'images/images.json'];
 
@@ -36,8 +36,8 @@
 
   function note(title, body) {
     if (!noteEl) { return; }
-    var t = document.getElementById('galleryNoteTitle');
-    var b = document.getElementById('galleryNoteBody');
+    var t = document.getElementById('noteTitle');
+    var b = document.getElementById('noteBody');
     if (t) { t.textContent = title; }
     if (b) { b.innerHTML = body; }
     noteEl.hidden = false;
@@ -68,7 +68,7 @@
   function skeleton(host, n) {
     var heights = [280, 360, 240, 400, 300, 340, 260, 380];
     for (var i = 0; i < n; i++) {
-      var s = el('div', 'gallery__item is-loading');
+      var s = el('div', 'tile loading');
       s.style.height = heights[i % heights.length] + 'px';
       host.appendChild(s);
     }
@@ -77,7 +77,7 @@
   /* ------------------------------------------------------------- rendering */
 
   function tile(image, index, withCaption, fixed) {
-    var btn = el('button', 'gallery__item' + (fixed ? ' gallery__item--fixed' : ''));
+    var btn = el('button', 'tile');
     btn.type = 'button';
     btn.setAttribute('data-index', String(index));
 
@@ -99,13 +99,15 @@
     btn.appendChild(img);
 
     if (withCaption !== false && (image.caption || image.category)) {
-      var cap = el('span', 'gallery__caption');
+      var cap = el('figcaption');
+      var b = el('b');
+      b.textContent = image.caption || '';
+      cap.appendChild(b);
       if (image.category) {
         var small = el('small');
         small.textContent = image.category;
         cap.appendChild(small);
       }
-      cap.appendChild(document.createTextNode(image.caption || ''));
       btn.appendChild(cap);
     }
 
@@ -173,10 +175,10 @@
 
   /* -------------------------------------------------------------- lightbox */
 
-  var box      = document.getElementById('lightbox');
-  var boxImg   = document.getElementById('lightboxImg');
-  var boxMeta  = document.getElementById('lightboxMeta');
-  var boxCount = document.getElementById('lightboxCounter');
+  var box      = document.getElementById('lb');
+  var boxImg   = document.getElementById('lbImg');
+  var boxMeta  = document.getElementById('lbMeta');
+  var boxCount = document.getElementById('lbCount');
   var current  = 0;
   var lastFocused = null;
 
@@ -187,8 +189,7 @@
     boxImg.src = image.src;
     boxImg.alt = image.caption || 'Westhead Gates installation';
     if (boxMeta) {
-      boxMeta.textContent = [image.caption, image.category]
-        .filter(Boolean).join(' — ');
+      boxMeta.innerHTML = '<b>' + (image.caption || '') + '</b>' + (image.category || '');
     }
     if (boxCount) {
       boxCount.textContent = (current + 1) + ' / ' + shown.length;
@@ -200,17 +201,17 @@
     lastFocused = document.activeElement;
     box.hidden = false;
     // Next frame, so the transition actually runs.
-    requestAnimationFrame(function () { box.classList.add('is-open'); });
-    document.body.classList.add('is-locked');
+    requestAnimationFrame(function () { box.classList.add('open'); });
+    document.body.classList.add('locked');
     showAt(i);
-    var close = document.getElementById('lightboxClose');
+    var close = document.getElementById('lbClose');
     if (close) { close.focus(); }
   }
 
   function closeLightbox() {
     if (!box) { return; }
-    box.classList.remove('is-open');
-    document.body.classList.remove('is-locked');
+    box.classList.remove('open');
+    document.body.classList.remove('locked');
     window.setTimeout(function () {
       box.hidden = true;
       boxImg.src = '';
@@ -219,13 +220,13 @@
   }
 
   if (box) {
-    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-    document.getElementById('lightboxPrev').addEventListener('click', function () { showAt(current - 1); });
-    document.getElementById('lightboxNext').addEventListener('click', function () { showAt(current + 1); });
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', function () { showAt(current - 1); });
+    document.getElementById('lbNext').addEventListener('click', function () { showAt(current + 1); });
 
     // Click the backdrop (but not the image or a button) to close.
     box.addEventListener('click', function (e) {
-      if (e.target === box || e.target.classList.contains('lightbox__stage')) {
+      if (e.target === box || e.target.classList.contains('lb__stage')) {
         closeLightbox();
       }
     });
@@ -275,11 +276,22 @@
         buildFilters();
         render();
       } else if (teaser) {
-        // Home page: a fixed handful, no captions, no lightbox wiring needed.
+        // Home page: a fixed handful, each linking through to the gallery.
         var n = parseInt(teaser.getAttribute('data-gallery-teaser'), 10) || 4;
-        shown = all.slice(0, n);
-        shown.forEach(function (image, i) {
-          teaser.appendChild(tile(image, i, true, true));
+        all.slice(0, n).forEach(function (image) {
+          var a = el('a');
+          a.href = 'gallery.html';
+          var img = el('img');
+          img.src = image.src;
+          img.alt = image.caption || 'Westhead Gates installation';
+          img.loading = 'lazy';
+          a.appendChild(img);
+          var cap = el('div');
+          cap.style.marginTop = '.55rem';
+          cap.innerHTML = '<strong>' + (image.caption || '') + '</strong><br><span>' +
+            (image.category || '') + '</span>';
+          a.appendChild(cap);
+          teaser.appendChild(a);
         });
       }
     })

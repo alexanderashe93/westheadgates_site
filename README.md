@@ -33,32 +33,29 @@ grep -rn "\[" --include="*.html" --include="*.php" . | grep -v node_modules
 
 The ones that appear on every page:
 
-| Placeholder            | What to put there                                   |
-|------------------------|-----------------------------------------------------|
-| `[YOUR PHONE]`         | Displayed phone number, e.g. `01695 123456`         |
-| `[YOURPHONE-E164]`     | Same number for `tel:` links, e.g. `+441695123456`  |
-| `[YOUR MOBILE]`        | Mobile number                                        |
-| `[YOUR EMAIL]`         | Enquiries address                                    |
-| `[YOUR AREA]`          | Area covered, e.g. `West Lancashire and Merseyside` |
-| `[YOUR TOWN]`          | Where the workshop is                                |
-| `[YOUR-DOMAIN]`        | Domain, no `https://` — used in meta tags            |
-| `[Workshop address]`   | Street address                                       |
-| `[Town, Postcode]`     | Town and postcode                                    |
-| `[NUMBER]`             | Company number and VAT number                        |
+| Placeholder            | Count | What to put there                                  |
+|------------------------|-------|----------------------------------------------------|
+| `[YOUR PHONE]`         | 13    | Displayed number, e.g. `01695 123456`              |
+| `[YOURPHONE-E164]`     | 13    | Same number for `tel:` links, e.g. `+441695123456` |
+| `[YOUR MOBILE]`        | 1     | Mobile number                                       |
+| `[YOUR AREA]`          | 4     | Area covered, e.g. `West Lancashire`                |
+| `[YOUR TOWN]`          | 4     | Where the workshop is                               |
+| `[Unit / street]`      | 2     | Street address                                      |
+| `[Town]` `[Postcode]`  | 10    | Town and postcode                                   |
+| `[NUMBER]`             | 6     | Company number and VAT number                       |
+
+**Already filled in:** the email `info@westhead-gates.co.uk` and the domain
+`westhead-gates.co.uk` (meta tags, sitemap, robots.txt and `api/config.php`).
 
 Page-specific ones to deal with before launch:
 
-- **index.html** — the three hero statistics, the `[6–8] weeks` lead time,
-  three testimonials, and the bracketed text in the *Safety & compliance*
-  section (see §5).
-- **contact.html** — opening hours, the Google Maps embed URL, and all six
-  FAQ answers.
-- **privacy.html** — currently a scaffold. It is a legal requirement once the
-  contact form is live. Write it before launch.
-
-Social links in the home page footer point at `[YOUR FACEBOOK URL]` and
-`[YOUR INSTAGRAM URL]`. Delete the `.social` block if you'd rather not
-link out.
+- **index.html** — the line under the hero buttons (`[25] years in the trade ·
+  [500]+ gates fitted · Fully insured`) and the `[12] month guarantee`. If any
+  of those numbers aren't real, delete them rather than rounding — this is
+  the one thing customers actually check.
+- **contact.html** — opening hours and the `[one working day]` response time.
+- **privacy.html** — a scaffold. It is a legal requirement once the contact
+  form is live. Write it before launch.
 
 ---
 
@@ -117,9 +114,13 @@ and failing that shows a diagnostic message rather than an empty page.
 Edit **`api/config.php`** — it is the only file you need to touch:
 
 ```php
-'enquiry_recipients' => array('enquiries@yourdomain.co.uk'),
-'mail_from'          => 'website@yourdomain.co.uk',
+'enquiry_recipients' => array('info@westhead-gates.co.uk'),   // already set
+'mail_from'          => 'website@westhead-gates.co.uk',       // already set
 ```
+
+Enquiries go to **info@westhead-gates.co.uk**. The one job left is to create
+the `website@westhead-gates.co.uk` mailbox in Plesk under **Mail → Create
+Email Address** — it is what the site sends *from*.
 
 `mail_from` **must be an address on your own domain**, and ideally a real
 mailbox created in Plesk under **Mail → Create Email Address**. Sending from
@@ -138,34 +139,61 @@ spam. If nothing arrives, look at the domain's error log in Plesk under
 
 ---
 
-## 5. The safety & compliance section
+## 5. Safety claims
 
-The home page has a *Safety & compliance* section referencing **BS EN 12453**,
-**BS EN 12604** and the **Supply of Machinery (Safety) Regulations 2008**.
+The home page says, under *Why people choose us*:
 
-The standard and regulation names are correct as supplied. **The descriptions
-of what each one covers are placeholders reading `[CONFIRM …]`.** They were
-deliberately not written from memory — the source documents could not be
-opened from the environment this site was built in, and publishing inaccurate
-regulatory claims on a commercial site carries real risk.
+> **Safety-tested and certified.** An automatic gate is legally machinery —
+> we treat it that way.
 
-Fill those in from your own copies of the standards before the site goes
-live, or delete the section. The same applies to the servicing-frequency FAQ
-on the contact page.
+That is deliberately a plain statement of practice rather than a claim about
+what any particular standard requires. The earlier draft named BS EN 12453,
+BS EN 12604 and the Supply of Machinery (Safety) Regulations 2008 with
+descriptions of each; those descriptions were never written, because the
+source documents you sent were blocked by this environment's network policy
+and inaccurate regulatory claims on a commercial site carry real risk.
+
+If you want the standards named on the site, send me the relevant passages
+and I'll write that section properly. As it stands the line is safe to
+publish.
 
 ---
 
-## 6. Files
+## 6. Colour scheme
+
+The site uses the **Ironstone** scheme — near-black `#1f1e1c` with an oxblood
+`#9c3327` accent on a warm off-white ground.
+
+Everything is driven by six custom properties at the top of
+`assets/css/style.css`:
+
+```css
+--dark:     #1f1e1c;   /* headings, header mark, footer, CTA ground */
+--darker:   #141312;   /* footer base                                */
+--accent:   #9c3327;   /* every action: buttons, links, active states */
+--accent-d: #78251b;   /* the shadow under a button                  */
+--warm:     #f6f4f1;   /* alternating section ground                 */
+--line:     #e4e1db;   /* borders                                    */
+```
+
+Change those six and the whole site follows. Nothing else needs touching.
+
+Type is **Bitter** for headings and **Libre Franklin** for body, loaded from
+Google Fonts with real fallback stacks.
+
+---
+
+## 7. Files
 
 ```
 index.html            Home
 gallery.html          Gallery — auto-populated from /images/
-contact.html          Contact, form, map, FAQ
+contact.html          Contact — enquiry form and details
 privacy.html          Privacy notice (scaffold — needs writing)
 404.html              Not-found page
 
 assets/css/style.css  All styling. Design tokens are at the top in :root.
-assets/js/main.js     Nav, scroll reveals, footer year
+assets/js/main.js     Mobile nav, optional-photo fallback, footer year
 assets/js/gallery.js  Loads /images/, builds the grid, runs the lightbox
 assets/js/contact.js  Inline validation and background submit
 assets/img/           favicon.svg, plus hero.jpg / workshop.jpg (see below)
@@ -186,31 +214,35 @@ sitemap.xml           Update the domain
 
 | Path                            | Used for                              |
 |---------------------------------|---------------------------------------|
-| `assets/img/hero.jpg`           | Home page hero background             |
-| `assets/img/workshop.jpg`       | "Built in the workshop" section       |
+| `assets/img/hero.jpg`           | Home page hero photo                  |
+| `assets/img/workshop.jpg`       | "Why people choose us" section        |
 | `assets/img/og.jpg`             | Link preview on social media (1200×630) |
 | `assets/img/apple-touch-icon.png` | iOS home-screen icon (180×180)      |
 
-All four are optional — the pages degrade to the dark gradient without them,
-so nothing breaks. The hero is worth getting right: it is the first thing
-anyone sees.
+All four are optional. The hero and workshop photos are marked
+`data-optional`, so until you upload them the page hides the empty frame
+rather than showing a broken image — nothing looks wrong, there is just less
+on the page. The hero is worth getting right: it is the first thing anyone
+sees.
 
 ---
 
-## 7. Editing pages later
+## 8. Editing pages later
 
 The navigation and footer are repeated in each HTML file. That is the trade
 for a site with no build step: changing the phone number means editing it in
-each page. With three pages that is a fair deal, and it means anyone can edit
-the site in Plesk's file manager without tooling.
+four places. With three pages plus the privacy notice that is a fair deal,
+and it means anyone can edit the site in Plesk's file manager without
+tooling. If the site ever grows past about six pages, say so and I'll convert
+the header and footer to PHP includes — still no build step, one file to
+edit.
 
 Colours, fonts and spacing are CSS custom properties at the top of
-`assets/css/style.css` — change `--brass` in one place and it updates
-everywhere.
+`assets/css/style.css` — see §6.
 
 ---
 
-## 8. Local preview
+## 9. Local preview
 
 ```bash
 php -S localhost:8000
