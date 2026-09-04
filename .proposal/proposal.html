@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Westhead Gates — Website Design Proposal</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 14mm; }
+
+  :root {
+    --dark:   #1f1e1c;
+    --darker: #141312;
+    --accent: #9c3327;
+    --warm:   #f6f4f1;
+    --line:   #e0ddd6;
+    --ink:    #2e2b28;
+    --ink-2:  #4f4a44;
+    --muted:  #78736b;
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    font-family: "DejaVu Sans", "Liberation Sans", sans-serif;
+    font-size: 10.2pt; line-height: 1.55; color: var(--ink);
+    background: #fff;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  h1, h2, h3, .serif { font-family: "Bitstream Charter", Charter, Georgia, serif; }
+  h1 { font-size: 30pt; line-height: 1.12; color: var(--dark); font-weight: 700; }
+  h2 { font-size: 17pt; color: var(--dark); font-weight: 700; margin-bottom: 3mm; }
+  h3 { font-size: 11.5pt; color: var(--dark); font-weight: 700; }
+  p  { margin-bottom: 3mm; }
+  ul { margin: 0 0 3mm; padding-left: 5mm; }
+  li { margin-bottom: 1.6mm; }
+  strong { color: var(--dark); }
+  a { color: var(--accent); text-decoration: none; }
+
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .eyebrow {
+    font-size: 8pt; font-weight: 700; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 2.5mm;
+  }
+  .rule { height: 2px; background: var(--dark); margin: 4mm 0 5mm; }
+  .thin { height: 1px; background: var(--line); margin: 5mm 0; }
+
+  /* ---------- cover ---------- */
+  .cover { display: flex; flex-direction: column; height: 262mm; }
+  .cover__mark {
+    width: 22mm; height: 22mm; border-radius: 3mm; background: var(--dark);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 8mm;
+  }
+  .cover__mark svg { width: 12mm; height: 12mm; }
+  .cover h1 { font-size: 38pt; }
+  .cover__sub { font-size: 13pt; color: var(--ink-2); margin-top: 5mm; max-width: 130mm; }
+  .cover__meta {
+    margin-top: auto; padding-top: 6mm; border-top: 2px solid var(--dark);
+    display: flex; flex-wrap: wrap; justify-content: space-between;
+    gap: 6mm 8mm; font-size: 9pt;
+  }
+  .cover__meta > div { word-break: break-word; }
+  .cover__meta b { display: block; font-size: 8pt; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 1.5mm; font-weight: 700; }
+  .cover__strip { display: flex; gap: 2mm; margin-top: 10mm; }
+  .cover__strip i { height: 9mm; flex: 1; border-radius: 1mm; display: block; }
+
+  /* ---------- shots ---------- */
+  figure { margin: 0 0 4mm; }
+  figure img { width: 100%; border: 1px solid var(--line); border-radius: 1.5mm; display: block; }
+  figcaption { font-size: 8.6pt; color: var(--muted); margin-top: 2mm; }
+
+  .two { display: flex; gap: 6mm; }
+  .two > * { flex: 1; }
+
+  /* ---------- swatches ---------- */
+  .swatches { display: flex; gap: 3mm; margin: 4mm 0 2mm; }
+  .sw { flex: 1; }
+  .sw i { display: block; height: 22mm; border-radius: 1.5mm; border: 1px solid var(--line); }
+  .sw b { display: block; font-size: 9pt; margin-top: 2mm; color: var(--dark); }
+  .sw span { display: block; font-size: 8.2pt; color: var(--muted);
+    font-family: "DejaVu Sans Mono", monospace; }
+
+  /* ---------- boxes ---------- */
+  .box { border: 1px solid var(--line); border-radius: 2mm; padding: 5mm; background: var(--warm); }
+  .box--accent { border-color: rgba(156,51,39,.35); background: #fbf4f2; }
+  .box h3 { margin-bottom: 2mm; }
+
+  .cols { display: flex; gap: 6mm; }
+  .cols > div { flex: 1; min-width: 0; }
+
+  /* Flex children default to min-width:auto, so a long word or email address
+     sets the row's minimum and pushes content off the page. */
+  .two > *, .swatches > *, .cover__meta > * { min-width: 0; }
+
+  .steps { counter-reset: s; }
+  .steps li { list-style: none; position: relative; padding-left: 9mm; margin-bottom: 3mm; }
+  .steps li::before {
+    counter-increment: s; content: counter(s);
+    position: absolute; left: 0; top: 0;
+    width: 6mm; height: 6mm; border-radius: 50%;
+    background: var(--dark); color: #fff;
+    font-size: 8.5pt; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 9.6pt; }
+  td, th { text-align: left; padding: 2.4mm 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 8pt; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  td:first-child { width: 42mm; color: var(--dark); font-weight: 600; }
+
+  .foot {
+    position: fixed; bottom: 6mm; left: 0; right: 0;
+    font-size: 8pt; color: var(--muted);
+    display: flex; justify-content: space-between;
+  }
+  .note { font-size: 8.6pt; color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- ============================== COVER ============================== -->
+<section class="page cover">
+  <div class="cover__mark">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round">
+      <path d="M4 21V8l8-5 8 5v13"/><path d="M8 21V10M12 21V8M16 21V10"/><path d="M3 21h18"/>
+    </svg>
+  </div>
+  <p class="eyebrow">Website design proposal</p>
+  <h1>Westhead Gates</h1>
+  <p class="cover__sub">A three-page website — home, gallery and contact — designed to turn
+    people looking for a gate into people ringing you.</p>
+
+  <div class="cover__strip">
+    <i style="background:#1f1e1c"></i>
+    <i style="background:#9c3327"></i>
+    <i style="background:#f6f4f1;border:1px solid #e0ddd6"></i>
+    <i style="background:#141312"></i>
+  </div>
+
+  <div class="cover__meta">
+    <div><b>Prepared for</b>Westhead Gates<br>info@westhead-gates.co.uk</div>
+    <div><b>Prepared by</b>[Your name]<br>[Your company]</div>
+    <div><b>Date</b>[Date]</div>
+    <div><b>Status</b>For approval</div>
+  </div>
+</section>
+
+<!-- ========================= WHAT WE'RE BUILDING ========================= -->
+<section class="page">
+  <p class="eyebrow">Overview</p>
+  <h2>What we&rsquo;re building</h2>
+  <div class="rule"></div>
+
+  <p>A clear, fast three-page website that does one job: get someone who needs a gate to
+  pick up the phone. No clutter, nothing to learn, and nothing that gets in the way.</p>
+
+  <div class="cols" style="margin-top:5mm">
+    <div>
+      <h3>Home</h3>
+      <p>What you do, why people choose you, and a sample of recent work. Two ways to
+      get in touch, visible from the moment the page loads.</p>
+    </div>
+    <div>
+      <h3>Gallery</h3>
+      <p>Your work, full width, filterable by type. Photos open full size. This is the
+      page that sells the job.</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>An enquiry form that emails you directly, alongside your phone number, email,
+      address and opening hours.</p>
+    </div>
+  </div>
+
+  <div class="thin"></div>
+
+  <h3 style="margin-bottom:3mm">The thinking behind it</h3>
+  <div class="cols">
+    <div>
+      <ul>
+        <li><strong>Built for your customer.</strong> Someone in their forties to seventies,
+          often on a phone in their own driveway. Body text is set larger than usual and
+          contrast is kept high.</li>
+        <li><strong>Your phone number never scrolls away.</strong> On a mobile there is a
+          permanent bar at the bottom of the screen: <em>Call now</em> and
+          <em>Get a quote</em>.</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><strong>Photographs do the selling.</strong> The layout is deliberately quiet so
+          the work stands out rather than competing with the design.</li>
+        <li><strong>Fast and simple.</strong> No page builder, no plugins to update, nothing
+          that can break on its own. It will load quickly even on a poor signal.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== DESIGN ============================== -->
+<section class="page">
+  <p class="eyebrow">The look</p>
+  <h2>Colour and type</h2>
+  <div class="rule"></div>
+
+  <p>The scheme is called <strong>Ironstone</strong> — a near-black with a deep oxblood red.
+  It was chosen over brighter options because it reads as established and serious rather
+  than fashionable, and because it works as well printed on a van or a business card as it
+  does on a screen.</p>
+
+  <div class="swatches">
+    <div class="sw"><i style="background:#1f1e1c"></i><b>Ironstone</b><span>#1f1e1c</span></div>
+    <div class="sw"><i style="background:#9c3327"></i><b>Oxblood</b><span>#9c3327</span></div>
+    <div class="sw"><i style="background:#f6f4f1"></i><b>Warm off-white</b><span>#f6f4f1</span></div>
+    <div class="sw"><i style="background:#141312"></i><b>Deep base</b><span>#141312</span></div>
+    <div class="sw"><i style="background:#ffffff;border:1px solid #e0ddd6"></i><b>Paper</b><span>#ffffff</span></div>
+  </div>
+
+  <p class="note">Oxblood is used sparingly — buttons, links and small marks only. Everything
+  else is black, white and warm grey, so the accent still means &ldquo;do this&rdquo; when a
+  visitor sees it.</p>
+
+  <div class="thin"></div>
+
+  <h3 style="margin-bottom:3mm">Typefaces</h3>
+  <table>
+    <tr>
+      <td>Headings</td>
+      <td><strong>Bitter</strong> — a sturdy slab serif. Solid and traditional without being
+        old-fashioned.</td>
+    </tr>
+    <tr>
+      <td>Body text</td>
+      <td><strong>Libre Franklin</strong> — chosen for plain readability at a larger size
+        than most sites use.</td>
+    </tr>
+  </table>
+
+  <div class="box box--accent" style="margin-top:6mm">
+    <h3>A note on the screenshots that follow</h3>
+    <p style="margin-bottom:0">The pages are shown with <strong>placeholder photography</strong>
+    — the grey panels with a gate outline. Those are stand-ins for your own photographs.
+    Typefaces in these images are also close substitutes rather than the final Bitter and
+    Libre Franklin, which load from the web when the site is live. Layout, colour, spacing
+    and wording are all exactly as they will be.</p>
+  </div>
+</section>
+
+<!-- ============================== HOME ============================== -->
+<section class="page">
+  <p class="eyebrow">Page one</p>
+  <h2>Home</h2>
+  <div class="rule"></div>
+
+  <figure>
+    <img src="p-home-top.png" alt="The Westhead Gates home page">
+    <figcaption>The home page as a visitor first sees it.</figcaption>
+  </figure>
+
+  <div class="cols">
+    <div>
+      <ul>
+        <li>The headline says plainly what you make.</li>
+        <li>Two actions, side by side: request a quote, or call.</li>
+        <li>One quiet line of proof underneath — years in the trade, gates fitted, insured.</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>A large photograph of finished work, straight away.</li>
+        <li>Your phone number sits in the header on every page.</li>
+        <li>Four services, described in a sentence each. No jargon.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <p class="eyebrow">Page one, continued</p>
+  <h2>Recent work and why people choose you</h2>
+  <div class="rule"></div>
+
+  <figure>
+    <img src="p-home-mid.png" alt="Recent work and reasons to choose Westhead Gates">
+    <figcaption>Further down the home page.</figcaption>
+  </figure>
+
+  <p><strong>The four photographs update themselves.</strong> They are pulled straight from
+  your gallery, so the newest work you upload appears here without anyone editing the page.</p>
+
+  <p style="margin-bottom:0"><strong>Four reasons, not twenty.</strong> No sub-contractors, a
+  fixed price in writing, safety-tested and certified, and a workmanship guarantee. These are
+  the things that decide whether someone rings you rather than the next firm.</p>
+</section>
+
+<!-- ============================== GALLERY ============================== -->
+<section class="page">
+  <p class="eyebrow">Page two</p>
+  <h2>Gallery</h2>
+  <div class="rule"></div>
+
+  <figure>
+    <img src="p-gallery.png" alt="The gallery page">
+    <figcaption>The gallery, with filter buttons across the top.</figcaption>
+  </figure>
+
+  <div class="box box--accent">
+    <h3>Adding photos takes no technical knowledge</h3>
+    <p style="margin-bottom:2mm">There is no list to edit and nothing to log into. You copy
+    photographs into a folder on the server and they appear on the website.</p>
+    <ul style="margin-bottom:0">
+      <li>Drop a photo into the folder &rarr; it appears on the gallery, newest first.</li>
+      <li>Delete a photo &rarr; it disappears.</li>
+      <li>Put photos into sub-folders &mdash; <em>Driveway gates</em>, <em>Railings</em> &mdash;
+        and those become the filter buttons automatically.</li>
+      <li>The file name becomes the caption, so <em>oak-clad-electric-gates.jpg</em> reads as
+        &ldquo;Oak clad electric gates&rdquo;.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="page">
+  <p class="eyebrow">Page two, continued</p>
+  <h2>Viewing a photograph</h2>
+  <div class="rule"></div>
+
+  <figure>
+    <img src="p-lightbox.png" alt="A photograph opened full screen">
+    <figcaption>Tapping any photograph opens it full size.</figcaption>
+  </figure>
+
+  <p style="margin-bottom:0">Visitors can move between photographs with the arrows, the keyboard,
+  or by swiping on a phone. It closes with the cross or the escape key. Small thing, but it is
+  how people expect a gallery to behave, and it keeps them looking at your work for longer.</p>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section class="page">
+  <p class="eyebrow">Page three</p>
+  <h2>Contact</h2>
+  <div class="rule"></div>
+
+  <figure>
+    <img src="p-contact.png" alt="The contact page">
+    <figcaption>The enquiry form, with your details alongside it.</figcaption>
+  </figure>
+
+  <div class="cols">
+    <div>
+      <ul>
+        <li>Enquiries arrive by email at <strong>info@westhead-gates.co.uk</strong>.</li>
+        <li>Replying to that email goes straight back to the customer.</li>
+        <li>No monthly fee and no third-party form service.</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>Three layers of spam protection, so you are not chasing junk.</li>
+        <li>The form checks itself as it is filled in, which means fewer enquiries with a
+          mistyped phone number.</li>
+        <li>Your phone, email, address and opening hours sit beside it.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== MOBILE ============================== -->
+<section class="page">
+  <p class="eyebrow">On a phone</p>
+  <h2>Most people will see this version</h2>
+  <div class="rule"></div>
+
+  <p>More than half of enquiries to a business like yours come from a mobile — usually from
+  someone standing on their own driveway. The site was laid out for that first.</p>
+
+  <div class="two" style="margin-top:5mm">
+    <figure>
+      <img src="p-m-home.png" alt="The home page on a phone">
+      <figcaption>Home, on a phone.</figcaption>
+    </figure>
+    <figure>
+      <img src="p-m-gallery.png" alt="The gallery on a phone">
+      <figcaption>Gallery, single column.</figcaption>
+    </figure>
+  </div>
+
+  <div class="box" style="margin-top:2mm">
+    <h3>The bar along the bottom</h3>
+    <p style="margin-bottom:0">Notice the two buttons fixed to the bottom of the screen —
+    <strong>Call now</strong> and <strong>Get a quote</strong>. They never scroll away, and they
+    sit where a thumb naturally rests. On a trade website this one detail typically brings in
+    more calls than everything above it put together.</p>
+  </div>
+</section>
+
+<!-- ============================== INCLUDED ============================== -->
+<section class="page">
+  <p class="eyebrow">Scope</p>
+  <h2>What&rsquo;s included</h2>
+  <div class="rule"></div>
+
+  <table>
+    <tr><td>Pages</td><td>Home, gallery, contact, plus a privacy notice and a
+      &ldquo;page not found&rdquo; page.</td></tr>
+    <tr><td>Self-updating gallery</td><td>Add and remove photographs by copying files into a
+      folder. No login, no admin panel, nothing to learn.</td></tr>
+    <tr><td>Enquiry form</td><td>Emails you directly, with spam protection. Works even if a
+      visitor has JavaScript turned off.</td></tr>
+    <tr><td>Mobile and tablet</td><td>Every page tested at desktop, tablet and phone widths.</td></tr>
+    <tr><td>Search engine basics</td><td>Page titles and descriptions, a sitemap, structured
+      business information, and social sharing previews.</td></tr>
+    <tr><td>Speed</td><td>No page builder and no plugins. Fewer things to go wrong and nothing
+      to keep updated.</td></tr>
+    <tr><td>Hosting</td><td>Runs on your existing Plesk server. No new subscriptions.</td></tr>
+    <tr><td>Accessibility</td><td>Larger body text, high contrast, keyboard navigation and
+      proper labelling throughout.</td></tr>
+  </table>
+
+  <div class="thin"></div>
+
+  <h3 style="margin-bottom:3mm">Not included at this stage</h3>
+  <p style="margin-bottom:0">Photography, copywriting beyond what is shown, online payments,
+  a booking system, and individual pages for each service or town. Any of these can be added
+  later — the site is built so that extra pages slot in without a rebuild.</p>
+</section>
+
+<!-- ============================== NEEDED ============================== -->
+<section class="page">
+  <p class="eyebrow">Over to you</p>
+  <h2>What we need from you</h2>
+  <div class="rule"></div>
+
+  <p>The design is finished. These are the pieces only you can supply.</p>
+
+  <table style="margin-top:4mm">
+    <tr><td>Photographs</td><td><strong>The single most important item.</strong> Ten to twenty
+      of your best finished jobs. Bright but overcast days work best, taken straight on and
+      from a few steps back. These replace every grey panel in this document.</td></tr>
+    <tr><td>Phone numbers</td><td>The landline and mobile you want shown.</td></tr>
+    <tr><td>The proof line</td><td>Years in the trade, roughly how many gates you have fitted,
+      and the length of your workmanship guarantee. If any of these are not accurate, we leave
+      them off rather than round them up.</td></tr>
+    <tr><td>Address and hours</td><td>Workshop address and your opening times.</td></tr>
+    <tr><td>Company details</td><td>Company number and VAT number for the footer.</td></tr>
+    <tr><td>Privacy notice</td><td>Required by law once the enquiry form is live. We will draft
+      it; you confirm it is accurate.</td></tr>
+  </table>
+
+  <div class="box box--accent" style="margin-top:6mm">
+    <h3>Worth being straight about</h3>
+    <p style="margin-bottom:0">A website like this stands or falls on its photographs. Everything
+    else is in place and tested. If the photographs are good, the site will do its job; if they
+    are phone snaps taken in the rain, no amount of design will make up for it. It is worth
+    setting aside an afternoon for this.</p>
+  </div>
+</section>
+
+<!-- ============================== NEXT ============================== -->
+<section class="page">
+  <p class="eyebrow">Next</p>
+  <h2>How we get it live</h2>
+  <div class="rule"></div>
+
+  <ul class="steps">
+    <li><strong>You approve the design.</strong> Anything in this document can still change —
+      colours, wording, the order of sections. It is far easier now than later.</li>
+    <li><strong>You send the details and photographs</strong> from the previous page.</li>
+    <li><strong>We fill everything in</strong> and send you a private link to review the real
+      site before anyone else can see it.</li>
+    <li><strong>You have a proper look</strong> on your own phone and computer, and tell us
+      anything that needs changing.</li>
+    <li><strong>We put it live</strong> on your domain, with a security certificate, and test
+      the enquiry form end to end.</li>
+  </ul>
+
+  <div class="thin"></div>
+
+  <div class="cols">
+    <div class="box">
+      <h3>Afterwards</h3>
+      <p style="margin-bottom:0">Adding photographs is yours to do whenever you like. If you
+      would rather we handled it, or you want to add service or area pages later to bring in
+      more search traffic, that can be quoted separately.</p>
+    </div>
+    <div class="box">
+      <h3>Questions</h3>
+      <p style="margin-bottom:0">Anything at all in this document — get in touch and we will
+      talk it through.<br><br>
+      <strong>[Your name]</strong><br>[Your email]<br>[Your phone]</p>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:8mm">Prepared for Westhead Gates &middot; [Date] &middot;
+  This document shows a proposed design and is not a contract.</p>
+</section>
+
+</body>
+</html>

@@ -40,7 +40,7 @@ body {
   overflow-x: hidden;
 }
 
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
 button { font: inherit; color: inherit; cursor: pointer; }
 ul { list-style: none; padding: 0; }
 a { color: var(--green); text-decoration: none; }
@@ -168,6 +168,7 @@ p { text-wrap: pretty; }
   transition: box-shadow .2s ease, transform .2s ease;
 }
 .tile:hover { box-shadow: 0 8px 22px rgba(31,30,28,.14); transform: translateY(-2px); }
+.tile img { width: 100%; height: auto; }
 .tile figcaption { padding: .75rem .9rem; text-align: left; }
 .tile b { display: block; color: var(--green); font-size: 1rem; }
 .tile small { color: var(--muted); font-size: .9rem; }

@@ -38,7 +38,7 @@ body {
   overflow-x: hidden;
 }
 
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
 button { font: inherit; color: inherit; cursor: pointer; }
 ul { list-style: none; padding: 0; }
 a { color: var(--dark); text-decoration: none; }
