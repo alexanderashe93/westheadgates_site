@@ -11,16 +11,16 @@
    painted explicitly rather than inherited from the host.
    ========================================================================== */
 :root {
-  --green:   #17352a;
-  --green-d: #12261e;
-  --orange:  #c2410c;
-  --orange-d:#9a3409;
+  --green:   #1f1e1c;
+  --green-d: #141312;
+  --orange:  #9c3327;
+  --orange-d:#78251b;
   --paper:   #ffffff;
-  --warm:    #f7f6f3;
-  --line:    #e3e1db;
-  --ink:     #33383a;
-  --ink-2:   #4a504b;
-  --muted:   #6b7169;
+  --warm:    #f6f4f1;
+  --line:    #e4e1db;
+  --ink:     #2e2b28;
+  --ink-2:   #4a4640;
+  --muted:   #6d6860;
   --wrap:    1140px;
   --pad:     clamp(1.15rem, 4vw, 2.5rem);
   --r:       6px;
@@ -72,7 +72,7 @@ p { text-wrap: pretty; }
 }
 .btn:active { transform: translateY(2px); }
 .btn--go { background: var(--orange); color: #fff; box-shadow: 0 2px 0 var(--orange-d); }
-.btn--go:hover { background: #ad3a0b; }
+.btn--go:hover { filter: brightness(.92); }
 .btn--go:active { box-shadow: none; }
 .btn--out { background: transparent; color: var(--green); border: 2px solid var(--green); padding: .875rem 1.55rem; }
 .btn--out:hover { background: var(--green); color: #fff; }
@@ -110,7 +110,7 @@ p { text-wrap: pretty; }
   .nav {
     position: fixed; inset: auto 0 auto 0; top: var(--menutop, 76px);
     flex-direction: column; gap: 0; background: var(--paper);
-    border-bottom: 1px solid var(--line); box-shadow: 0 12px 26px rgba(23,53,42,.12);
+    border-bottom: 1px solid var(--line); box-shadow: 0 12px 26px rgba(31,30,28,.14);
     padding: .25rem var(--pad) 1rem;
     opacity: 0; visibility: hidden; transform: translateY(-8px);
     transition: opacity .2s ease, transform .2s ease, visibility .2s;
@@ -167,13 +167,13 @@ p { text-wrap: pretty; }
   background: var(--paper); break-inside: avoid; cursor: zoom-in;
   transition: box-shadow .2s ease, transform .2s ease;
 }
-.tile:hover { box-shadow: 0 8px 22px rgba(23,53,42,.12); transform: translateY(-2px); }
+.tile:hover { box-shadow: 0 8px 22px rgba(31,30,28,.14); transform: translateY(-2px); }
 .tile figcaption { padding: .75rem .9rem; text-align: left; }
 .tile b { display: block; color: var(--green); font-size: 1rem; }
 .tile small { color: var(--muted); font-size: .9rem; }
 
 /* --- Lightbox ------------------------------------------------------------- */
-.lb { position: fixed; inset: 0; z-index: 200; background: rgba(12,20,16,.95); display: grid; grid-template-rows: auto 1fr auto; opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s; }
+.lb { position: fixed; inset: 0; z-index: 200; background: rgba(16,15,14,.96); display: grid; grid-template-rows: auto 1fr auto; opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s; }
 .lb.open { opacity: 1; visibility: visible; }
 .lb__bar { display: flex; align-items: center; justify-content: space-between; padding: 1rem var(--pad); color: rgba(255,255,255,.75); font-variant-numeric: tabular-nums; }
 .lb__stage { position: relative; display: grid; place-items: center; padding-inline: clamp(1rem, 8vw, 5rem); min-height: 0; }
@@ -204,7 +204,7 @@ body.locked { overflow: hidden; }
 }
 .field textarea { min-height: 120px; resize: vertical; }
 .field input:focus, .field textarea:focus, .field select:focus {
-  outline: 0; border-color: var(--orange); box-shadow: 0 0 0 3px rgba(194,65,12,.16);
+  outline: 0; border-color: var(--orange); box-shadow: 0 0 0 3px rgba(156,51,39,.16);
 }
 .field.bad input, .field.bad textarea { border-color: #b4231f; }
 .err { font-size: .88rem; color: #a3201c; min-height: 1.1rem; }
@@ -289,8 +289,8 @@ body.locked { overflow: hidden; }
   <section class="hero">
     <div class="wrap">
       <div>
-        <h1>Gates, railings and automation in [Your Area]</h1>
-        <p class="lede">Made in our own workshop and fitted by our own team. Free site survey, a fixed price in writing, and every gate safety-tested before we leave.</p>
+        <h1>Bespoke gates, railings and automation</h1>
+        <p class="lede">Designed and built in our own workshop, then fitted by the same team. Free site survey, a fixed price in writing, and every gate safety-tested before we leave.</p>
         <div class="actions">
           <button class="btn btn--go" data-go="contact">Get a free quote</button>
           <a class="btn btn--out" href="tel:+440000000000">
@@ -395,7 +395,7 @@ body.locked { overflow: hidden; }
         </div>
         <div class="card">
           <h3>Email</h3>
-          <p style="margin-top:.3rem"><a href="mailto:hello@example.com" style="font-size:1.1rem">[YOUR EMAIL]</a></p>
+          <p style="margin-top:.3rem"><a href="mailto:info@westhead-gates.co.uk" style="font-size:1.1rem">info@westhead-gates.co.uk</a></p>
           <p style="margin-top:.3rem">Photos of your driveway are welcome — they help a lot.</p>
         </div>
         <div class="card">
@@ -433,7 +433,7 @@ body.locked { overflow: hidden; }
   <div class="wrap">
     <div>
       <b>Westhead Gates</b>
-      Bespoke gates, railings and automation,<br>made in [Your town] and fitted across [your area].
+      Bespoke gates, railings and automation,<br>designed, built and fitted by our own team.
     </div>
     <div>
       <b>Pages</b>
@@ -442,7 +442,7 @@ body.locked { overflow: hidden; }
     <div>
       <b>Get in touch</b>
       <a href="tel:+440000000000">[YOUR PHONE]</a><br>
-      <a href="mailto:hello@example.com">[YOUR EMAIL]</a><br>
+      <a href="mailto:info@westhead-gates.co.uk">info@westhead-gates.co.uk</a><br>
       [Town], [Postcode]
     </div>
   </div>
@@ -479,12 +479,12 @@ body.locked { overflow: hidden; }
     var k = 'i' + w + h + gap;
     var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '">' +
       '<defs><linearGradient id="' + k + '" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="' + a + '"/><stop offset="1" stop-color="' + b + '"/></linearGradient>' +
-      '<pattern id="p' + k + '" width="' + gap + '" height="' + h + '" patternUnits="userSpaceOnUse"><rect width="2" height="' + h + '" fill="rgba(23,53,42,.22)"/></pattern></defs>' +
+      '<pattern id="p' + k + '" width="' + gap + '" height="' + h + '" patternUnits="userSpaceOnUse"><rect width="2" height="' + h + '" fill="rgba(31,30,28,.22)"/></pattern></defs>' +
       '<rect width="' + w + '" height="' + h + '" fill="url(#' + k + ')"/>' +
       '<rect x="' + w * .07 + '" y="' + h * .3 + '" width="' + w * .86 + '" height="' + h * .7 + '" fill="url(#p' + k + ')"/>' +
-      '<path d="M' + w * .07 + ' ' + h * .34 + ' Q ' + w / 2 + ' ' + h * .16 + ' ' + w * .93 + ' ' + h * .34 + '" fill="none" stroke="rgba(23,53,42,.3)" stroke-width="3"/>' +
-      '<rect x="' + w * .07 + '" y="' + h * .66 + '" width="' + w * .86 + '" height="3" fill="rgba(23,53,42,.22)"/>' +
-      '<rect y="' + (h - h * .06) + '" width="' + w + '" height="' + h * .06 + '" fill="rgba(23,53,42,.14)"/></svg>';
+      '<path d="M' + w * .07 + ' ' + h * .34 + ' Q ' + w / 2 + ' ' + h * .16 + ' ' + w * .93 + ' ' + h * .34 + '" fill="none" stroke="rgba(31,30,28,.3)" stroke-width="3"/>' +
+      '<rect x="' + w * .07 + '" y="' + h * .66 + '" width="' + w * .86 + '" height="3" fill="rgba(31,30,28,.22)"/>' +
+      '<rect y="' + (h - h * .06) + '" width="' + w + '" height="' + h * .06 + '" fill="rgba(31,30,28,.14)"/></svg>';
     return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
   }
   var TONES = [['#cfd0c8','#9fa398'],['#d4cec2','#a6a08f'],['#c7ccca','#98a19d'],['#d8d4cb','#aaa79b'],['#c9cdc6','#9ba096'],['#d2ccc3','#a39d92']];
@@ -502,19 +502,21 @@ body.locked { overflow: hidden; }
      'Repairs &amp; servicing', 'We repair and service most makes of motor — including gates we didn’t fit.']
   ];
 
+  /* On the real site these come from the filenames in /images/, so the second
+     line describes the job rather than naming a place. */
   var PHOTOS = [
-    ['Driveway gates', 'Oak-clad electric gates', '[Town]', 1200, 820],
-    ['Driveway gates', 'Estate entrance pair',   '[Town]', 1000, 1250],
-    ['Sliding',        'Cantilever sliding gate','[Town]', 1200, 760],
-    ['Railings',       'Estate railings',        '[Town]', 1200, 900],
-    ['Automation',     'Underground motors',     '[Town]', 1100, 1100],
-    ['Driveway gates', 'Steel palisade pair',    '[Town]', 1200, 850],
-    ['Railings',       'Juliet balcony',         '[Town]', 1000, 1300],
-    ['Sliding',        'Tracked sliding gate',   '[Town]', 1300, 780],
-    ['Automation',     'Keypad and intercom',    '[Town]', 1100, 950],
-    ['Driveway gates', 'Hardwood five-bar',      '[Town]', 1200, 800],
-    ['Railings',       'Boundary fencing',       '[Town]', 1250, 830],
-    ['Driveway gates', 'Arched top pair',        '[Town]', 1000, 1200]
+    ['Driveway gates', 'Oak-clad electric gates', 'Automated pair',       1200, 820],
+    ['Driveway gates', 'Estate entrance pair',    'Powder-coated black',  1000, 1250],
+    ['Sliding',        'Cantilever sliding gate', 'No ground track',      1200, 760],
+    ['Railings',       'Estate railings',         'Galvanised and coated',1200, 900],
+    ['Automation',     'Underground motors',      'Retro-fit',            1100, 1100],
+    ['Driveway gates', 'Steel palisade pair',     'Swing, inward',        1200, 850],
+    ['Railings',       'Juliet balcony',          'Powder-coated',        1000, 1300],
+    ['Sliding',        'Tracked sliding gate',    'Wide opening',         1300, 780],
+    ['Automation',     'Keypad and intercom',     'Video entry',          1100, 950],
+    ['Driveway gates', 'Hardwood five-bar',       'Manual, field gate',   1200, 800],
+    ['Railings',       'Boundary fencing',        'Matching run',         1250, 830],
+    ['Driveway gates', 'Arched top pair',         'Automated, underground',1000, 1200]
   ].map(function (p, i) {
     var c = tone(i);
     return { cat: p[0], t: p[1], s: p[2], w: p[3], h: p[4], src: photo(p[3], p[4], c[0], c[1], 22 + (i % 4) * 6) };
