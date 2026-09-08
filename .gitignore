@@ -7,4 +7,11 @@ Thumbs.db
 *.swp
 
 # Generated at runtime by api/images.php and api/contact.php
-api/cache/
+public/api/cache/
+
+# Cloudflare tooling
+node_modules/
+.wrangler/
+
+# Built by "npm run manifest" from whatever is in public/images/
+public/images/images.json

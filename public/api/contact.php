@@ -136,13 +136,16 @@ if ($errors) {
     respond(false, 'Please add ' . implode(', ', $errors) . '.', 422);
 }
 
+// Keep in step with the <option> values in contact.html, and with the
+// SUBJECTS map in worker/config.js.
 $subjects = array(
-    'new-gates'         => 'Driveway gates — new',
-    'automation'        => 'Automation for existing gates',
-    'railings'          => 'Railings, fencing or balustrade',
-    'repair'            => 'Repair or service',
-    'safety-inspection' => 'Safety inspection of an existing gate',
-    'other'             => 'Something else',
+    'gates'     => 'Sliding or swing gates',
+    'railings'  => 'Railings or balustrade',
+    'staircase' => 'Staircase',
+    'spiral'    => 'Spiral staircase',
+    'balcony'   => 'Balcony',
+    'steel'     => 'Structural steel',
+    'other'     => 'Something else',
 );
 $subjectLabel = $subjects[$subject] ?? 'Website enquiry';
 

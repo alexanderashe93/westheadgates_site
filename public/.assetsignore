@@ -1,0 +1,14 @@
+# Files inside public/ that must not be published as part of the website on
+# Cloudflare. Everything listed here is skipped when wrangler uploads.
+
+# The PHP endpoints. On Plesk these run and do the work; on Cloudflare the
+# Worker does the same two jobs, so publishing them would just be handing
+# out the source.
+api/
+
+# Apache configuration — Cloudflare has no use for it, and it is not public.
+.htaccess
+
+# Hand-written captions are read by the Worker from the bucket, not fetched
+# by the browser.
+images/captions.json

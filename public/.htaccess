@@ -11,8 +11,9 @@ ErrorDocument 404 /404.html
 # Don't list folder contents if a page is missing.
 Options -Indexes
 
-# Keep the gallery cache and config out of reach.
-<FilesMatch "^(config\.php|captions\.json)$">
+# Keep the gallery cache, the config and the Cloudflare-only files out of
+# reach. Apache would happily serve _headers and .assetsignore as plain text.
+<FilesMatch "^(config\.php|captions\.json|_headers|\.assetsignore)$">
     Require all denied
 </FilesMatch>
 RedirectMatch 404 ^/api/cache/

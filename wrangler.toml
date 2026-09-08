@@ -1,0 +1,69 @@
+# Westhead Gates — Cloudflare Workers deployment.
+#
+# The site's files are uploaded as static assets and served from Cloudflare's
+# edge. The Worker only runs for the two paths that need code: the gallery
+# index and the contact form. See README §10 for the full walkthrough.
+
+name = "westhead-gates"
+main = "worker/index.js"
+compatibility_date = "2025-09-01"
+
+# ---------------------------------------------------------------- the site
+# public/ is the website and nothing else: the same folder you would upload
+# to httpdocs on Plesk. Everything outside it — the Worker, the scripts, the
+# mockups — is tooling and never reaches the web.
+[assets]
+directory = "public"
+binding = "ASSETS"
+
+# Serve /contact for /contact.html, as the rewrite in .htaccess does.
+html_handling = "auto-trailing-slash"
+
+# Unknown paths get the site's own 404 page.
+not_found_handling = "404-page"
+
+# Everything else is served straight off the edge without waking the Worker;
+# only these two need it.
+run_worker_first = ["/api/*", "/images/*"]
+
+# ----------------------------------------------------------------- gallery
+# Photos live in an R2 bucket, so adding one is a drag-and-drop in the
+# Cloudflare dashboard and the gallery picks it up within a few minutes —
+# no deploy. Create the bucket first:
+#
+#   npx wrangler r2 bucket create westhead-gates-images
+#
+# Then upload the photos you have:
+#
+#   npm run push-images
+#
+# Prefer to ship photos with the site instead? Comment this binding out and
+# run `npm run manifest` before each deploy; the gallery falls back to
+# reading images/images.json.
+[[r2_buckets]]
+binding = "IMAGES"
+bucket_name = "westhead-gates-images"
+
+# ------------------------------------------------------------------- email
+# Which provider sends the enquiry. The API key is a secret, not a setting:
+#
+#   npx wrangler secret put MAIL_API_KEY
+#
+# Options: resend, sendgrid, mailgun, or log (prints to the console instead
+# of sending, for local testing). Mailgun also needs MAILGUN_DOMAIN.
+[vars]
+MAIL_PROVIDER = "resend"
+
+# ------------------------------------------------------------- rate limits
+# Holds one short-lived counter per visitor IP for the contact form's hourly
+# limit. Create it, then paste the id it prints in below:
+#
+#   npx wrangler kv namespace create RATE
+#
+# Without this the form still works; it just isn't rate limited.
+# [[kv_namespaces]]
+# binding = "RATE"
+# id = "PASTE_THE_ID_HERE"
+
+[observability]
+enabled = true

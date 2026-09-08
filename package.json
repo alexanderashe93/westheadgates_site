@@ -1,0 +1,16 @@
+{
+  "name": "westhead-gates",
+  "private": true,
+  "type": "module",
+  "description": "Westhead Gates Ltd brochure site. Static HTML; the Worker only exists for Cloudflare deployment.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "manifest": "node scripts/manifest.mjs",
+    "push-images": "node scripts/push-images.mjs",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.129.1"
+  }
+}
