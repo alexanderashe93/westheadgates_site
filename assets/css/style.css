@@ -1,22 +1,30 @@
 /* ==========================================================================
-   Westhead Gates — site stylesheet.
-   Plain CSS, no build step. Scheme: Ironstone.
+   Westhead Gates Ltd — site stylesheet.
+   Plain CSS, no build step.
    Change the tokens in :root and the whole site follows.
    ========================================================================== */
 :root {
-  /* --- Ironstone ---------------------------------------------------------- */
-  --dark:     #1f1e1c;   /* headings, header marks, footer, CTA ground        */
-  --darker:   #141312;   /* footer base                                        */
-  --accent:   #9c3327;   /* every action: buttons, links, active states        */
-  --accent-d: #78251b;   /* the shadow under a button                          */
-  --warm:     #f6f4f1;   /* alternating section ground                         */
-  --line:     #e4e1db;   /* borders                                            */
+  /* --- Brand: taken from the supplied logo artwork and the flyer -----------
+     Black ground, brass accent, silver secondary. The brass in the logo is
+     CMYK C38 M56 Y98 K25 — too dark to use as a button next to white, so
+     --accent is a brighter screen equivalent. If a screen hex is agreed with
+     the designer, put it here and the whole site follows. ----------------- */
+  --dark:     #111111;   /* headings, header mark, footer, CTA ground         */
+  --darker:   #000000;   /* footer base — true black, as the signage          */
+  --accent:   #d9a227;   /* the brand gold: buttons, links, active states     */
+  --accent-d: #a87814;   /* the shadow under a button                         */
+  --accent-t: #111111;   /* text that sits on the gold                        */
+  --silver:   #b9b9b9;   /* the flyer's secondary band                        */
+  --head:     #1a1a1a;   /* header bar — a touch off true black so the logo's
+                            darkest letters still separate from the ground    */
+  --warm:     #f5f4f2;   /* alternating section ground                        */
+  --line:     #e2e0dc;   /* borders                                           */
 
   --paper:    #ffffff;
-  --ink:      #2e2b28;
-  --ink-2:    #4a4640;
-  --muted:    #6d6860;
-  --field:    #d9d5cd;
+  --ink:      #2b2b2b;
+  --ink-2:    #474747;
+  --muted:    #6b6b6b;
+  --field:    #d6d4d0;
 
   --wrap: 1140px;
   --pad:  clamp(1.15rem, 4vw, 2.5rem);
@@ -75,34 +83,45 @@ p { text-wrap: pretty; }
   transition: filter .18s ease, transform .12s ease, background-color .18s ease, color .18s ease;
 }
 .btn:active { transform: translateY(2px); }
-.btn--go { background: var(--accent); color: #fff; box-shadow: 0 2px 0 var(--accent-d); }
-.btn--go:hover { filter: brightness(.92); color: #fff; }
+.btn--go { background: var(--accent); color: var(--accent-t); box-shadow: 0 2px 0 var(--accent-d); }
+.btn--go:hover { filter: brightness(.94); color: var(--accent-t); }
 .btn--go:active { box-shadow: none; }
 .btn--out { background: transparent; color: var(--dark); border: 2px solid var(--dark); padding: .875rem 1.55rem; }
 .btn--out:hover { background: var(--dark); color: #fff; }
 .btn svg { width: 1.15em; height: 1.15em; flex: none; }
 
 /* --- Header --------------------------------------------------------------- */
-.top { position: sticky; top: 0; z-index: 60; background: var(--paper); border-bottom: 1px solid var(--line); }
+/* Dark, because the logo is drawn for a dark ground: its wordmark runs from
+   white through to near-black, so on a white bar the left half disappears. */
+.top { position: sticky; top: 0; z-index: 60; background: var(--head); border-bottom: 1px solid #2c2c2c; }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; padding-block: .95rem; }
 
 .brand { display: flex; align-items: center; gap: .75rem; }
 .brand:hover { color: inherit; }
-.brand i { width: 46px; height: 46px; flex: none; border-radius: var(--r); background: var(--dark); display: grid; place-items: center; }
+.brand i { width: 46px; height: 46px; flex: none; border-radius: var(--r); background: rgba(255,255,255,.08); display: grid; place-items: center; overflow: hidden; }
 .brand i svg { width: 25px; height: 25px; }
-.brand b { font-family: "Bitter", Georgia, serif; font-size: 1.3rem; color: var(--dark); display: block; line-height: 1.2; }
-.brand span { font-size: .82rem; color: var(--muted); display: block; }
+/* The logo, converted from the artwork the client supplied. The header uses
+   the side-by-side lockup (logo-h.svg) because the supplied stack is too tall
+   to stay readable in a 60px bar; the footer uses the stack as drawn. If a
+   logo is ever replaced, drop the new file in and main.js swaps it in on
+   load, falling back to the mark-and-wordmark below if it is missing. */
+.brand__logo { display: none; height: 52px; width: auto; }
+.brand--haslogo .brand__logo { display: block; }
+.brand--haslogo i, .brand--haslogo .brand__text { display: none; }
+.brand b { font-family: "Bitter", Georgia, serif; font-size: 1.3rem; color: #fff; display: block; line-height: 1.2; }
+.brand b em { font-style: normal; font-size: .72em; color: rgba(255,255,255,.55); }
+.brand span { font-size: .82rem; color: rgba(255,255,255,.6); display: block; }
 
 .right { display: flex; align-items: center; gap: 1.75rem; }
 .nav { display: flex; gap: 1.5rem; }
-.nav a { padding: .3rem 0; font-size: 1.03rem; color: var(--ink); border-bottom: 3px solid transparent; }
-.nav a:hover { color: var(--dark); }
-.nav a[aria-current="page"] { color: var(--dark); font-weight: 600; border-bottom-color: var(--accent); }
+.nav a { padding: .3rem 0; font-size: 1.03rem; color: rgba(255,255,255,.8); border-bottom: 3px solid transparent; }
+.nav a:hover { color: #fff; }
+.nav a[aria-current="page"] { color: #fff; font-weight: 600; border-bottom-color: var(--accent); }
 .tel { font-family: "Bitter", Georgia, serif; font-weight: 700; font-size: 1.35rem; color: var(--accent); white-space: nowrap; }
-.tel:hover { color: var(--accent-d); }
+.tel:hover { color: #fff; }
 
-.burger { display: none; width: 46px; height: 46px; border: 2px solid var(--dark); border-radius: var(--r); background: none; place-items: center; }
-.burger span { display: block; width: 20px; height: 2.5px; background: var(--dark); border-radius: 2px; transition: transform .25s ease, opacity .2s; }
+.burger { display: none; width: 46px; height: 46px; border: 2px solid rgba(255,255,255,.4); border-radius: var(--r); background: none; place-items: center; }
+.burger span { display: block; width: 20px; height: 2.5px; background: #fff; border-radius: 2px; transition: transform .25s ease, opacity .2s; }
 .burger span + span { margin-top: 5px; }
 .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
 .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
@@ -113,14 +132,15 @@ p { text-wrap: pretty; }
   .tel { display: none; }
   .nav {
     position: fixed; inset: auto 0 auto 0; top: var(--menutop, 76px);
-    flex-direction: column; gap: 0; background: var(--paper);
-    border-bottom: 1px solid var(--line); box-shadow: 0 12px 26px rgba(31,30,28,.14);
+    flex-direction: column; gap: 0; background: var(--head);
+    border-bottom: 1px solid #2c2c2c; box-shadow: 0 12px 26px rgba(0,0,0,.4);
     padding: .25rem var(--pad) 1rem;
     opacity: 0; visibility: hidden; transform: translateY(-8px);
     transition: opacity .2s ease, transform .2s ease, visibility .2s;
   }
   .nav.open { opacity: 1; visibility: visible; transform: none; }
-  .nav a { padding: 1rem 0; font-size: 1.12rem; border-bottom: 1px solid var(--line); }
+  .nav a { padding: 1rem 0; font-size: 1.12rem; border-bottom: 1px solid #2c2c2c; }
+  .brand__logo { height: 46px; }
 }
 
 /* --- Hero / page head ----------------------------------------------------- */
@@ -144,10 +164,11 @@ p { text-wrap: pretty; }
 .grid img { width: 100%; }
 .g2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .g4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 
 .item h3 { margin-bottom: .35rem; }
 .item p { color: var(--ink-2); font-size: 1rem; }
-.item > svg { width: 30px; height: 30px; color: var(--accent); margin-bottom: .6rem; }
+.item > svg { width: 36px; height: 36px; color: var(--accent); margin-bottom: .7rem; }
 
 .ticks { display: flex; flex-direction: column; gap: .8rem; margin-top: 1.5rem; }
 .ticks li { display: grid; grid-template-columns: 24px 1fr; gap: .7rem; align-items: start; }
@@ -180,7 +201,7 @@ p { text-wrap: pretty; }
   background: var(--paper); break-inside: avoid; cursor: zoom-in;
   transition: box-shadow .2s ease, transform .2s ease;
 }
-.tile:hover { box-shadow: 0 8px 22px rgba(31,30,28,.14); transform: translateY(-2px); }
+.tile:hover { box-shadow: 0 8px 22px rgba(0,0,0,.16); transform: translateY(-2px); }
 .tile img { width: 100%; height: auto; }
 .tile figcaption { padding: .75rem .9rem; text-align: left; }
 .tile b { display: block; color: var(--dark); font-size: 1rem; }
@@ -192,11 +213,11 @@ p { text-wrap: pretty; }
   background: var(--warm); padding: clamp(1.5rem, 4vw, 2.5rem); text-align: center;
 }
 .note p { color: var(--ink-2); max-width: 52ch; margin: .5rem auto 0; }
-.note code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; background: rgba(31,30,28,.07); padding: .1rem .4rem; border-radius: 4px; }
+.note code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; background: rgba(0,0,0,.07); padding: .1rem .4rem; border-radius: 4px; }
 .note[hidden] { display: none; }
 
 /* --- Lightbox ------------------------------------------------------------- */
-.lb { position: fixed; inset: 0; z-index: 200; background: rgba(16,15,14,.96); display: grid; grid-template-rows: auto 1fr auto; opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s; }
+.lb { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.96); display: grid; grid-template-rows: auto 1fr auto; opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s; }
 .lb.open { opacity: 1; visibility: visible; }
 .lb[hidden] { display: none; }
 .lb__bar { display: flex; align-items: center; justify-content: space-between; padding: 1rem var(--pad); color: rgba(255,255,255,.75); font-variant-numeric: tabular-nums; }
@@ -234,7 +255,7 @@ body.locked { overflow: hidden; }
 .field textarea { min-height: 120px; resize: vertical; }
 .field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236d6860' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .9rem center; background-size: 18px; padding-right: 2.6rem; }
 .field input:focus, .field textarea:focus, .field select:focus {
-  outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(156,51,39,.16);
+  outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(217,162,39,.28);
 }
 .field.bad input, .field.bad textarea, .field.bad select { border-color: #b4231f; }
 .err { font-size: .88rem; color: #9c2320; min-height: 1.1rem; }
@@ -268,6 +289,7 @@ body.locked { overflow: hidden; }
 .foot a { color: rgba(255,255,255,.85); }
 .foot a:hover { color: #fff; text-decoration: underline; }
 .foot b { font-family: "Bitter", Georgia, serif; color: #fff; font-size: 1.1rem; display: block; margin-bottom: .4rem; }
+.foot__logo { width: 200px; height: auto; margin-bottom: .9rem; }
 .foot .wrap.foot__base {
   display: block; border-top: 1px solid rgba(255,255,255,.15);
   margin-top: 1.75rem; padding-top: 1rem;
@@ -283,7 +305,7 @@ body.locked { overflow: hidden; }
     background: var(--field); border-top: 1px solid var(--field);
   }
   .callbar a { display: flex; align-items: center; justify-content: center; gap: .5rem; padding: 1.05rem; font-weight: 600; color: #fff; }
-  .callbar a:first-child { background: var(--accent); }
+  .callbar a:first-child { background: var(--accent); color: var(--accent-t); }
   .callbar a:last-child { background: var(--dark); }
   .callbar a:hover { color: #fff; }
   .callbar svg { width: 20px; height: 20px; }

@@ -159,24 +159,58 @@ publish.
 
 ---
 
-## 6. Colour scheme
+## 6. Branding and colour
 
-The site uses the **Ironstone** scheme — near-black `#1f1e1c` with an oxblood
-`#9c3327` accent on a warm off-white ground.
+### The logo
 
-Everything is driven by six custom properties at the top of
+`assets/img/logo.svg` is the logo you supplied, converted from the PDF into
+SVG so it stays sharp at any size and loads in a single small file. Nothing
+was redrawn — the paths and both metallic gradients are the artwork itself.
+
+It appears in the header and in the footer, and it drives three other files
+generated from the same artwork:
+
+| File                              | What it is                              |
+|-----------------------------------|-----------------------------------------|
+| `assets/img/logo.svg`             | The full logo, header and footer         |
+| `assets/img/favicon.svg`          | The gate alone, on black — browser tab   |
+| `assets/img/apple-touch-icon.png` | The same, 180×180, for iOS home screens  |
+| `assets/img/og.png`               | The link-preview card, 1200×630          |
+
+**To replace the logo**, drop a new `assets/img/logo.svg` (or `.png`) in and
+change the `src` in the four HTML files. If the file is ever missing the site
+falls back to a plain mark and wordmark rather than showing a broken image.
+
+**The header is dark on purpose.** The wordmark is a metallic gradient running
+from white on the left to near-black on the right, which is designed to sit on
+a dark ground — on a white bar the left half of "WESTHEAD" disappears. The bar
+is `#1a1a1a` rather than pure black so the last two letters still separate
+from it.
+
+### Colour
+
+Taken from the logo and the flyer: black ground, brass accent, silver
+secondary. Everything is driven by the custom properties at the top of
 `assets/css/style.css`:
 
 ```css
---dark:     #1f1e1c;   /* headings, header mark, footer, CTA ground */
---darker:   #141312;   /* footer base                                */
---accent:   #9c3327;   /* every action: buttons, links, active states */
---accent-d: #78251b;   /* the shadow under a button                  */
---warm:     #f6f4f1;   /* alternating section ground                 */
---line:     #e4e1db;   /* borders                                    */
+--dark:     #111111;   /* headings, footer, CTA ground                */
+--darker:   #000000;   /* footer base                                 */
+--head:     #1a1a1a;   /* the header bar                              */
+--accent:   #d9a227;   /* every action: buttons, links, active states */
+--accent-d: #a87814;   /* the shadow under a button                   */
+--accent-t: #111111;   /* text sitting on the accent                  */
+--silver:   #b9b9b9;   /* the flyer's secondary band                  */
+--warm:     #f5f4f2;   /* alternating section ground                  */
+--line:     #e2e0dc;   /* borders                                     */
 ```
 
-Change those six and the whole site follows. Nothing else needs touching.
+Change those and the whole site follows. Nothing else needs touching.
+
+The brass in the logo is CMYK **C38 M56 Y98 K25** — that is the value in the
+artwork itself. `--accent` is a brighter screen gold, because the print value
+is too dark to work as a button next to white. If your designer has an agreed
+RGB or hex for screen, put it in `--accent` and the site takes it.
 
 Type is **Bitter** for headings and **Libre Franklin** for body, loaded from
 Google Fonts with real fallback stacks.
