@@ -1,9 +1,8 @@
 /**
- * Westhead Gates — sending the enquiry email.
+ * Westhead Gates Ltd — sending the enquiry email.
  *
- * On Plesk this is PHP's mail(), which hands the message to the mail server
- * running on the same box. A Worker has no mail server, so the message goes
- * out over HTTPS through whichever provider is configured.
+ * A Worker has no mail server of its own, so the message goes out over HTTPS
+ * through whichever provider is configured.
  *
  * Pick one with the MAIL_PROVIDER variable in wrangler.toml and set its key:
  *

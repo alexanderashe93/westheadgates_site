@@ -1,0 +1,48 @@
+# Deploy the site to Cloudflare on every merge to main.
+#
+# Needs two repository secrets, under Settings -> Secrets and variables ->
+# Actions:
+#
+#   CLOUDFLARE_API_TOKEN    a token with the "Edit Cloudflare Workers" template
+#   CLOUDFLARE_ACCOUNT_ID   from the right-hand side of the Workers dashboard
+#
+# Adding a photo is then: commit it to public/images/, merge, done.
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  # Lets you redeploy by hand from the Actions tab without pushing anything.
+  workflow_dispatch:
+
+# A second merge while the first is still deploying should wait, not race it.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Reads public/images/ and writes the gallery's photo list.
+      - name: Build the gallery
+        run: npm run build
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

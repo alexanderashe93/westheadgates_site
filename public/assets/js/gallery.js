@@ -1,12 +1,10 @@
-/* Westhead Gates — auto-loading gallery.
+/* Westhead Gates Ltd — auto-loading gallery.
  *
- * No image is hard-coded anywhere. The photo list is fetched at page load,
- * in this order:
+ * No image is hard-coded anywhere. The photo list is fetched at page load
+ * from images/images.json, which is built from whatever is in /images/ each
+ * time the site deploys — see scripts/build-gallery.mjs.
  *
- *   1. api/images.php   — reads the /images/ folder on the server (normal case)
- *   2. images/images.json — a static list, if PHP is unavailable
- *
- * Drop a photo into /images/ and it appears. Delete it and it's gone.
+ * Add a photo to /images/ and it appears. Delete it and it's gone.
  * Sub-folders of /images/ become filter categories.
  */
 (function () {
@@ -20,7 +18,7 @@
   var countEl   = document.getElementById('count');
   var noteEl    = document.getElementById('note');
 
-  var SOURCES = ['api/images.php', 'images/images.json'];
+  var SOURCE = 'images/images.json';
 
   var all = [];       // every image
   var shown = [];     // what the lightbox currently steps through
@@ -45,12 +43,8 @@
 
   /* --------------------------------------------------------------- loading */
 
-  function load(index) {
-    index = index || 0;
-    if (index >= SOURCES.length) {
-      return Promise.reject(new Error('no source available'));
-    }
-    return fetch(SOURCES[index], { headers: { Accept: 'application/json' } })
+  function load() {
+    return fetch(SOURCE, { headers: { Accept: 'application/json' } })
       .then(function (res) {
         if (!res.ok) { throw new Error('HTTP ' + res.status); }
         return res.json();
@@ -59,8 +53,7 @@
         var list = Array.isArray(data) ? data : (data && data.images);
         if (!Array.isArray(list)) { throw new Error('unexpected payload'); }
         return list;
-      })
-      .catch(function () { return load(index + 1); });
+      });
   }
 
   /* -------------------------------------------------------------- skeleton */
@@ -264,8 +257,8 @@
       if (!all.length) {
         if (grid) {
           note('No photos yet',
-            'Upload photos to the <code>/images/</code> folder on the server and they ' +
-            'will appear here automatically. Sub-folders become filter categories.');
+            'Add photos to <code>public/images/</code> and merge to main — they ' +
+            'appear here automatically. Sub-folders become filter categories.');
         }
         if (countEl) { countEl.textContent = ''; }
         if (filtersEl) { filtersEl.hidden = true; }
@@ -280,7 +273,7 @@
         var n = parseInt(teaser.getAttribute('data-gallery-teaser'), 10) || 4;
         all.slice(0, n).forEach(function (image) {
           var a = el('a');
-          a.href = 'gallery.html';
+          a.href = '/gallery';
           var img = el('img');
           img.src = image.src;
           img.alt = image.caption || 'Westhead Gates installation';
@@ -299,8 +292,8 @@
       host.textContent = '';
       if (grid) {
         note('Gallery unavailable',
-          'The photo list could not be loaded. Check that <code>api/images.php</code> ' +
-          'is present and that PHP is enabled for this domain in Plesk.');
+          'The photo list could not be loaded. It is built at deploy time — ' +
+          'check that <code>images/images.json</code> was published.');
       }
       if (countEl) { countEl.textContent = ''; }
       if (filtersEl) { filtersEl.hidden = true; }

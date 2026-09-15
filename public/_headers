@@ -1,6 +1,6 @@
-# Cloudflare static assets — response headers.
-# The equivalent of the mod_headers and mod_expires blocks in .htaccess.
-# Requests the Worker handles get these from worker/index.js instead.
+# Response headers for the static files, applied by Cloudflare at the edge.
+# The contact form's replies come from the Worker, which sets the same set
+# in worker/index.js.
 
 /*
   X-Content-Type-Options: nosniff

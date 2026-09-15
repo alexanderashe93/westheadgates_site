@@ -1,10 +1,10 @@
 /**
  * Read an image's pixel dimensions out of its header bytes.
  *
- * On Plesk this job is done by PHP's getimagesize(). A Worker has no image
- * library, but every format the site accepts states its size in the first
- * few hundred bytes, so parsing the header is enough — and it means only the
- * head of each object has to be read, not the whole photo.
+ * Used by the gallery build so each tile can reserve the right shape before
+ * its photo loads. Every format the site accepts states its size in the first
+ * few hundred bytes, so this reads the header rather than decoding the image
+ * — which is why there is no image library in the dependencies.
  *
  * Returns { width, height } or null if the format isn't recognised.
  */

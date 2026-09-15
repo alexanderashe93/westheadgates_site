@@ -1,6 +1,6 @@
 /* Westhead Gates — contact form.
  *
- * The form works without JavaScript: it posts to api/contact.php and the
+ * The form works without JavaScript: it posts to /api/contact and the
  * server redirects back with ?sent=1 or ?error=…. This script only makes
  * that nicer — inline validation and a submit without a page reload.
  */

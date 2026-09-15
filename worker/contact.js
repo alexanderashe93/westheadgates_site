@@ -1,10 +1,10 @@
 /**
- * Westhead Gates — contact form handler for Cloudflare.
+ * Westhead Gates Ltd — contact form handler.
  *
- * The port of api/contact.php, down to the wording of the replies, so the
- * form behaves identically whichever host is serving it: JSON back to
- * contact.js when JavaScript is on, a 303 redirect to contact.html when it
- * is off.
+ * Validates the enquiry, turns away the obvious bots, and sends it on. Works
+ * both ways round: JSON back to contact.js when JavaScript is on, and a 303
+ * redirect to the contact page when it is off, so the form still works for a
+ * visitor with scripts blocked.
  */
 
 import { config, SUBJECTS } from './config.js';
@@ -189,6 +189,6 @@ function respond(request, ok, message, status = 200) {
   const query = ok ? 'sent=1' : `error=${encodeURIComponent(message)}`;
   return new Response(null, {
     status: 303,
-    headers: { Location: `/contact.html?${query}#form` },
+    headers: { Location: `/contact?${query}#form` },
   });
 }
