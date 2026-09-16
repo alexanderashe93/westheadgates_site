@@ -23,15 +23,34 @@ not_found_handling = "404-page"
 run_worker_first = ["/api/*"]
 
 # ------------------------------------------------------------------- email
-# A Worker has no mail server, so the enquiry goes out over HTTPS through a
-# provider. Set its key once:
+# A Worker has no mail server of its own, so the enquiry has to be handed to
+# something that does.
+#
+# "cloudflare" uses Cloudflare's own Email Workers: no third-party account,
+# no API key, no cost. To switch it on:
+#
+#   1. Cloudflare dashboard -> the domain -> Email -> Email Routing -> enable.
+#   2. Add info@westhead-gates.co.uk as a destination address and click the
+#      link in the verification email Cloudflare sends it.
+#   3. Uncomment the [[send_email]] block below and deploy.
+#
+# Until step 2 is done the deploy will be rejected, which is why the block
+# starts commented out. The alternatives are resend, sendgrid and mailgun —
+# each needs the domain verified with them and a key:
 #
 #   npx wrangler secret put MAIL_API_KEY
 #
-# Options: resend, sendgrid, mailgun, or log (prints to the console instead
-# of sending, for local testing). Mailgun also needs MAILGUN_DOMAIN.
+# "log" prints the enquiry to the console instead of sending, for testing.
 [vars]
-MAIL_PROVIDER = "resend"
+MAIL_PROVIDER = "cloudflare"
+
+# The list of addresses the Worker is allowed to email. Each one has to be a
+# verified Email Routing destination on the domain, and that restriction is
+# the point: the form can reach the business and nobody else, so it cannot be
+# turned into an open relay.
+# [[send_email]]
+# name = "SEND_EMAIL"
+# destination_address = "info@westhead-gates.co.uk"
 
 # ------------------------------------------------------------- rate limits
 # Holds one short-lived counter per visitor IP for the contact form's hourly
