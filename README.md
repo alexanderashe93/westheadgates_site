@@ -123,15 +123,15 @@ mailFrom: 'website@westhead-gates.co.uk',           // already set
 
 Enquiries go to **info@westhead-gates.co.uk**.
 
-A Worker has no mail server of its own, so the message goes out over HTTPS
-through a provider — Resend, SendGrid or Mailgun, chosen by `MAIL_PROVIDER`
-in `wrangler.toml`. Setting that up is §8.
+A Worker has no mail server of its own, so the enquiry has to be handed to
+something that does. `MAIL_PROVIDER` in `wrangler.toml` picks how — the
+default uses Cloudflare's own Email Workers, which needs no third-party
+account and costs nothing. Setting it up is §8.
 
-`mailFrom` **must be an address on a domain you have verified with that
-provider**. That verification is the step that keeps enquiries out of the
-junk folder; without it they get filtered or rejected outright by SPF. The
-visitor's own address goes in `Reply-To`, so hitting reply in your inbox
-still works.
+`mailFrom` **must be on a domain verified with whichever you choose**. That
+verification is the step that keeps enquiries out of the junk folder; without
+it they get filtered or rejected outright by SPF. The visitor's own address
+goes in `Reply-To`, so hitting reply in your inbox still works.
 
 The form is protected by three layers: a hidden honeypot field, a minimum
 time-on-page check, and a per-IP hourly rate limit — all set in
@@ -249,7 +249,7 @@ public/                     >>> THE WEBSITE <<<  everything here is published
 worker/index.js             Routing and security headers
 worker/config.js            >>> EDIT THIS ONE <<<  who gets the enquiries
 worker/contact.js           The enquiry form — validation and spam checks
-worker/mail.js              Sending, via Resend / SendGrid / Mailgun
+worker/mail.js              Sending, via Cloudflare Email Workers or an API
 
 scripts/build-gallery.mjs   Builds images/images.json from public/images/
 scripts/imagesize.mjs       Reads pixel dimensions from image headers
@@ -329,19 +329,35 @@ anything — the workflow has a `workflow_dispatch` trigger.
 
 ### Sending email
 
-Pick a provider, verify `westhead-gates.co.uk` with them, create an API key,
-then set it once:
+**The default is Cloudflare's own Email Workers** — no third-party account,
+no API key, nothing to pay. Two steps:
+
+1. Dashboard → the domain → **Email → Email Routing → enable**.
+2. Add `info@westhead-gates.co.uk` as a **destination address** and click the
+   link in the verification email Cloudflare sends it.
+
+Then uncomment the `[[send_email]]` block in `wrangler.toml` and deploy.
+
+It ships commented out on purpose: until that address is verified Cloudflare
+refuses the binding, and an uncommented block would fail the deploy rather
+than just the form.
+
+The catch worth knowing: a Worker may only send to addresses verified this
+way. That is exactly right for a contact form — it can email the business and
+nobody else, so it can never be turned into an open relay — but it does mean
+it cannot send the customer a confirmation. If you ever want that, switch to
+one of the outside providers below.
+
+**The alternatives** are `resend`, `sendgrid` and `mailgun`. Each needs
+`westhead-gates.co.uk` verified with them and a key:
 
 ```bash
 npx wrangler secret put MAIL_API_KEY
 ```
 
-It is stored encrypted on Cloudflare, never in the repository. `resend` is
-the default and the least setup; `sendgrid` and `mailgun` also work — change
-`MAIL_PROVIDER` in `wrangler.toml`. Mailgun also needs `MAILGUN_DOMAIN`.
-
-Verifying the domain is not optional. It is what stops enquiries being
-filtered as spam.
+The key is stored encrypted on Cloudflare, never in the repository. Set
+`MAIL_PROVIDER` in `wrangler.toml` to whichever you use; Mailgun also needs
+`MAILGUN_DOMAIN`.
 
 ### Rate limiting (optional)
 

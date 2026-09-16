@@ -1,51 +1,46 @@
-WESTHEAD GATES — GALLERY PHOTOS
-================================
+WESTHEAD GATES LTD — GALLERY PHOTOS
+===================================
 
-Drop photos in this folder. That's it. They appear on the gallery page
-the next time it loads. Delete one and it disappears. Nothing to edit.
+Drop photos in this folder, commit them, and merge to main. They appear on
+the gallery page as soon as the deploy finishes. Delete one and it goes.
+There is no list to edit anywhere.
 
 Accepted file types: .jpg  .jpeg  .png  .webp  .avif  .gif
 
 
-CATEGORIES (optional)
----------------------
-Put photos in a sub-folder and that folder becomes a filter button:
+CATEGORIES
+----------
+A sub-folder becomes a filter button on the gallery page:
 
     images/
-      driveway-gates/    -> a "Driveway gates" filter
-        oak-gates.jpg
-        estate-gates.jpg
-      railings/          -> a "Railings" filter
-        balcony.jpg
-      loose-photo.jpg    -> shows under "All", no category
+      sliding-gates/      -> a "Sliding gates" filter
+        louvred-sliding-gate.jpg
+      balconies/          -> a "Balconies" filter
+        glass-balcony.jpg
+      loose-photo.jpg     -> shows under "All", no category
 
-If you use no sub-folders at all, the filter buttons hide themselves.
+One level deep only — a folder is a filter button, and filters don't nest.
 
 
 CAPTIONS
 --------
-The filename becomes the caption, so name files properly:
+The filename becomes the caption, so name the file as you want it to read:
 
-    estate-gates-in-oak.jpg     ->  "Estate gates in oak"
-    01-sliding-gate.jpg         ->  "Sliding gate"   (the 01- is stripped)
+    louvred-sliding-gate.jpg     ->  "Louvred sliding gate"
+    01-glass-balcony.jpg         ->  "Glass balcony"   (the 01- is stripped)
 
-To set captions by hand instead, create a file here called captions.json:
-
-    {
-      "driveway-gates/oak-gates.jpg": "Oak-clad gates, powder-coated black",
-      "railings/balcony.jpg": "Juliet balcony, powder-coated black"
-    }
+To write a caption by hand instead, add it to captions.json in this folder.
+That is also how to get capitals right in the middle of a caption, e.g.
+"Ornate Juliet balcony".
 
 
 ORDER
 -----
-Newest photos appear first, based on the file's date. To control the order
-yourself, set 'gallery_sort' to 'name' in api/config.php and prefix the
-filenames: 01-, 02-, 03- and so on.
+Newest file first. The four at the front also fill the "Recent work" strip
+on the home page, so put the best work in most recently.
 
 
-BEFORE YOU UPLOAD
------------------
-Resize photos to around 2000px on the long edge and save at ~80% quality.
-Straight-off-the-camera files are often 8MB+, which makes the gallery slow
-on a phone. Most photos should end up between 200KB and 500KB.
+SIZE
+----
+Resize to about 2000px on the long edge before committing. These files live
+in the repository for good, so a folder of 8MB camera originals is permanent.
