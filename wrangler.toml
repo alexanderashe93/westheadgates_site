@@ -8,15 +8,24 @@ main = "worker/index.js"
 compatibility_date = "2025-09-01"
 
 # ---------------------------------------------------------------- the site
+#
+# HOLDING PAGE IS LIVE (since 2026-11-09, at the client's request).
+# holding/ is served instead of public/, and every path that is not a file in
+# holding/ gets the holding page. The full site is untouched in public/, and
+# is also preserved on the `full-site` branch.
+#
+# To put the full site back: revert the commit that added this note
+# (git revert <hash> && git push origin main), which restores the three
+# settings below to:
+#   directory = "public"
+#   html_handling = "auto-trailing-slash"
+#   not_found_handling = "404-page"
 [assets]
-directory = "public"
+directory = "holding"
 binding = "ASSETS"
 
-# Serve /contact for /contact.html.
-html_handling = "auto-trailing-slash"
-
-# Unknown paths get the site's own 404 page.
-not_found_handling = "404-page"
+# Every unknown path (old pages, /gallery, /contact.html ...) gets index.html.
+not_found_handling = "single-page-application"
 
 # Everything except the form is served straight off the edge without waking
 # the Worker.
